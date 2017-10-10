@@ -6,6 +6,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
+import { LeaderBoardsComponent } from './leader-boards/leader-boards.component';
+import { ContactComponent } from './contact/contact.component';
+import { ProfileComponent } from './profile/profile.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { VideoComponent } from './video/video.component';
 
 const appRoutes: Routes = [
   {path: 'test', component: TestComponent },
@@ -13,7 +18,12 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    LeaderBoardsComponent,
+    ContactComponent,
+    ProfileComponent,
+    SignUpComponent,
+    VideoComponent
   ],
   imports: [
     BrowserModule,
