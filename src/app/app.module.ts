@@ -11,8 +11,11 @@ import { ContactComponent } from './contact/contact.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { VideoComponent } from './video/video.component';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
   {path: 'test', component: TestComponent },
   {path: 'signup', component: SignUpComponent },
   {path: 'video', component: VideoComponent },
@@ -31,7 +34,8 @@ const appRoutes: Routes = [
     ContactComponent,
     ProfileComponent,
     SignUpComponent,
-    VideoComponent
+    VideoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
