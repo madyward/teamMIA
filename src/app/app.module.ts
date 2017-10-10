@@ -14,6 +14,13 @@ import { VideoComponent } from './video/video.component';
 
 const appRoutes: Routes = [
   {path: 'test', component: TestComponent },
+  {path: 'signup', component: SignUpComponent },
+  {path: 'video', component: VideoComponent },
+  {path: 'leaderboards', component: LeaderBoardsComponent },
+  {path: 'contact', component: ContactComponent },
+  {path: 'profile', component: ProfileComponent },
+  
+  
   
 ];
 @NgModule({
