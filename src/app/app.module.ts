@@ -12,6 +12,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { VideoComponent } from './video/video.component';
 import { HomeComponent } from './home/home.component';
+import { SigninService} from './services/signin.service';
+import { SignupService } from './services/signup.service';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -44,7 +46,10 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
 
-  providers: [],
+  providers: [
+    SignupService,
+    SigninService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
