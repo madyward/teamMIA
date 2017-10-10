@@ -14,6 +14,7 @@ import { VideoComponent } from './video/video.component';
 
 const appRoutes: Routes = [
   {path: 'test', component: TestComponent },
+  
 ];
 @NgModule({
   declarations: [
