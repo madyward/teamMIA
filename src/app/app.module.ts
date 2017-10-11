@@ -9,13 +9,14 @@ import { TestComponent } from './test/test.component';
 import { LeaderBoardsComponent } from './leader-boards/leader-boards.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProfileComponent } from './profile/profile.component';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { VideoComponent } from './video/video.component';
 import { HomeComponent } from './home/home.component';
 import { SigninService} from './auth/signin.service';
 import { SignupService } from './auth/signup.service';
 import { AuthService } from './auth/auth.service';
-import { SignInComponent } from './auth/sign-in/sign-in.component';
+
 import { HttpModule } from '@angular/http';
 // import { DataStorageService } from './shared/data-storage.service';
 
@@ -56,7 +57,7 @@ const appRoutes: Routes = [
   providers: [
     AuthService,
     SignupService,
-    SigninService,
+    SigninService
     // DataStorageService
   ],
   bootstrap: [AppComponent]

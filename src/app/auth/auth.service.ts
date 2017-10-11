@@ -31,8 +31,16 @@ export class AuthService {
         .catch(
             error => console.log(error)
         );
-    }
+    }    
+    
     getToken(){
         return firebase.auth().currentUser.getToken();
+    }
+    signoutUser(){
+        firebase.auth().signOut().then(function(){
+            console.log("Sign out successful.");
+        }).catch(function(error){
+            console.log("There was an issue with sign out.");
+        });
     }
 }
