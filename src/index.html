@@ -10,5 +10,18 @@
 </head>
 <body>
   <pm-root></pm-root>
-</body>
+  <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDh-hrLobQ_kFD11bWacfhUP_ejzKHFY58",
+        authDomain: "remempathy-us.firebaseapp.com",
+        databaseURL: "https://remempathy-us.firebaseio.com",
+        projectId: "remempathy-us",
+        storageBucket: "remempathy-us.appspot.com",
+        messagingSenderId: "1071599625628"
+      };
+      firebase.initializeApp(config);
+    </script>
+  </body>
 </html>
