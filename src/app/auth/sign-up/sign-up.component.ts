@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -7,7 +8,10 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
   ngOnInit() {
   }
   onSignup(form: NgForm){
@@ -15,6 +19,7 @@ export class SignUpComponent implements OnInit {
     const password = form.value.password;
     this.authService.signupUser(email, password);
     form.resetForm();
+    this.router.navigate(['/video']);
   }
   onSaveUsers(){}
 }
