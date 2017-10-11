@@ -14,13 +14,15 @@ import { VideoComponent } from './video/video.component';
 import { HomeComponent } from './home/home.component';
 import { SigninService} from './auth/signin.service';
 import { SignupService } from './auth/signup.service';
-import { AuthService } from './auth/sign-up/auth.service';
+import { AuthService } from './auth/auth.service';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'test', component: TestComponent },
   {path: 'signup', component: SignUpComponent },
+  {path: 'signin', component: SignInComponent},
   {path: 'video', component: VideoComponent },
   {path: 'leaderboards', component: LeaderBoardsComponent },
   {path: 'contact', component: ContactComponent },
@@ -37,6 +39,7 @@ const appRoutes: Routes = [
     ContactComponent,
     ProfileComponent,
     SignUpComponent,
+    SignInComponent,
     VideoComponent,
     HomeComponent
   ],
