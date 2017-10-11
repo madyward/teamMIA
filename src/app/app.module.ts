@@ -16,6 +16,8 @@ import { SigninService} from './auth/signin.service';
 import { SignupService } from './auth/signup.service';
 import { AuthService } from './auth/auth.service';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { HttpModule } from '@angular/http';
+import { DataStorageService } from './shared/data-storage.service';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -47,13 +49,15 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientJsonpModule,
     FormsModule,
+    HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
 
   providers: [
     AuthService,
     SignupService,
-    SigninService
+    SigninService,
+    DataStorageService
   ],
   bootstrap: [AppComponent]
 })

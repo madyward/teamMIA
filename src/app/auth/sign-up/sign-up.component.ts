@@ -7,12 +7,13 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-  constructor(private authSerivice: AuthService) { }
+  constructor(private authService: AuthService) { }
   ngOnInit() {
   }
-onSignup(form: NgForm){
-  const email = form.value.email;
-  const password = form.value.password;
-  this.authSerivice.signupUser(email, password);
-}
+  onSignup(form: NgForm){
+    const email = form.value.email;
+    const password = form.value.password;
+    this.authService.signupUser(email, password);
+  }
+  onSaveUsers(){}
 }

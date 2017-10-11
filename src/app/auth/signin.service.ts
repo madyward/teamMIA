@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class SigninService {
-    API_BASE: String = 'http://localhost:3000/';
+    API_BASE: String = 'https://remempathy-us.firebaseio.com/';
     constructor(private http: Http) { }
 
      signIn(email:string, password: string, name: string) {
