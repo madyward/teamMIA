@@ -14,6 +14,7 @@ import { VideoComponent } from './video/video.component';
 import { HomeComponent } from './home/home.component';
 import { SigninService} from './auth/signin.service';
 import { SignupService } from './auth/signup.service';
+import { AuthService } from './auth/sign-up/auth.service';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -47,6 +48,7 @@ const appRoutes: Routes = [
   ],
 
   providers: [
+    AuthService,
     SignupService,
     SigninService
   ],
