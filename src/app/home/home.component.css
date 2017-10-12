@@ -1,9 +1,19 @@
-.rightSide{
-    border: 1px solid black;
+.rightSide-top{
+    border: 1px solid #eaeaea;
+    background-color: #eaeaea;
+    margin-bottom: 5%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.rightSide-bottom{
+    border: 1px solid #eaeaea;
+    background-color: #eaeaea;
     margin-bottom: 5%;
     border-radius: 10%;
     text-align: center;
 }
+
 
 #spotLight{
     height: 305px;
