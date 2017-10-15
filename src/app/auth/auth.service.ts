@@ -34,7 +34,13 @@ export class AuthService {
     }    
     
     getToken(){
-        return firebase.auth().currentUser.getToken();
+        var user = firebase.auth().currentUser;
+        if (user){
+            console.log("User signed in.");
+        } else {
+            console.log("No user logged in.");
+        }
+        return user.getToken();
     }
     signoutUser(){
         firebase.auth().signOut().then(function(){
