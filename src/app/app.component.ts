@@ -11,7 +11,7 @@ import {AuthService} from "./auth/auth.service";
 
 export class AppComponent implements OnInit {
   constructor(private router: Router){}
-  public logo: string = 'Logo will go here';
+  //public logo: string = 'Logo will go here';
   ngOnInit(){
     firebase.initializeApp({
       apiKey: "AIzaSyDh-hrLobQ_kFD11bWacfhUP_ejzKHFY58",
@@ -25,5 +25,5 @@ export class AppComponent implements OnInit {
         console.log(res);
         this.router.navigate(['/home']);
       })
+    }
   }
-}
