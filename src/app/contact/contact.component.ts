@@ -7,6 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ContactComponent implements OnInit {
   home= ["Video Suggestion", "Enhancement", "Other"];
+  fname = '';
   constructor() { }
   ngOnInit() {
   }

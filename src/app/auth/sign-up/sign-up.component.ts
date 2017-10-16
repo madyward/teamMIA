@@ -10,6 +10,7 @@ import {NgForm} from '@angular/forms';
 })
 
 export class SignUpComponent implements OnInit {
+  location = ["Lilly", "Example 2", "Example 3"];
   constructor(
     private authService: AuthService,
     private router: Router
