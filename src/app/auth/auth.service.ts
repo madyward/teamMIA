@@ -2,53 +2,86 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase';
+import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/database";
+import { FirebaseListObservable } from 'angularfire2/database-deprecated';
+import { AngularFireAuth } from 'angularfire2/auth';
+import {Http, Response} from '@angular/http';
 
 Injectable()
 export class AuthService {
-    constructor(private http: Http) { }
-    signupUser(email: string, password: string){
-      firebase.auth().createUserWithEmailAndPassword(email, password)
-     .catch(
-        error => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            if (errorCode == "auth/email-already-in-use"){
-                alert("Email already registered.");
-            }
-            if (errorCode == "auth/invalid-email"){
-                alert("Please enter a valid email.");
-            }
-            if (errorCode == "auth/weak-password"){
-                alert("You must enter a stronger password.");
-            } else {
-                alert(errorMessage);
-            } 
-            console.log(error);
-        }         
-    )}
-    signinUser(email: string, password: string){
-        firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(
-            response => console.log(response)
-        )
-        .catch(
-            error => console.log(error)
-        );
-    }    
-    getToken(){
-        var user = firebase.auth().currentUser;
-        if (user){
-            console.log("User signed in.");
-        } else {
-            console.log("No user logged in.");
-        }
-        return user.getToken();
+    authState: any = null;
+    constructor(private afAuth: AngularFireAuth,
+        private db: AngularFireDatabase, 
+        private http: Http,
+        private router: Router){
+            this.afAuth.authState.subscribe((auth) => {
+                this.authState = auth
+              });  
     }
-    signoutUser(){
-        firebase.auth().signOut().then(function(){
-            console.log("Sign out successful.");
-        }).catch(function(error){
-            console.log("There was an issue with sign out.");
-        });
+    // Returns true if user is logged in
+    get authenticated(): boolean {
+        return this.authState !== null;
     }
+    // Returns current user data
+    get currentUser(): any {
+        return this.authenticated ? this.authState: null;
+    }
+
+    // Returns
+    get currentUserObservable(): any {
+        return this.afAuth.authState
+    }
+
+    // Returns current user UID
+    get currentUserId(): string {
+        return this.authenticated ? this.authState.uid: '';
+    }
+
+    //// Email/Password Auth ////
+    emailSignUp(email:string, password:string) {
+        return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+        .then((user) => {
+            this.authState = user
+            this.updateUserData()
+        })
+        .catch(error => console.log(error));
+    }
+
+    emailLogin(email:string, password:string) {
+        return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+        .then((user) => {
+            this.authState = user
+            this.updateUserData()
+        })
+       .catch(error => console.log(error));
+    }
+    // Sends email allowing user to reset password
+    // resetPassword(email: string) {
+    //     var auth = firebase.auth();
+    //     return auth.sendPasswordResetEmail(email)
+    //     .then(() => console.log("email sent"))
+    //     .catch((error) => console.log(error))
+    // }
+
+    //// Sign Out ////
+    signOut(): void {
+        this.afAuth.auth.signOut();
+        this.router.navigate(['/home'])
+    }
+
+
+    //// Helpers ////
+    private updateUserData(): void {
+    // Writes user name and email to realtime db
+    // useful if your app displays information about users or for admin features
+    let path = `users/${this.currentUserId}`; // Endpoint on firebase
+    let data = {
+        email: this.authState.email,
+        name: this.authState.displayName
+    }
+      this.db.object(path).update(data)
+      .catch(error => console.log(error));
+  
+    }
+
 }

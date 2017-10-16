@@ -20,7 +20,10 @@ import {SignupService} from './auth/signup.service';
 import {AuthService} from './auth/auth.service';
 import {AuthGuard} from './auth/auth.guard';
 import {HttpModule} from '@angular/http';
-import { AuthGuard} from './core/auth.guard';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import {FirebaseListObservable } from 'angularfire2/database-deprecated';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -28,10 +31,10 @@ const appRoutes: Routes = [
   {path: 'test', component: TestComponent },
   {path: 'signup', component: SignUpComponent },
   {path: 'signin', component: SignInComponent},
-  {path: 'video', component: VideoComponent },
-  {path: 'leaderboards', component: LeaderBoardsComponent },
+  {path: 'video', component: VideoComponent, canActivate: [AuthGuard] },
+  {path: 'leaderboards', component: LeaderBoardsComponent, canActivate: [AuthGuard]},
   {path: 'contact', component: ContactComponent },
-  {path: 'profile', component: ProfileComponent },
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -51,12 +54,16 @@ const appRoutes: Routes = [
     HttpClientJsonpModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFireModule,
+    AngularFireDatabaseModule,
+    //FirebaseListObservable,
+    AngularFireAuthModule
   ],
 
   providers: [
     AuthService,
-    AuthGuard
+    AuthGuard,
     SignupService,
     SigninService
     // DataStorageService
