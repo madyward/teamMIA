@@ -1,11 +1,4 @@
 import * as firebase from 'firebase';
-// import * as admin from ("firebase-admin");
-// var serviceAccount = require("path/to/serviceAccountKey.json");
-
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount),
-//   databaseURL: "https://<DATABASE_NAME>.firebaseio.com"
-// });
 
 export class AuthService {
     signupUser(email: string, password: string){
