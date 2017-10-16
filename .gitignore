@@ -43,3 +43,5 @@ Thumbs.db
 
 # Firebase
 src/functions/node_modules/
+functions/
+./remepathy-us-firebase-admindsdk-fjwbn-0c62fe1f32.json

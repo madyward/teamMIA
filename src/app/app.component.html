@@ -1,32 +1,29 @@
-<!--The content below is only a placeholder and can be replaced.-->
-
+<div>
     <div>
-        <div>
-            <ul class="signin-signup-signout">
-                    <li style="height: 0px;"><a [routerLink]="['/signup']" class="signin-up-out-buttons" style="color: #AD1F1F;">Take The Pledge!</a></li>
-                    <li style="height: 0px;"><a [routerLink]="['/signin']" class="signin-up-out-buttons" style="color: #AD1F1F;">Sign In</a></li>
-                    <li style="height: 0px;"><a (click)="signOutToken()"  class="signin-up-out-buttons" style="color: #AD1F1F;">Sign Out</a></li>
+        <ul class="signin-signup-signout">
+                <li style="height: 0px;"><a [routerLink]="['/signup']" class="signin-up-out-buttons" style="color: #AD1F1F;">Take The Pledge!</a></li>
+                <li style="height: 0px;"><a [routerLink]="['/signin']" class="signin-up-out-buttons" style="color: #AD1F1F;">Sign In</a></li>
+                <li style="height: 0px;"><a (click)="signOutToken()"  class="signin-up-out-buttons" style="color: #AD1F1F;">Sign Out</a></li>
+        </ul>
+        <img id="logo" src="./assets/RemEmpathy-blacktext.png" alt="RemEmpathy" />
+        
+    </div>
+    <nav class='navbar navbar-default'>
+        <div class='container-fluid'>
+            <a class='navbar-brand'style="color: white">{{pageTitle}}</a>
+            <ul class='nav navbar-nav' id='nav'>
+                <li><a [routerLink]="['/home']" style="color: white"><h4>Home</h4></a></li>
+                <li><a [routerLink]="['/video']"style="color: white"><h4>Video</h4></a></li>
+                <li><a [routerLink]="['/leaderboards']"style="color: white"><h4>Leader Boards</h4></a></li>
+                <li><a [routerLink]="['/contact']"style="color: white"><h4>Contact</h4></a></li>
+                <li><a [routerLink]="['/profile']"style="color: white"><h4>Profile</h4></a></li>
+             
             </ul>
-            <img id="logo" src="./assets/RemEmpathy-blacktext.png" alt="RemEmpathy" />
             
         </div>
-        <nav class='navbar navbar-default'>
-            <div class='container-fluid'>
-                <a class='navbar-brand'style="color: white">{{pageTitle}}</a>
-                <ul class='nav navbar-nav' id='nav'>
-                    <li><a [routerLink]="['/home']" style="color: white"><h4>Home</h4></a></li>
-                    <li><a [routerLink]="['/video']"style="color: white"><h4>Video</h4></a></li>
-                    <li><a [routerLink]="['/leaderboards']"style="color: white"><h4>Leader Boards</h4></a></li>
-                    <li><a [routerLink]="['/contact']"style="color: white"><h4>Contact</h4></a></li>
-                    <li><a [routerLink]="['/profile']"style="color: white"><h4>Profile</h4></a></li>
-                 
-                </ul>
-                
-            </div>
 
-        </nav>
-        <div class='container'>
-            <router-outlet></router-outlet>
-        </div>
+    </nav>
+    <div class='container'>
+        <router-outlet></router-outlet>
     </div>
-
+</div>

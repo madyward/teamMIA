@@ -1,7 +1,13 @@
 import * as firebase from 'firebase';
+// import * as admin from ("firebase-admin");
+// var serviceAccount = require("path/to/serviceAccountKey.json");
+
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount),
+//   databaseURL: "https://<DATABASE_NAME>.firebaseio.com"
+// });
 
 export class AuthService {
-
     signupUser(email: string, password: string){
       firebase.auth().createUserWithEmailAndPassword(email, password)
      .catch(
@@ -22,7 +28,6 @@ export class AuthService {
             console.log(error);
         }         
     )}
-    
     signinUser(email: string, password: string){
         firebase.auth().signInWithEmailAndPassword(email, password)
         .then(
@@ -32,9 +37,14 @@ export class AuthService {
             error => console.log(error)
         );
     }    
-    
     getToken(){
-        return firebase.auth().currentUser.getToken();
+        var user = firebase.auth().currentUser;
+        if (user){
+            console.log("User signed in.");
+        } else {
+            console.log("No user logged in.");
+        }
+        return user.getToken();
     }
     signoutUser(){
         firebase.auth().signOut().then(function(){
