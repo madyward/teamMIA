@@ -43,3 +43,4 @@ Thumbs.db
 
 # Firebase
 src/functions/node_modules/
+functions/
