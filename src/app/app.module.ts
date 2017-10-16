@@ -18,8 +18,9 @@ import {HomeComponent} from './home/home.component';
 import {SigninService} from './auth/signin.service';
 import {SignupService} from './auth/signup.service';
 import {AuthService} from './auth/auth.service';
+import {AuthGuard} from './auth/auth.guard';
 import {HttpModule} from '@angular/http';
-// import { DataStorageService } from './shared/data-storage.service';
+import { AuthGuard} from './core/auth.guard';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -55,6 +56,7 @@ const appRoutes: Routes = [
 
   providers: [
     AuthService,
+    AuthGuard
     SignupService,
     SigninService
     // DataStorageService
