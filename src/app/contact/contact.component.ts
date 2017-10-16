@@ -6,6 +6,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  home= ["Video Suggestion", "Enhancement", "Other"];
   constructor() { }
   ngOnInit() {
   }
