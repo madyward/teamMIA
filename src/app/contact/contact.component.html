@@ -1,3 +1,36 @@
-<p>
-  contact works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" id="email">
+      <div class="form-group">
+      <form method="POST" action="http://formspree.io/ajhephner178@gmail.com">
+        <h2>Feedback</h2>
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" name="email" placeholder="Your email">
+        <label for="reason">Reason:</label>
+        <select class="form-control" id="reason">
+          <option *ngFor="let i of home" [value]="i">{{i}}</option>
+        </select>
+
+        <label for="message">Message:</label>
+        <textarea name="message" class="form-control" placeholder="Your message"></textarea>
+        <button class="btn btn-danger" type="submit">Send</button>
+      </form>
+    </div>
+    </div>
+<!-- left hand side below -->
+
+      <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+          <div class="picture">
+            <h3>Image Goes in this box</h3>
+          </div>
+
+          <div class="quote" id="text">
+            <h1>Quote on patient focus here </h1>
+          </div>
+
+      </div>
+
+
+  </div>
+</div>
+
