@@ -1,33 +1,37 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" id="email">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="email">
       <div class="form-group">
       <form method="POST" action="http://formspree.io/ajhephner178@gmail.com">
         <h2>Feedback</h2>
         <label for="email">Email:</label>
-        <input type="email" class="form-control" name="email" placeholder="Your email">
+        <input type="email" class="form-control email-input" name="email" placeholder="Your email">
+
         <label for="reason">Reason:</label>
-        <select class="form-control" id="reason">
+        <select class="form-control reason-input" id="reason">
           <option *ngFor="let i of home" [value]="i">{{i}}</option>
         </select>
 
         <label for="message">Message:</label>
-        <textarea name="message" class="form-control" placeholder="Your message"></textarea>
-        <button class="btn btn-danger" type="submit">Send</button>
+        <textarea name="message" class="form-control message-input" placeholder="Your message"></textarea>
+
+        <button class="btn" type="submit"><h4 class="btn-text">Send</h4></button>
       </form>
     </div>
     </div>
 <!-- left hand side below -->
 
-      <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+      <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" >
+        <div class="img-quote">
           <div class="picture">
-            <h3>Image Goes in this box</h3>
+            <img class="img" src="./assets/feedbackPage-quotePic.jpg" alt="">
           </div>
 
           <div class="quote" id="text">
-            <h1>Quote on patient focus here </h1>
+            <h4>It's not how much you do, but how much love you put into the doing the matters</h4>
+            <h4>- Mother Teresa</h4>
           </div>
-
+        </div>
       </div>
 
 
