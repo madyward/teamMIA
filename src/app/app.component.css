@@ -1,6 +1,82 @@
-.navbar {
-    background-color: red;
+h4 {
+    margin: 0px;
 }
-#nav li{
-    display: inline-block;
+
+/*======Nav Bar======*/
+#logo {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0.3%;
+    height: 30%;
+    width: 30%;
+}
+
+ul a {
+    text-decoration: none;
+}
+
+.signin-signup-signout {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.signin-up-out-buttons {
+    /* text-decoration: none; */
+    padding: 0 10px 0 10px;
+    font-weight: bold;
+}
+
+@media (min-width: 1400px) {
+    .signin-up-out-buttons {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 1700px) {
+    .signin-up-out-buttons {
+        font-size: 1.4em;
+    }
+}
+
+.signin-up-out-buttons::after {
+	content: '';
+	display: block;
+	height: 4px;
+	width: 0%;
+	background-color: #AD1F1F; 
+	transition: all ease-in-out 250ms;
+	
+}
+
+.signin-up-out-buttons:hover::after {
+	width: 100%;
+}
+
+
+
+.navbar {
+    background-color: #AD1F1F;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+#nav a{
+    margin: 0em 2em 0em 2em;
+}
+
+@media (min-width: 1400px) {
+    #nav a{
+        margin: 0em 3em 0em 3em;
+    }
+}
+
+@media (min-width: 1700px) {
+    #nav a{
+        margin: 0em 4em 0em 4em;
+    }
 }
