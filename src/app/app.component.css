@@ -67,9 +67,21 @@ ul a {
     border: none;
     border-radius: 0px;
 }
+
+#nav li a {
+    color: #fff;
+    border: none;
+}
+
+#nav li a:hover {
+    background-color: #8e1818;
+    border: none;
+}
+
 #nav a{
     margin: 0em 2em 0em 2em;
 }
+
 
 @media (min-width: 1400px) {
     #nav a{
