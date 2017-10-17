@@ -13,21 +13,20 @@
       <h2>Videos</h2>
     </div>
     <div class="table-responsive">
-      <table class="table"
+      <table align="center" class="table"
          *ngIf= 'videos && videos.length'>
          <thead></thead>
             <tbody>
               <tr>
-                <td *ngFor= "let video of videos">
-                    <a href="{{video.url}}">  
+                <td *ngFor= "let video of videos" class="video-grid center">
+                    <a data-fancybox data-type='iframe' href="{{video.url}}">  
                   <img
                     [src]="video.picture"
                     alt="{{video.picture}}"
-                    class="img-responsive"
-                    style="max-height: 150px;">
-                    {{video.patient}}
-                    {{video.condition}}
-                    {{i}}
+                    class="video"
+                    style="height: 150px; width: 250px;">
+                    <p>{{video.patient}}</p>   
+                    <p>{{video.condition}}</p>
                   </a>
                   </td>
                     
@@ -36,48 +35,45 @@
               <br/>
 
                   <tr>
-                <td *ngFor= "let video of videos2">
-                    <a href="{{video.url}}">  
+                <td *ngFor= "let video of videos2" class="video-grid center">
+                    <a data-fancybox data-type='iframe' href="{{video.url}}">  
                         <img
                           [src]="video.picture"
                           alt="{{video.picture}}"
-                          class="img-responsive"
-                          style="max-height: 150px;">
-                          {{video.patient}}
-                          {{video.condition}}
-                          {{i}}
+                          class="video"
+                          style="height: 150px; width: 250px;">
+                          <p>{{video.patient}}</p>   
+                          <p>{{video.condition}}</p>
                         </a>
                       </td>
               </tr>  
 
               <br/>
               <tr>
-                <td *ngFor= "let video of videos3">
-                    <a href="{{video.url}}">  
+                <td *ngFor= "let video of videos3" class="video-grid center">
+                    <a data-fancybox data-type='iframe' href="{{video.url}}">  
                         <img
                           [src]="video.picture"
                           alt="{{video.picture}}"
-                          class="img-responsive"
-                          style="max-height: 150px;">
-                          {{video.patient}}
-                          {{video.condition}}
-                          {{i}}
+                          class="video"
+                          style="height: 150px; width: 250px;">
+                          <p>{{video.patient}}</p>   
+                          <p>{{video.condition}}</p>
                         </a>
                       </td>
               </tr>  
 
               <br/>
               <tr>
-                <td *ngFor= "let video of videos4">
-                    <a href="{{video.url}}">  
+                <td *ngFor= "let video of videos4" class="video-grid center">
+                    <a data-fancybox data-type='iframe' href="{{video.url}}">  
                         <img
                           [src]="video.picture"
                           alt="{{video.picture}}"
-                          class="img-responsive"
-                          style="max-height: 150px;">
-                          {{video.patient}}
-                          {{video.condition}}
-                          {{i}}
+                          class="video"
+                          style="height: 150px; width: 250px;">
+                          <p>{{video.patient}}</p>   
+                          <p>{{video.condition}}</p>
                         </a>
                       </td>
               </tr>  

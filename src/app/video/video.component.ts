@@ -26,7 +26,6 @@ export class VideoComponent implements OnInit {
   videos4 =[
     { url: "https://www.youtube.com/embed/rP6WHiQlOSk", picture: "https://i.ytimg.com/vi/rP6WHiQlOSk/maxresdefault.jpg", patient: "Annie Kramer-Golinkoff", condition: "Multiple Conditions"},
     { url: "https://www.youtube.com/embed/nyK-tCWZv_Y", picture: "http://andreawilsonwoods.com/wp-content/uploads/2016/07/DressthinkingprofileRMver2.jpg", patient: "Andrea Wilson", condition: "Liver Cancer"},
-    { url: "https://www.youtube.com/embed/rP6WHiQlOSk", picture: "https://i.ytimg.com/vi/rP6WHiQlOSk/maxresdefault.jpg", patient: "Annie Kramer-Golinkoff", condition: "Test"}
   ]
   constructor() { }
   ngOnInit() {
