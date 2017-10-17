@@ -19,7 +19,21 @@ import {SigninService} from './auth/signin.service';
 import {SignupService} from './auth/signup.service';
 import {AuthService} from './auth/auth.service';
 import {HttpModule} from '@angular/http';
-// import { DataStorageService } from './shared/data-storage.service';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import {FirebaseListObservable } from 'angularfire2/database-deprecated';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+// Initialize Firebase
+export const firebaseConfig = {
+  apiKey: "AIzaSyDh-hrLobQ_kFD11bWacfhUP_ejzKHFY58",
+  authDomain: "remempathy-us.firebaseapp.com",
+  databaseURL: "https://remempathy-us.firebaseio.com",
+  projectId: "remempathy-us",
+  storageBucket: "remempathy-us.appspot.com",
+  messagingSenderId: "1071599625628"
+};
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -27,10 +41,10 @@ const appRoutes: Routes = [
   {path: 'test', component: TestComponent },
   {path: 'signup', component: SignUpComponent },
   {path: 'signin', component: SignInComponent},
-  {path: 'video', component: VideoComponent },
-  {path: 'leaderboards', component: LeaderBoardsComponent },
+  {path: 'video', component: VideoComponent, canActivate: [AuthGuard] },
+  {path: 'leaderboards', component: LeaderBoardsComponent, canActivate: [AuthGuard]},
   {path: 'contact', component: ContactComponent },
-  {path: 'profile', component: ProfileComponent },
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -50,11 +64,17 @@ const appRoutes: Routes = [
     HttpClientJsonpModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule,
+    AngularFireDatabaseModule,
+    //FirebaseListObservable,
+    AngularFireAuthModule
   ],
 
   providers: [
     AuthService,
+    AuthGuard,
     SignupService,
     SigninService
     // DataStorageService
