@@ -18,8 +18,8 @@ import {HomeComponent} from './home/home.component';
 import {SigninService} from './auth/signin.service';
 import {SignupService} from './auth/signup.service';
 import {AuthService} from './auth/auth.service';
-import {AuthGuard} from './auth/auth.guard';
 import {HttpModule} from '@angular/http';
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import {FirebaseListObservable } from 'angularfire2/database-deprecated';
