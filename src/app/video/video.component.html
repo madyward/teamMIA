@@ -18,20 +18,29 @@
          <thead></thead>
             <tbody>
               <tr>
-                <td *ngFor= "let video of videos; let i = index">
-                    {{video.url}}  
-                    {{video.picture}}
+                <td *ngFor= "let video of videos">
+                    <!-- {{video.url}}   -->
+                   <a href="{{video.url}}"> <img [src]= "video.picture" 
+                    alt="{{video.picture}}"
+                    class="img-responsive"
+                    style="max-height: 150px"></a>
                     {{video.patient}}
                     {{video.condition}}
                     {{i}}</td>
+                    </tr>
+                    <tr>
+                    
               </tr>  
 
               <br/>
 
                   <tr>
-                <td *ngFor= "let video of videos2; let i = index">
-                    {{video.url}}  
-                    {{video.picture}}
+                <td *ngFor= "let video of videos2">
+                    <!-- {{video.url}}   -->
+                    <a href="{{video.url}}"> <img [src]= "video.picture" 
+                      alt="{{video.picture}}"
+                      class="img-responsive"
+                      style="max-height: 150px"></a>
                     {{video.patient}}
                     {{video.condition}}
                     {{i}}</td>
@@ -39,9 +48,12 @@
 
               <br/>
               <tr>
-                <td *ngFor= "let video of videos3; let i = index">
-                    {{video.url}}  
-                    {{video.picture}}
+                <td *ngFor= "let video of videos3">
+                    <!-- {{video.url}}   -->
+                    <a href="{{video.url}}"> <img [src]= "video.picture" 
+                      alt="{{video.picture}}"
+                      class="img-responsive"
+                      style="max-height: 150px"></a>
                     {{video.patient}}
                     {{video.condition}}
                     {{i}}</td>
@@ -49,9 +61,12 @@
 
               <br/>
               <tr>
-                <td *ngFor= "let video of videos4; let i = index">
-                    {{video.url}}  
-                    {{video.picture}}
+                <td *ngFor= "let video of videos4">
+                    <!-- {{video.url}}   -->
+                    <a href="{{video.url}}"> <img [src]= "video.picture" 
+                      alt="{{video.picture}}"
+                      class="img-responsive"
+                      style="max-height: 150px"></a>
                     {{video.patient}}
                     {{video.condition}}
                     {{i}}</td>
