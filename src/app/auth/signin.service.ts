@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Http, Response, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -6,9 +6,7 @@ import 'rxjs/add/operator/map';
 export class SigninService {
     API_BASE: String = 'https://remempathy-us.firebaseio.com/';
     constructor(private http: Http) { }
-
      signIn(email:string, password: string, name: string) {
-        
         return this.http.post(this.API_BASE + 'signin', JSON.stringify({email: email, password: password, name: name}))
             .map((response: Response) => {
                 let user = response.json();

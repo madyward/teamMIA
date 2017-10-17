@@ -1,0 +1,46 @@
+.picture{
+    
+    margin: 15% 0 5% 0;
+}
+
+#text{
+    
+}
+
+.img-quote {
+    margin-left: 5%;
+}
+
+.email-input {
+    margin-bottom: 3%;
+}
+
+.reason-input {
+    margin-bottom: 3%;
+}
+
+.message-input {
+    margin-bottom: 1%;
+}
+
+.btn {
+    background-color: #AD1F1F;
+    border: 1px solid #AD1F1F;
+    color: #fff;
+    padding: 8px 8px 7px 8px;
+}
+
+.btn:hover {
+    background-color: #fff;
+    border: 1px solid #AD1F1F;
+    color: #333;
+}
+
+.btn-text {
+    margin: 0px;
+}
+ 
+.img {
+    height: 270px;
+    border-radius: 6px;
+}

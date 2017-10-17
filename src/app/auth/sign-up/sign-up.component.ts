@@ -1,13 +1,16 @@
-import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import {Router} from '@angular/router';
+import {AuthService} from '../auth.service';
+import {Component, OnInit} from '@angular/core';
+import {NgForm} from '@angular/forms';
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
+
 export class SignUpComponent implements OnInit {
+  location = ["Lilly", "Example 2", "Example 3"];
   constructor(
     private authService: AuthService,
     private router: Router
@@ -17,9 +20,10 @@ export class SignUpComponent implements OnInit {
   onSignup(form: NgForm){
     const email = form.value.email;
     const password = form.value.password;
-    this.authService.signupUser(email, password);
+    this.authService.emailSignUp(email, password);
     form.resetForm();
     this.router.navigate(['/video']);
   }
   onSaveUsers(){}
 }
+//signupUser

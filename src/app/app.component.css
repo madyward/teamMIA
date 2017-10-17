@@ -64,10 +64,24 @@ ul a {
     justify-content: space-around;
     margin-left: 0px;
     margin-right: 0px;
+    border: none;
+    border-radius: 0px;
 }
+
+#nav li a {
+    color: #fff;
+    border: none;
+}
+
+#nav li a:hover {
+    background-color: #8e1818;
+    border: none;
+}
+
 #nav a{
     margin: 0em 2em 0em 2em;
 }
+
 
 @media (min-width: 1400px) {
     #nav a{
@@ -75,8 +89,8 @@ ul a {
     }
 }
 
-@media (min-width: 1700px) {
+/* @media (min-width: 1700px) {
     #nav a{
         margin: 0em 4em 0em 4em;
     }
-}
+} */

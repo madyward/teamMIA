@@ -2,3 +2,8 @@
     width: 500px;
     height: 550px;
 }
+h4{
+    display: inline-block;
+    margin: 4px;
+}
+
