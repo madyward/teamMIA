@@ -12,8 +12,8 @@ export class AuthService {
     authState: any = null;
     constructor(private http: Http, 
         private router: Router,
-        public afAuth: AngularFireAuth,
-        public db: AngularFireDatabase  
+        private afAuth: AngularFireAuth,
+        private db: AngularFireDatabase  
         ){
             this.afAuth.authState.subscribe((auth) => {
                 this.authState = auth
@@ -76,11 +76,9 @@ export class AuthService {
     // Writes user name and email to realtime db
     // useful if your app displays information about users or for admin features
     let path = `users/${this.currentUserId}`; // Endpoint on firebase
-    let fname, lname, email, uid;
     let data = {
         email: this.authState.email,
-        fname: this.authState.fname,
-        uid: this.authState.uid,
+        uid: this.authState.uid
     }
       this.db.object(path).update(data)
       .catch(error => console.log(error));
