@@ -25,6 +25,16 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import {FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+// Initialize Firebase
+export const firebaseConfig = {
+  apiKey: "AIzaSyDh-hrLobQ_kFD11bWacfhUP_ejzKHFY58",
+  authDomain: "remempathy-us.firebaseapp.com",
+  databaseURL: "https://remempathy-us.firebaseio.com",
+  projectId: "remempathy-us",
+  storageBucket: "remempathy-us.appspot.com",
+  messagingSenderId: "1071599625628"
+};
+
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
@@ -55,6 +65,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireModule,
     AngularFireDatabaseModule,
     //FirebaseListObservable,

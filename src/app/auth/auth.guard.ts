@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/take';
 import * as firebase from 'firebase';
 
-Injectable()
+@Injectable()
 export class AuthGuard implements CanActivate {
     constructor(private auth: AuthService, private router: Router) {}
     canActivate(

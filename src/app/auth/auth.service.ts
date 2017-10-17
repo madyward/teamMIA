@@ -1,19 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Provider } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import {Http, Response} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import * as firebase from 'firebase';
 import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/database";
 import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { AngularFireAuth } from 'angularfire2/auth';
-import {Http, Response} from '@angular/http';
+import * as firebase from 'firebase';
 
-Injectable()
+@Injectable()
 export class AuthService {
     authState: any = null;
-    constructor(private afAuth: AngularFireAuth,
-        private db: AngularFireDatabase, 
-        private http: Http,
-        private router: Router){
+    constructor(private http: Http, 
+        private router: Router,
+        public afAuth: AngularFireAuth,
+        public db: AngularFireDatabase  
+        ){
             this.afAuth.authState.subscribe((auth) => {
                 this.authState = auth
               });  

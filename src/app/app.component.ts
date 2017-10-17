@@ -3,6 +3,7 @@ import {Router} from "@angular/router";
 import * as firebase from 'firebase';
 import * as admin from "firebase-admin";
 import {AuthService} from "./auth/auth.service";
+import {AppModule} from "./app.module";
 
 @Component({
   selector: 'pm-root',
@@ -16,7 +17,8 @@ export class AppComponent implements OnInit {
   ngOnInit(){
     firebase.initializeApp({
       apiKey: "AIzaSyDh-hrLobQ_kFD11bWacfhUP_ejzKHFY58",
-      authDomain: "remempathy-us.firebaseapp.com"
+      authDomain: "remempathy-us.firebaseapp.com",
+      databaseURL: "https://remempathy-us.firebaseio.com"
     });
   }
   signOutToken(){
