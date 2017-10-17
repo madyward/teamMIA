@@ -20,6 +20,7 @@ export class SignUpComponent implements OnInit {
   onSignup(form: NgForm){
     const email = form.value.email;
     const password = form.value.password;
+    const fName =  form.value.fname;
     this.authService.emailSignUp(email, password);
     form.resetForm();
     this.router.navigate(['/video']);

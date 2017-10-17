@@ -15,8 +15,10 @@ export class AuthGuard implements CanActivate {
         state: RouterStateSnapshot): Observable<boolean> | boolean {
           if (this.auth.authenticated) { return true; }
           console.log('access denied!')
-          this.router.navigate(['/signup']);
-          alert("Access restricted to registered users only. Please sign up or sign in.")
+          if (!this.auth.authenticated) {
+              this.router.navigate(['/signup']);
+              alert("Access restricted to registered users only. Please sign up or sign in.")
+            }
           return false
       }
 }
