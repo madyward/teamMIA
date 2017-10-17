@@ -21,11 +21,11 @@
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "styles.css",
-        "assets/fancybox-master/dist/jquery.fancybox.min.css"
+        "./assets/fancybox-master/dist/jquery.fancybox.css"
       ],
       "scripts": [
         "../node_modules/bootstrap/dist/js/bootstrap.min.js",
-        "assets/fancybox-master/dist/jquery.fancybox.min.js"
+        "./assets/fancybox-master/dist/jquery.fancybox.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

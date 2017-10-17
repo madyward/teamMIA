@@ -30,6 +30,9 @@ h4 {
     
 } */
 
+#pledge {
+    margin-bottom: 5%;
+}
 
 #spotLight{
    padding-bottom: 28px;
@@ -49,6 +52,14 @@ h4 {
         width: 110px;
     }
 }
+
+/* @media all and (max-width: 768px) and (min-width: 991px) {
+    .picture {
+        height: 80px;
+        width: 130px;
+    }
+} */
+
 
 /* table {
     width: 95%;
