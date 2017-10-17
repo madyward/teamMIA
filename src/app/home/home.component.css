@@ -1,3 +1,7 @@
+h4 {
+    margin-bottom: 0px;
+}
+
 .rightSide-top{
     border: 1px solid #eaeaea;
     background-color: #eaeaea;
@@ -7,30 +11,48 @@
 }
 
 .rightSide-bottom{
-    border: 1px solid #eaeaea;
-    background-color: #eaeaea;
     margin-bottom: 5%;
     border-radius: 10%;
     text-align: center;
 }
 
+.header {
+    color: #fff;
+    background-color: #AD1F1F;
+    padding: 7px 0px 7px 0px;
+    border-radius: 3px;
+
+}
+
+/* .rightSide-bottom-bgColor {
+    border: 1px solid #AD1F1F;
+    background-color: #AD1F1F;
+    
+} */
+
 
 #spotLight{
-    height: 305px;
+   padding-bottom: 28px;
 }
 
 /*======Top Videos======*/
 .picture {
     cursor: pointer;
-    height: 50px;
-    width: 100px;
-    border-radius: 3px;
+    height: 100px;
+    width: 150px;
+    border-radius: 4px;
 }
 
+@media(max-width: 1200px) {
+    .picture {
+        height: 60px;
+        width: 110px;
+    }
+}
 
-table {
+/* table {
     width: 95%;
-}
+} */
 
 td {
     padding: 1em 1.2em 0em 1.2em;
@@ -48,7 +70,7 @@ td {
     color: #337ab7;
     padding-top: 0em;
     cursor: pointer;
-    border-top: solid #337ab7 2px;
+    border-top: solid #337ab7 1.5px;
 }
 
 .videoLi {
@@ -64,8 +86,6 @@ td {
     display: block;
     color: #337ab7;
 }
-
-
 
 .videoTable {
     text-align: center;
