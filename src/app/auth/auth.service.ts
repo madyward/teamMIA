@@ -56,7 +56,7 @@ export class AuthService {
         })
        .catch(error => console.log(error));
     }
-    // Sends email allowing user to reset password
+    // //Sends email allowing user to reset password
     // resetPassword(email: string) {
     //     var auth = firebase.auth();
     //     return auth.sendPasswordResetEmail(email)

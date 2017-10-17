@@ -26,4 +26,3 @@ export class SignUpComponent implements OnInit {
   }
   onSaveUsers(){}
 }
-//signupUser
