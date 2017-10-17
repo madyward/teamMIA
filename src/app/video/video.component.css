@@ -1,0 +1,17 @@
+p {
+    margin: 0px;
+}
+
+.video-grid {
+    border: none;
+    display: inline-block; 
+    padding-left: 10%;
+}
+
+.video {
+    margin-right: 25%;
+}
+
+.center {
+    text-align: center;
+}
