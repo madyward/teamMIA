@@ -9,6 +9,9 @@
   </ul> -->
 
   <div class="container">
+    <div class="row">
+      <h2>Videos</h2>
+    </div>
     <div class="table-responsive">
       <table class="table"
          *ngIf= 'videos && videos.length'>
@@ -21,16 +24,40 @@
                     {{video.patient}}
                     {{video.condition}}
                     {{i}}</td>
-                    
-                    <br/>
               </tr>  
-              <tr>
-                 <td *ngFor= "let video of videos">
+
+              <br/>
+
+                  <tr>
+                <td *ngFor= "let video of videos2; let i = index">
                     {{video.url}}  
                     {{video.picture}}
                     {{video.patient}}
-                    {{video.condition}}</td>
-              </tr>
+                    {{video.condition}}
+                    {{i}}</td>
+              </tr>  
+
+              <br/>
+              <tr>
+                <td *ngFor= "let video of videos3; let i = index">
+                    {{video.url}}  
+                    {{video.picture}}
+                    {{video.patient}}
+                    {{video.condition}}
+                    {{i}}</td>
+              </tr>  
+
+              <br/>
+              <tr>
+                <td *ngFor= "let video of videos4; let i = index">
+                    {{video.url}}  
+                    {{video.picture}}
+                    {{video.patient}}
+                    {{video.condition}}
+                    {{i}}</td>
+              </tr>  
+
+              <br/>
             
             
             </tbody>        
