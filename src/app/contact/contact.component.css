@@ -27,19 +27,15 @@
     background-color: #AD1F1F;
     border: 1px solid #AD1F1F;
     color: #fff;
-    padding: 8px 8px 7px 8px;
+    padding: 6px 8px 5px 8px;
 }
 
 .btn:hover {
     background-color: #fff;
     border: 1px solid #AD1F1F;
-    color: #333;
+    color: #AD1F1F;
 }
 
-.btn-text {
-    margin: 0px;
-}
- 
 .img {
     height: 270px;
     border-radius: 6px;

@@ -18,3 +18,55 @@
 #spotLight{
     height: 305px;
 }
+
+/*======Top Videos======*/
+.picture {
+    cursor: pointer;
+    height: 50px;
+    width: 100px;
+    border-radius: 3px;
+}
+
+
+table {
+    width: 95%;
+}
+
+td {
+    padding: 1em 1.2em 0em 1.2em;
+    text-align: center;
+}
+
+.videoTitle {
+    color: #337ab7;
+    padding-top: 0.5em !important;
+    cursor: pointer;
+    
+}
+
+.videoSubTitle {
+    color: #337ab7;
+    padding-top: 0em;
+    cursor: pointer;
+    border-top: solid #337ab7 2px;
+}
+
+.videoLi {
+    display: inline-block;
+    text-align: center;
+    margin: 4% 1%;
+    box-sizing: border-box;
+    padding: .7%;
+}
+
+.videoLi::after {
+    content: 'Julie Flygare: Narcolepsy';
+    display: block;
+    color: #337ab7;
+}
+
+
+
+.videoTable {
+    text-align: center;
+}
