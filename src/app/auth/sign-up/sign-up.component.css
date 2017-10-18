@@ -21,6 +21,11 @@ h4{
 }
 
 .user{
-    margin: 5%;
+    margin-top: 2%;
 
 }
+
+.required {
+    color: rgb(209, 46, 46);
+}
+

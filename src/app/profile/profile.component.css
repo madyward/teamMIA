@@ -1,0 +1,25 @@
+.btn {
+    background-color: #AD1F1F;
+    border: 1px solid #AD1F1F;
+    color: #fff;
+    padding: 6px 8px 5px 8px;
+}
+
+.btn:hover {
+    background-color: #fff;
+    border: 1px solid #AD1F1F;
+    color: #AD1F1F;
+}
+
+.btn {
+    margin-bottom: 10px;
+}
+
+.user{
+    margin-top: 1%;
+
+}
+
+.required {
+    color: rgb(209, 46, 46);
+}
