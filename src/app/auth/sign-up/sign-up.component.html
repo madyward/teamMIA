@@ -2,32 +2,40 @@
 <div class="row">
   <div class="col-xs-5 col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1">
     <form (ngSubmit)="onSignup(f)" #f="ngForm">
+     
       <div class="form-group">
-        <label for="name">First Name:</label>
-        <input type="text" class="form-control" name="fname" ngModel #fname (keyup)="0">
-       
-        <label for="name">Last Name:</label>
+        
+        <div>
+        <label class="user" for="name">First Name:</label>
+        <input type="text" class="form-control" name="fname" 
+        ngModel #fname='ngModel' (keyup)="0"
+        required>
+
+        <span class="required" *ngIf="!fname.valid && fname.touched">Please Enter a name</span>
+       </div>
+        <label class="user" for="name">Last Name:</label>
         <input type="text" id="lName" #lname (keyup)="0" class="form-control">
 
-        <label for="email">Email:</label>
+        <label class="user" for="email">Email:</label>
         <input type="email" id="email" name="email" ngModel class="form-control">
         
-        <label for="password">Password:</label>
+        <label class="user" for="password">Password:</label>
         <input type="password" id="password" name="password"ngModel class="form-control">
         <p><i>* Minimum 6 characters</i></p>
         
         <!-- want this to eventually pop into second div when selected-ajh -->
-        <label for="location">Company:</label>
+        <label class="user" for="location">Company:</label>
         <select class="form-control" id="reason">
         
           <option  *ngFor="let i of location" [value]="i">{{i}}</option>
         </select>
        
-        <label for="location">Location:</label>
+        <label class="user" for="location">Location:</label>
         <input type="text" id="location" name="location" ngModel class="form-control">
         </div>
         
-        <button class="btn btn-primary" type="submit" (click)="onSignup(f)">Sign Up</button>
+        <button class="btn btn-primary" type="submit" (click)="onSignup(f)"
+        [disabled]="!f.valid">Sign Up</button>
     </form>
 
   </div>
