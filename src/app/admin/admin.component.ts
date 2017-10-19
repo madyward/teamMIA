@@ -12,8 +12,8 @@ import { Response } from '@angular/http';
 })
 export class AdminComponent implements OnInit {
   ngOnInit(): void {
-    this.getVideo();
-    throw new Error("Method not implemente.");
+    
+    
     
   }
 
@@ -33,7 +33,9 @@ export class AdminComponent implements OnInit {
         picture: picture, 
         patient: patient,
         condition: condition
+
       });
+     
     }
     saveVideo() {
       this.serverService.storeVideos(this.videos)
@@ -46,7 +48,8 @@ export class AdminComponent implements OnInit {
     getVideo(){
       this.serverService.showVideos()
         .subscribe(
-          (videos: any[]) => this.videos = videos, 
+          (videos: any[]) => console.log(videos), 
+         
           
           (error) => console.log(error)
 
