@@ -14,13 +14,7 @@ export class AdminComponent implements OnInit {
     throw new Error("Method not implemente.");
   }
 
-  videos=[{
-    url : "",
-    picture: '',
-    patient: '',
-    condition: '', 
-  }
-  ];
+  videos=[{}];
 
   constructor() {}
     addVideo(
