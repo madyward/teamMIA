@@ -1,0 +1,61 @@
+/* ======Form====== */
+.user{
+    margin-top: 2%;
+
+}
+
+.btn {
+    background-color: #AD1F1F;
+    border: 1px solid #AD1F1F;
+    color: #fff;
+    padding: 6px 8px 5px 8px;
+}
+
+.btn:hover {
+    background-color: #fff;
+    border: 1px solid #AD1F1F;
+    color: #AD1F1F;
+}
+
+button:focus {outline:0;}  
+
+
+/* ======Video Grid====== */
+hr {
+    opacity: 0;
+}
+
+p {
+    margin: 0px;
+}
+
+.video-grid {
+    border: none;
+    display: inline-block; 
+    padding-left: 10%;
+}
+
+.video {
+    margin-right: 25%;
+    border-radius: 4px; 
+}
+
+a:focus {outline:0;}
+
+.video:hover {
+    opacity: 0.7;
+}
+
+.videoSubTitle {
+    color: #337ab7;
+    padding-top: 0em;
+    border-top: solid #337ab7 1px;
+}
+
+.videoSubTitle2 {
+    color: #337ab7;
+}
+
+.center {
+    text-align: center;
+}
