@@ -30,11 +30,13 @@
           </div>
 
           <button class="btn btn-primary" type="submit" (click)= "addVideo(url.value, picture.value, patient.value, condition.value)" >Add Video</button>
+          <button class="btn btn-success"(click)='saveVideo()'>Save Video</button>
+          <button class="btn btn-danger"(click)='getVideo()'>Get Video</button>
              </div>
             </form>
           <hr>
           <tr>
-              <td *ngFor= "let video of videos" class="video-grid center">
+              <td *ngFor= "let video of videos[0]" class="video-grid center">
                 <a data-fancybox data-type='iframe' href="{{video.url}}">
                 {{video.url}}
                 <img
