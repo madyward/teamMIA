@@ -1,32 +1,38 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-5 col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1">
-     
-       <form>
-        <div class="form-group">
+    <div class="row">
+      <div class="col-xs-5 col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1">
+       
+         <form>
+          <div class="form-group">
+            
+              <div>
+                  <label class="url user" for="url">Video URL:</label>
+                  <input type="text" class="form-control" #url>
+                  
+                </div>
+  
+           <div>
+              <label class="picture user" for="picture">Picture URL:</label>
+              <input type="text" class="form-control" name="picture" #picture>
+              
+            </div>
+  
+          <div>
+            <label class="patient user" for="patient">Patient Name:</label>
+            <input type="text" class="form-control" name="patient" #patient>
           
-            <div>
-                <label class="url" for="url">Video URL:</label>
-                <input type="text" class="form-control" #url>
-                
-              </div>
-
-         <div>
-            <label class="picture" for="picture">Picture URL:</label>
-            <input type="text" class="form-control" name="picture" #picture>
-            
           </div>
-
-        <div>
-          <label class="patient" for="patient">Patient Name:</label>
-          <input type="text" class="form-control" name="patient" #patient>
-        
-        </div>
-
-        <div>
-            <label class="condition" for="condition">Condition:</label>
-            <input type="text" class="form-control" name="condition"  #condition>
-            
+  
+          <div>
+              <label class="condition user" for="condition">Condition:</label>
+              <input type="text" class="form-control" name="condition"  #condition>
+              
+            </div>
+  
+            <button class="btn btn-primary user" type="submit" (click)= "addVideo(url.value, picture.value, patient.value, condition.value)" >Add Video</button>
+               </div>
+              </form>
+            <br>
           </div>
 
           <button class="btn btn-primary" type="submit" (click)= "addVideo(url.value, picture.value, patient.value, condition.value)" >Add Video</button>
@@ -37,18 +43,19 @@
           <hr>
           <tr>
               <td *ngFor= "let video of videos[0]" class="video-grid center">
+
                 <a data-fancybox data-type='iframe' href="{{video.url}}">
-                {{video.url}}
-                <img
-                [src]="video.picture"
-                alt="{{video.picture}}"
-                class="video"
-                style="height: 150px; width: 250px;">
-                {{video.patient}}
-                {{video.condition}}
+                  <img
+                  [src]="video.picture"
+                  alt="{{video.picture}}"
+                  class="video"
+                  style="height: 150px; width: 250px;">
                 </a>      
+                <p class="videoSubTitle2">{{video.patient}}</p>
+                <p class="videoSubTitle">{{video.condition}}</p>
               </td>
-            </tr>  
-        </div>
+            </tr> 
+            <!-- </table>      -->
+          </div>
+      </div>
     </div>
-</div>

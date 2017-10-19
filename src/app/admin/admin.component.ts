@@ -17,7 +17,9 @@ export class AdminComponent implements OnInit {
     
   }
 
+
   videos=[];
+
 
   constructor(private serverService: ServerService) {}
     addVideo(

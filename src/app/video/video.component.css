@@ -10,6 +10,23 @@ p {
 
 .video {
     margin-right: 25%;
+    border-radius: 4px; 
+}
+
+a:focus {outline:0;}
+
+.video:hover {
+    opacity: 0.7;
+}
+
+.videoSubTitle {
+    color: #337ab7;
+    padding-top: 0em;
+    border-top: solid #337ab7 1px;
+}
+
+.videoSubTitle2 {
+    color: #337ab7;
 }
 
 .center {
