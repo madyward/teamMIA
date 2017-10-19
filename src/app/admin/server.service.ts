@@ -10,16 +10,19 @@ import { AdminComponent } from './admin.component';
 export class ServerService {
     constructor(private http: Http){}
     storeVideos(videos: any[]){
-        return this.http.post('https://gotowork-26f00.firebaseio.com/video.json', videos);
+        return this.http.put('https://gotowork-26f00.firebaseio.com/video.json', videos);
     }
 
     showVideos(){
         return this.http.get('https://gotowork-26f00.firebaseio.com/video.json')
           .map(
              (response: Response) => {
-                 const video = response.json();                
-                 return video;
+                 const data = response.json();                
+                 for(const videos of data){
+                     videos.key.url = 'hee_' + videos.url;
              } 
-          );
+             return data;
+            }
+            );
     }
 }
