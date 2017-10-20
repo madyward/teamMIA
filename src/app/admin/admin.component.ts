@@ -1,9 +1,12 @@
 import { ClusterSetupMasterSettings } from 'cluster';
 import {Router} from '@angular/router';
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Provider} from '@angular/core';
 import {NgForm, Form } from '@angular/forms';
 import { ServerService } from './server.service';
 import { Response } from '@angular/http';
+import {Observable} from "rxjs/RX";
+import * as firebase from "firebase";
+import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/database";
 
 @Component({
   selector: 'app-admin',
@@ -12,15 +15,9 @@ import { Response } from '@angular/http';
 })
 export class AdminComponent implements OnInit {
   ngOnInit(): void {
-    
-    
-    
   }
 
-
-  videos=[];
-
-
+  videoList=[];
   constructor(private serverService: ServerService) {}
     addVideo(
       url : string,
@@ -28,7 +25,7 @@ export class AdminComponent implements OnInit {
       patient: string, 
       condition: string
     ){
-      this.videos.push({
+      this.videoList.push({
         url: url,
         picture: picture, 
         patient: patient,
@@ -38,8 +35,8 @@ export class AdminComponent implements OnInit {
      
     }
     saveVideo() {
-      this.serverService.storeVideos(this.videos)
-      .subscribe(
+      this.serverService.storeVideos(this.videoList)
+      .then(
         (response) => console.log(response),
         (error) => console.log(error)
       );
@@ -47,18 +44,31 @@ export class AdminComponent implements OnInit {
 
     getVideo(){
       this.serverService.showVideos()
-        .subscribe(
-          (videos: any[]) => console.log(videos), 
-         
-          
-          (error) => console.log(error)
-
-        );
-
+      .then(
+        (videoList: any[]) => console.log(videoList[0].url),         
+        (error) => console.log(error)
+      );
     }
-
-   
-
-  
-
 }
+
+//SAVEVIDEO ORIGINAL
+//saveVideo() {
+//  this.serverService.storeVideos(this.videos)
+//   .subcribe(
+//     (response) => console.log(response),
+//     (error) => console.log(error)
+//   );
+//}
+
+
+
+//getVideo(){
+//  this.serverService.showVideos()
+//      .subscribe(
+//     (videos: any[]) => console.log(videos), 
+      
+       
+//        (error) => console.log(error)
+
+//      );
+ //}
