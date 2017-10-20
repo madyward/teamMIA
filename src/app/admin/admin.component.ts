@@ -1,9 +1,12 @@
 import { ClusterSetupMasterSettings } from 'cluster';
 import {Router} from '@angular/router';
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Provider} from '@angular/core';
 import {NgForm, Form } from '@angular/forms';
 import { ServerService } from './server.service';
 import { Response } from '@angular/http';
+import {Observable} from "rxjs/RX";
+import * as firebase from "firebase";
+import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/database";
 
 @Component({
   selector: 'app-admin',
@@ -12,15 +15,9 @@ import { Response } from '@angular/http';
 })
 export class AdminComponent implements OnInit {
   ngOnInit(): void {
-    
-    
-    
   }
 
-
   videos=[];
-
-
   constructor(private serverService: ServerService) {}
     addVideo(
       url : string,
@@ -39,23 +36,23 @@ export class AdminComponent implements OnInit {
     }
     saveVideo() {
       this.serverService.storeVideos(this.videos)
-      .subscribe(
-        (response) => console.log(response),
-        (error) => console.log(error)
-      );
+      // .subcribe(
+      //   (response) => console.log(response),
+      //   (error) => console.log(error)
+      // );
     }
 
-    getVideo(){
-      this.serverService.showVideos()
-        .subscribe(
-          (videos: any[]) => console.log(videos), 
+    //getVideo(){
+    //  this.serverService.showVideos()
+        // .subscribe(
+        //   (videos: any[]) => console.log(videos), 
          
           
-          (error) => console.log(error)
+        //   (error) => console.log(error)
 
-        );
+        // );
 
-    }
+    //}
 
    
 
