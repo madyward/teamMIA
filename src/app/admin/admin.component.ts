@@ -36,12 +36,16 @@ export class AdminComponent implements OnInit {
     }
     saveVideo() {
       this.serverService.storeVideos(this.videoList)
+      .then(
+        (response) => console.log(response),
+        (error) => console.log(error)
+      );
     }
 
-    getVideo(){
-     this.serverService.showVideos()
-     console.log(this.videoList.url);
-    }
+    // getVideo(){
+    //  this.serverService.showVideos()
+    //  console.log(this.videoList.url);
+    // }
 }
 
 //SAVEVIDEO ORIGINAL
