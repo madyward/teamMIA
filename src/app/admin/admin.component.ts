@@ -14,6 +14,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/dat
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+
   ngOnInit(): void {
   }
 
@@ -50,25 +51,3 @@ export class AdminComponent implements OnInit {
       );
     }
 }
-
-//SAVEVIDEO ORIGINAL
-//saveVideo() {
-//  this.serverService.storeVideos(this.videos)
-//   .subcribe(
-//     (response) => console.log(response),
-//     (error) => console.log(error)
-//   );
-//}
-
-
-
-//getVideo(){
-//  this.serverService.showVideos()
-//      .subscribe(
-//     (videos: any[]) => console.log(videos), 
-      
-       
-//        (error) => console.log(error)
-
-//      );
- //}
