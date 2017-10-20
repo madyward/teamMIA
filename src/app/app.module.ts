@@ -85,7 +85,6 @@ const appRoutes: Routes = [
     SignupService,
     SigninService,
     ServerService
-    // DataStorageService
   ],
   bootstrap: [AppComponent]
 })
