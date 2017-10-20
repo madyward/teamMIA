@@ -12,8 +12,8 @@ export class AuthService {
     authState: any = null;
     constructor(private http: Http, 
         private router: Router,
-        public afAuth: AngularFireAuth,
-        public db: AngularFireDatabase  
+        private afAuth: AngularFireAuth,
+        private db: AngularFireDatabase  
         ){
             this.afAuth.authState.subscribe((auth) => {
                 this.authState = auth
@@ -56,7 +56,7 @@ export class AuthService {
         })
        .catch(error => console.log(error));
     }
-    // Sends email allowing user to reset password
+    // //Sends email allowing user to reset password
     // resetPassword(email: string) {
     //     var auth = firebase.auth();
     //     return auth.sendPasswordResetEmail(email)
@@ -78,7 +78,7 @@ export class AuthService {
     let path = `users/${this.currentUserId}`; // Endpoint on firebase
     let data = {
         email: this.authState.email,
-        name: this.authState.displayName
+        uid: this.authState.uid
     }
       this.db.object(path).update(data)
       .catch(error => console.log(error));

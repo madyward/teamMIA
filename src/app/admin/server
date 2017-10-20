@@ -1,0 +1,32 @@
+import { Http, Response } from '@angular/http';
+import { Injectable } from '@angular/core';
+import 'rxjs/RX';
+
+@Injectable()
+export class ServerService {
+constructor(private http: Http){}
+storeServers(servers: any[]){
+    return this.http.post('https://gotowork-26f00.firebaseio.com/data.json', servers);
+    // https://remempathy-us.firebaseio.com/video.json
+  }
+
+
+  getServers(){
+      return this.http.get('https://gotowork-26f00.firebaseio.com/data.json')
+    //   .map takes returned data and wrapps it in a new observable import with rxjs/RX 
+    // this allows us to unpack return info in a central location and making it avaliable to all components vs having to recode in each component.ts
+    .map(
+        (response: Response) => {
+            const data = response.json();
+             for(const servers of data){
+                 servers.name = 'FETCHED_' + servers.name;
+            }
+            return data;
+        }
+    );
+}
+}
+//put request overrides stored date in firebase
+// return this.http.put('https://gotowork-26f00.firebaseio.com/data.json', servers);
+// // https://remempathy-us.firebaseio.com/video.json
+// }

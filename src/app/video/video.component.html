@@ -13,63 +13,70 @@
       <h2>Videos</h2>
     </div>
     <div class="table-responsive">
-      <table class="table"
+      <table align="center" class="table"
          *ngIf= 'videos && videos.length'>
          <thead></thead>
             <tbody>
               <tr>
-                <td *ngFor= "let video of videos">
-                    <!-- {{video.url}}   -->
-                   <a href="{{video.url}}"> <img [src]= "video.picture" 
+                <td *ngFor= "let video of videos" class="video-grid center">
+                    <a data-fancybox data-type='iframe' href="{{video.url}}">  
+                  <img
+                    [src]="video.picture"
                     alt="{{video.picture}}"
-                    class="img-responsive"
-                    style="max-height: 150px"></a>
-                    {{video.patient}}
-                    {{video.condition}}
-                    {{i}}</td>
-                    </tr>
-                    <tr>
+                    class="video"
+                    style="height: 150px; width: 250px;">
+                  </a>
+                    <p class="videoSubTitle2">{{video.patient}}</p>   
+                    <p class="videoSubTitle">{{video.condition}}</p>
+                  </td>
+
                     
               </tr>  
 
               <br/>
 
                   <tr>
-                <td *ngFor= "let video of videos2">
-                    <!-- {{video.url}}   -->
-                    <a href="{{video.url}}"> <img [src]= "video.picture" 
-                      alt="{{video.picture}}"
-                      class="img-responsive"
-                      style="max-height: 150px"></a>
-                    {{video.patient}}
-                    {{video.condition}}
-                    {{i}}</td>
+                <td *ngFor= "let video of videos2" class="video-grid center">
+                    <a data-fancybox data-type='iframe' href="{{video.url}}">  
+                        <img
+                          [src]="video.picture"
+                          alt="{{video.picture}}"
+                          class="video"
+                          style="height: 150px; width: 250px;">
+                        </a>
+                          <p class="videoSubTitle2">{{video.patient}}</p>   
+                          <p class="videoSubTitle">{{video.condition}}</p>
+                      </td>
               </tr>  
 
               <br/>
               <tr>
-                <td *ngFor= "let video of videos3">
-                    <!-- {{video.url}}   -->
-                    <a href="{{video.url}}"> <img [src]= "video.picture" 
-                      alt="{{video.picture}}"
-                      class="img-responsive"
-                      style="max-height: 150px"></a>
-                    {{video.patient}}
-                    {{video.condition}}
-                    {{i}}</td>
+                <td *ngFor= "let video of videos3" class="video-grid center">
+                    <a data-fancybox data-type='iframe' href="{{video.url}}">  
+                        <img
+                          [src]="video.picture"
+                          alt="{{video.picture}}"
+                          class="video"
+                          style="height: 150px; width: 250px;">
+                        </a>
+                          <p class="videoSubTitle2">{{video.patient}}</p>   
+                          <p class="videoSubTitle">{{video.condition}}</p>
+                      </td>
               </tr>  
 
               <br/>
               <tr>
-                <td *ngFor= "let video of videos4">
-                    <!-- {{video.url}}   -->
-                    <a href="{{video.url}}"> <img [src]= "video.picture" 
-                      alt="{{video.picture}}"
-                      class="img-responsive"
-                      style="max-height: 150px"></a>
-                    {{video.patient}}
-                    {{video.condition}}
-                    {{i}}</td>
+                <td *ngFor= "let video of videos4" class="video-grid center">
+                    <a data-fancybox data-type='iframe' href="{{video.url}}">  
+                        <img
+                          [src]="video.picture"
+                          alt="{{video.picture}}"
+                          class="video"
+                          style="height: 150px; width: 250px;">
+                        </a>
+                          <p class="videoSubTitle2">{{video.patient}}</p>   
+                          <p class="videoSubTitle">{{video.condition}}</p>
+                      </td>
               </tr>  
 
               <br/>

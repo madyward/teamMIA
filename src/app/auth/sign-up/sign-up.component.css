@@ -7,3 +7,25 @@ h4{
     margin: 4px;
 }
 
+.btn {
+    background-color: #AD1F1F;
+    border: 1px solid #AD1F1F;
+    color: #fff;
+    padding: 6px 8px 5px 8px;
+}
+
+.btn:hover {
+    background-color: #fff;
+    border: 1px solid #AD1F1F;
+    color: #AD1F1F;
+}
+
+.user{
+    margin-top: 2%;
+
+}
+
+.required {
+    color: rgb(209, 46, 46);
+}
+

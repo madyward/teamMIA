@@ -1,0 +1,58 @@
+import { Response } from '@angular/http';
+
+import { ServerService } from './server.service';
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'pm-admin',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.css']
+})
+export class AdminComponent implements OnInit {
+  ngOnInit(): void {
+    throw new Error("Method not implemented.");
+  }
+  servers = [
+    {
+      name: 'Testserver',
+      capacity: 10,
+      id: this.generateId()
+    },
+    {
+      name: 'Liveserver',
+      capacity: 100,
+      id: this.generateId()
+    }
+  ];
+
+  constructor(private serverService : ServerService) {}
+  onAddServer(name: string) {
+    this.servers.push({
+      name: name,
+      capacity: 50,
+      id: this.generateId()
+    });
+  }
+onSave() {
+  this.serverService.storeServers(this.servers)
+  .subscribe(
+    (response) => console.log(response),
+    (error) => console.log(error)
+  );
+}
+onGet(){
+  this.serverService.getServers()
+    .subscribe(
+      (servers: any[]) =>  console.log(servers),
+        (error) => console.log(error)
+    );
+        //.json() method is a helper from Response above make sure to import Response from @angular/http
+        // const data = response.json();
+        // console.log(data);
+      
+     
+}
+  private generateId() {
+    return Math.round(Math.random() * 10000);
+  }
+}

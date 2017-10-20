@@ -17,9 +17,8 @@ export class AuthGuard implements CanActivate {
           console.log('access denied!')
           if (!this.auth.authenticated) {
               this.router.navigate(['/signup']);
-              alert("Access restricted to registered users only. Please sign up or sign in.")
-            
-          return false
-          }
+              alert("Access restricted to registered users only. Please sign up or sign in.") 
+                return false
+            }
       }
 }

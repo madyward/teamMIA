@@ -1,10 +1,12 @@
+import { ServerService } from './admin/server.service';
+
 import { FormsModule } from '@angular/forms';
 import { HttpClientJsonpModule } from '@angular/common/http';
 import { RouterModule, Routes} from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import {NgModule } from '@angular/core';
-import * as firebase from "firebase";
-import * as admin from "firebase-admin";
+import * as firebase from 'firebase';
+import * as admin from 'firebase-admin';
 
 import {AppComponent} from './app.component';
 import {TestComponent} from './test/test.component';
@@ -25,6 +27,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import {FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AdminComponent } from './admin/admin.component';
+
 
 // Initialize Firebase
 export const firebaseConfig = {
@@ -42,6 +46,7 @@ const appRoutes: Routes = [
   {path: 'test', component: TestComponent },
   {path: 'signup', component: SignUpComponent },
   {path: 'signin', component: SignInComponent},
+  {path: 'admin', component: AdminComponent},
   {path: 'video', component: VideoComponent, canActivate: [AuthGuard] },
   {path: 'leaderboards', component: LeaderBoardsComponent, canActivate: [AuthGuard]},
   {path: 'contact', component: ContactComponent },
@@ -58,7 +63,8 @@ const appRoutes: Routes = [
     SignUpComponent,
     SignInComponent,
     VideoComponent,
-    HomeComponent
+    HomeComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +83,8 @@ const appRoutes: Routes = [
     AuthService,
     AuthGuard,
     SignupService,
-    SigninService
+    SigninService,
+    ServerService
     // DataStorageService
   ],
   bootstrap: [AppComponent]

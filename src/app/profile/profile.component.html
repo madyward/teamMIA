@@ -1,5 +1,58 @@
-<div class="row">
-  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-1">
-    <h3>Hello world!</h3>
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-1">
+        <form (ngSubmit)="onUserChanges(f)" #f="ngForm">
+          <div class="form-group">
+
+            <div>
+              <label class="user" for="name">First Name:</label>
+              <input type="text" class="form-control" name="fname" 
+              ngModel #fname='ngModel' (keyup)="0"
+              required>
+      
+              <span class="required" *ngIf="!fname.valid && fname.touched">Please Enter your first name</span>
+             </div>
+           
+             <div>
+             <label class="user" for="name">Last Name:</label>
+             <input type="text" class="form-control" name="lname" ngModel #lname='ngModel' (keyup)="0" required>
+     
+             <span class="required" *ngIf="!lname.valid && lname.touched">Please Enter your last name</span>
+             </div>
+    
+            <div>
+            <label class="user" for="email">Email:</label>
+            <input type="email" id="email" class="form-control" ngModel name="email" 
+            required
+            email
+            #email="ngModel">
+            <span class="help required" *ngIf="!email.valid && email.dirty">Please enter a valid email</span>
+            </div>
+        
+                <label class="user" for="password">Password:</label>
+                <input type="password" id="password" name="password" ngModel class="form-control" #password="ngModel">
+                <p><i>* Minimum 6 characters</i></p>
+            
+            <label for="password">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="password" ngModel class="form-control"/>
+            <p><i>Please confirm your password.</i></p>
+  
+            <!-- Eventually pop into 2nd div of -->
+            <label class="user" for="company">Company:</label>
+            <select class="form-control" id="reason">
+            
+              <option  *ngFor="let i of company" [value]="i">{{i}}</option>
+            </select>
+           
+            <label class="user" for="location">Location:</label>
+            <select class="form-control" id="reason">
+                
+                  <option  *ngFor="let i of location" [value]="i">{{i}}</option>
+            </select>  
+            </div>
+            
+            <button class="btn btn-primary" type="submit" (click)="onUserChanges(f)">Update Account</button>
+        </form>
+      </div>
+    </div>
   </div>
-</div>
