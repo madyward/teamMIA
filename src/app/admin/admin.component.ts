@@ -40,7 +40,7 @@ export class AdminComponent implements OnInit {
 
     getVideo(){
      this.serverService.showVideos()
-     console.log(this.videoList);
+     console.log(this.videoList.url);
     }
 }
 
