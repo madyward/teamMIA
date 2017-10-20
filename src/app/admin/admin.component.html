@@ -40,7 +40,7 @@
          
           <button class="btn btn-primary" type="submit" (click)= "addVideo(url.value, picture.value, patient.value, condition.value)" >Add Video</button>
           <button class="btn btn-success"(click)='saveVideo()'>Save Video</button>
-          <button class="btn btn-danger"(click)='getVideo()'>Get Video</button>
+          <button class="btn btn-danger"(click)='getVideo(videoList[0].url)'>Get Video</button>
              
            
       
@@ -64,5 +64,25 @@
                   </tr> 
                   <!-- </table>      -->
                 </div>
+            </div>
+            <div class="row">
+              <div class="table-responsive">
+                <!-- <table align="center" class="table"
+                *ngIf= 'videos && videos.length'>     -->
+                <tr>
+                  <td *ngFor= "let video of videoList" class="video-grid center">
+                    <a data-fancybox data-type='iframe' href="{{videoList[0].url}}">
+                      <img
+                      [src]="video.picture"
+                      alt="{{video.picture}}"
+                      class="video"
+                      style="height: 150px; width: 250px;">
+                    </a>      
+                    <p class="videoSubTitle2">{{videoList[0].url}}</p>
+                    <p class="videoSubTitle">{{videoList[0].url}}</p>
+                  </td>
+                </tr> 
+                <!-- </table>      -->
+              </div>
             </div>
           </div>

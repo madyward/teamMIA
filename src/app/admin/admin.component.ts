@@ -42,10 +42,13 @@ export class AdminComponent implements OnInit {
       );
     }
 
-    // getVideo(){
-    //  this.serverService.showVideos()
-    //  console.log(this.videoList.url);
-    // }
+    getVideo(){
+      this.serverService.showVideos()
+      .then(
+        (videoList: any[]) => console.log(videoList[0].url),         
+        (error) => console.log(error)
+      );
+    }
 }
 
 //SAVEVIDEO ORIGINAL

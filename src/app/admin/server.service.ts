@@ -13,17 +13,17 @@ export class ServerService {
     private db: any
     constructor(){this.db = firebase.database();} 
     
-        storeVideos(videoList: any[]): Promise<any> {
-        return this.db.ref('video').push(videoList);
-        //{video: videoList}
+    storeVideos(videoList: any[]): Promise<any> {
+        return this.db.ref('video').push(videoList); //{video: videoList}
+        
                             //Use .set ^^ ONCE, then change to .update for the rest of the time
-    }
+        }
 
-    // showVideos(): Promise<any>{
-    //     return this.db.object('video').once('value').then(snapshot =>{
-    //         return snapshot.val();
-    //     })
-    // }  
+    showVideos(): Promise<any>{
+        return this.db.ref('video').once('value').then(snapshot =>{
+            return snapshot.val();
+        })
+    }  
     
 }        
 
