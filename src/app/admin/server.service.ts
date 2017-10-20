@@ -13,8 +13,8 @@ export class ServerService {
     private db: any
     constructor(){this.db = firebase.database();}
     
-    storeVideos(videos: any[]): Promise<any>{
-        return this.db.ref('video').update({videos: videos});
+    storeVideos(videoList: any[]): Promise<any>{
+        return this.db.ref('video').update({videoList: videoList});
                             //Use .set ^^ ONCE, then change to .update for the rest of the time
     }
 
