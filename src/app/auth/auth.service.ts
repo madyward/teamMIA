@@ -39,14 +39,14 @@ export class AuthService {
     }
 
     //// Email/Password Auth ////
-    emailSignUp(email:string, password:string) {
-        return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-        .then((user) => {
-            this.authState = user
-            this.updateUserData()
-        })
-        .catch(error => console.log(error));
-    }
+    // emailSignUp(email:string, password:string) {
+    //     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+    //     .then((user) => {
+    //         this.authState = user
+    //         this.updateUserData()
+    //     })
+    //     .catch(error => console.log(error));
+    // }
 
     emailLogin(email:string, password:string) {
         return this.afAuth.auth.signInWithEmailAndPassword(email, password)

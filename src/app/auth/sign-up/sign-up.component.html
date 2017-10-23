@@ -1,58 +1,39 @@
 <div class="container">
 <div class="row">
   <div class="col-xs-5 col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1">
-    <form (ngSubmit)="onSignup(f)" #f="ngForm">
-     
+    <form> 
       <div class="form-group">
-        
-          <div>
-              <label class="user" for="name">First Name:</label>
-              <input type="text" class="form-control" name="fname" 
-              ngModel #fname='ngModel' (keyup)="0"
-              required>
-      
-              <span class="required" *ngIf="!fname.valid && fname.touched">Please Enter your first name</span>
-             </div>
-      
-             <div>
-              <label class="user" for="name">Last Name:</label>
-              <input type="text" class="form-control" name="lname" ngModel #lname='ngModel' (keyup)="0" required>
-      
-              <span class="required" *ngIf="!lname.valid && lname.touched">Please Enter your last name</span>
-              </div>
-      
-              <div>
-              <label class="user" for="email">Email:</label>
-              <input type="email" id="email" class="form-control" ngModel name="email" 
-              required
-              email
-              #email="ngModel">
-              <span class="help required" *ngIf="!email.valid && email.dirty">Please enter a valid email</span>
-              </div>
-      
-              <label class="user" for="password">Password:</label>
-              <input type="password" id="password" name="password" ngModel class="form-control" #password="ngModel">
-              <p><i>*Minimum 6 characters</i></p>
-        
+        <div>
+          <label class="user" for="fname">First Name:</label>
+          <input type="text" class="form-control" (keyup)="0" #fname required>
+          <!-- <span class="required" *ngIf="!fname.valid && fname.touched">Please Enter your first name</span> -->
+        </div>
+        <div>
+          <label class="user" for="lname">Last Name:</label>
+          <input type="text" class="form-control" (keyup)="0" #lname required>
+          <!-- <span class="required" *ngIf="!lname.valid && lname.touched">Please Enter your last name</span> -->
+        </div>
+        <div>
+          <label class="user" for="email">Email:</label>
+          <input type="email" id="email" class="form-control" #email required>
+          <!-- <span class="help required" *ngIf="!email.valid && email.dirty">Please enter a valid email</span> -->
+        </div>
+        <label class="user" for="password">Password:</label>
+        <input type="password" id="password" class="form-control" required>
+        <p><i>*Minimum 6 characters</i></p>
+
         <!-- want this to eventually pop into second div when selected-ajh -->
         <label class="user" for="company">Company:</label>
-        <select class="form-control" id="reason">
-        
-          <option  *ngFor="let i of company" [value]="i">{{i}}</option>
+        <select class="form-control" id="reason" >
+          <option  *ngFor="let i of company" #company [value]="i">{{i}}</option>
         </select>
-       
         <label class="user" for="location">Location:</label>
-        <select class="form-control" id="reason">
-            
-              <option  *ngFor="let i of location" [value]="i">{{i}}</option>
+        <select class="form-control" id="reason" >  
+          <option  *ngFor="let i of location" #location [value]="i">{{i}}</option>
         </select>      
-
-        </div>
-        
-        <button class="btn btn-primary" type="submit" (click)="onSignup(f)"
-        [disabled]="!f.valid">Sign Up</button>
+      </div>
+      <button class="btn btn-primary" type="submit" (click)="saveUser(fname.value, lname.value, email.value, company.value, location.value)">Sign Up</button> 
     </form>
-
   </div>
 
 <!-- pledge section below -->
