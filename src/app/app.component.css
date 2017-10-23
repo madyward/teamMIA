@@ -79,6 +79,10 @@ ul a {
     border: none;
 }
 
+#nav li a:focus {
+    background-color: #AD1F1F;
+}
+
 #nav a{
     margin: 0em 0.7em 0em 0.7em;
     padding-left: 2em;
