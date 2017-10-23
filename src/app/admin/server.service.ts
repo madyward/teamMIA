@@ -26,14 +26,3 @@ export class ServerService {
     }  
     
 }        
-
-        //   .map(
-        //      (response: Response) => {
-        //          const data = response.json();                
-        //          for(const videos of data){
-        //              videos.key.url = 'hee_' + videos.url;
-        //      } 
-        //      return data;
-        //     }
-        //     );
-        //https://gotowork-26f00.firebaseio.com/video.json
