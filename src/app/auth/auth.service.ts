@@ -6,6 +6,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/dat
 import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
+import {SignupService} from "./signup.service";
 
 @Injectable()
 export class AuthService {
@@ -13,11 +14,12 @@ export class AuthService {
     constructor(private http: Http, 
         private router: Router,
         private afAuth: AngularFireAuth,
-        private db: AngularFireDatabase  
+        private db: AngularFireDatabase,
+        private signupservice: SignupService 
         ){
             this.afAuth.authState.subscribe((auth) => {
                 this.authState = auth
-              });  
+              });
     }
     // Returns true if user is logged in
     get authenticated(): boolean {
@@ -38,7 +40,6 @@ export class AuthService {
         return this.authenticated ? this.authState.uid: '';
     }
 
-    //// Email/Password Auth ////
     // emailSignUp(email:string, password:string) {
     //     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
     //     .then((user) => {

@@ -25,14 +25,14 @@
         <!-- want this to eventually pop into second div when selected-ajh -->
         <label class="user" for="company">Company:</label>
         <select class="form-control" id="reason" >
-          <option  *ngFor="let i of company" #company [value]="i">{{i}}</option>
+          <option  *ngFor="let i of company" [value]="i">{{i}}</option>
         </select>
         <label class="user" for="location">Location:</label>
         <select class="form-control" id="reason" >  
-          <option  *ngFor="let i of location" #location [value]="i">{{i}}</option>
+          <option  *ngFor="let i of location" [value]="i">{{i}}</option>
         </select>      
       </div>
-      <button class="btn btn-primary" type="submit" (click)="saveUser(fname.value, lname.value, email.value, company.value, location.value)">Sign Up</button> 
+      <button class="btn btn-primary" type="submit" (click)="saveUser(fname.value, lname.value, email.value)">Sign Up</button> 
     </form>
   </div>
 
