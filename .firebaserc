@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "remempathy-us"
+    "default": "remempathy-us",
+    "prod": "remempathy-us"
   }
 }
