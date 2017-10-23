@@ -6,6 +6,16 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./video.component.css']
 })
 export class VideoComponent implements OnInit {
+  nCnt: number = 0;
+  clickMe(){
+      this.nCnt = this.nCnt + 1;
+   
+
+      if(this.nCnt === 1){
+       console.log(1)
+      }
+     
+    }
   videos = [
     { url: "https://www.youtube.com/embed/MXTd8xd_f8s", picture: "https://i.ytimg.com/vi/MXTd8xd_f8s/maxresdefault.jpg", patient: "Julie Flygare", condition: "Narcolepsy"},
     { url: "https://www.youtube.com/embed/3HuxRDX0kbs", picture: "https://i.ytimg.com/vi/rZ-b1omWXH4/maxresdefault.jpg", patient: "Ryan Prior", condition: "Chronic Fatigue Syndrom"},

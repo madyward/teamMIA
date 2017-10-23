@@ -28,7 +28,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import {FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AdminComponent } from './admin/admin.component';
-
+import {MatTableModule} from '@angular/material'; 
 
 // Initialize Firebase
 export const firebaseConfig = {
@@ -76,7 +76,8 @@ const appRoutes: Routes = [
     AngularFireModule,
     AngularFireDatabaseModule,
     //FirebaseListObservable,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MatTableModule
   ],
 
   providers: [

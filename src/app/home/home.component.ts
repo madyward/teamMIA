@@ -6,6 +6,18 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  msg = '';
+  nCnt: number = 0;
+  clickMe(){
+      this.nCnt = this.nCnt + 1;
+      this.msg = "Clicked: " + this.nCnt;
+
+      if(this.nCnt === 3){
+       alert('3')
+      }
+     
+    }
   constructor() { }
   ngOnInit() {
   }
