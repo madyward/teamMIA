@@ -24,15 +24,17 @@
 
         <!-- want this to eventually pop into second div when selected-ajh -->
       <label class="user" for="company">Company:</label>
-        <select class="form-control" id="reason">
-          <option *ngFor="let i of company" [value]="i">{{i}}</option> <!-- ngModel name="company" #company="ngModel".....#company -->
+        <select class="form-control" id="reason" #test1>
+          <option *ngFor="let i of company; let x = index" id="x" [value]="i">{{i}}</option> <!-- ngModel name="company" #company="ngModel".....#company -->
         </select>
+        
+        
         <label class="user" for="location">Location:</label>
-        <select class="form-control" id="reason">
-          <option *ngFor="let l of location" [value]="l">{{l}}</option> <!-- ngModel name="location" #location="ngModel".....#location -->
+        <select class="form-control" id="reason" #test2>
+          <option *ngFor="let l of location; let u = index" id="u" [value]="l">{{l}}</option> <!-- ngModel name="location" #location="ngModel".....#location -->
         </select>     
       </div>
-      <button class="btn btn-primary" type="submit" (click)="addUser({fname: fname.value, lname: lname.value, email: email.value}, password.value)">Sign Up</button> <!-- , company: company.value, location: location.value -->
+      <button class="btn btn-primary" type="submit" (click)="addUser({fname: fname.value, lname: lname.value, email: email.value, company: test1.value, location: test2.value}, password.value)">Sign Up</button> <!-- , company: company.value, location: location.value -->
     </form>
   </div>
 
