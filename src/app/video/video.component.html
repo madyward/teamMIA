@@ -19,7 +19,7 @@
             <tbody>
               <tr>
                 <td *ngFor= "let video of videos" class="video-grid center">
-                    <a data-fancybox data-type='iframe' href="{{video.url}}">  
+                    <a data-fancybox data-type='iframe' (click)="clickMe()" href="{{video.url}}">  
                   <img
                     [src]="video.picture"
                     alt="{{video.picture}}"
@@ -67,7 +67,7 @@
               <br/>
               <tr>
                 <td *ngFor= "let video of videos4"  class="video-grid center">
-                    <a data-fancybox data-type='iframe'  (click)="clickMe()"href="{{video.url}}">  
+                    <a data-fancybox data-type='iframe'  (click)="clickMe()" href="{{video.url}}">  
                         <img
                           [src]="video.picture"
                           alt="{{video.picture}}"
