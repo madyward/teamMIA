@@ -40,20 +40,20 @@ export class AuthService {
         return this.authenticated ? this.authState.uid: '';
     }
 
-    // emailSignUp(email:string, password:string) {
-    //     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-    //     .then((user) => {
-    //         this.authState = user
-    //         this.updateUserData()
-    //     })
-    //     .catch(error => console.log(error));
-    // }
+    emailSignUp(user, password) {
+        return this.afAuth.auth.createUserWithEmailAndPassword(user.email, password)
+        .then((newUser) => {
+            this.authState = newUser
+            this.updateUserData(user)
+        })
+        .catch(error => console.log(error));
+    }
 
     emailLogin(email:string, password:string) {
         return this.afAuth.auth.signInWithEmailAndPassword(email, password)
-        .then((user) => {
-            this.authState = user
-            this.updateUserData()
+        .then((currentUser) => {
+            this.authState = currentUser
+          //  this.updateUserData()
         })
        .catch(error => console.log(error));
     }
@@ -73,17 +73,19 @@ export class AuthService {
 
 
     //// Helpers ////
-    private updateUserData(): void {
+    private updateUserData(user): void {
     // Writes user name and email to realtime db
     // useful if your app displays information about users or for admin features
     let path = `users/${this.currentUserId}`; // Endpoint on firebase
     let data = {
+        fname: user.fname,
+        lname: user.lname,
         email: this.authState.email,
         uid: this.authState.uid
     }
-      this.db.object(path).update(data)
-      .catch(error => console.log(error));
-  
+    // this.db.object(path).set(data)
+    // .catch(error => console.log(error));
+    this.db.list("users").set(this.currentUserId, data)
     }
-
+    
 }

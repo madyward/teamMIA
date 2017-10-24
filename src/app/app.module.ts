@@ -25,7 +25,6 @@ import {HttpModule} from '@angular/http';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import {FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AdminComponent } from './admin/admin.component';
 import {MatTableModule} from '@angular/material'; 
