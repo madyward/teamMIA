@@ -82,10 +82,13 @@ export class AuthService {
         lname: user.lname,
         email: this.authState.email,
         uid: this.authState.uid
+        // ,
+        // company: user.company.i,
+        // location: user.location.l
     }
-    // this.db.object(path).set(data)
-    // .catch(error => console.log(error));
     this.db.list("users").set(this.currentUserId, data)
+    .catch(error => console.log(error));
+    
     }
     
 }
