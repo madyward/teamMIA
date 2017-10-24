@@ -10,8 +10,6 @@ import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList} from "a
 
 @Injectable()
 export class SignupService {
-   // private db: any
-    //API_BASE: String = 'https://remempathy-us.firebaseio.com/';
    users: Observable<any[]>;
    usersDB: AngularFireList<any>;
 
@@ -22,10 +20,4 @@ export class SignupService {
     getUsers(){
         return this.users
     }
-//    addUser(fname, lname, email){
-//        this.usersDB.set(
-//         name: fname + lname,
-//         email: email
-//     )
-//    }
 }

@@ -23,27 +23,29 @@
         <p><i>*Minimum 6 characters</i></p>
 
         <!-- want this to eventually pop into second div when selected-ajh -->
-        <label class="user" for="company">Company:</label>
-        <select class="form-control" id="reason" >
-          <option  *ngFor="let i of company" [value]="i">{{i}}</option>
+      <label class="user" for="company">Company:</label>
+        <select class="form-control" id="reason" #test1>
+          <option *ngFor="let i of company; let x = index" id="x" [value]="i">{{i}}</option> <!-- ngModel name="company" #company="ngModel".....#company -->
         </select>
+        
+        
         <label class="user" for="location">Location:</label>
-        <select class="form-control" id="reason" >  
-          <option  *ngFor="let i of location" [value]="i">{{i}}</option>
-        </select>      
+        <select class="form-control" id="reason" #test2>
+          <option *ngFor="let l of location; let u = index" id="u" [value]="l">{{l}}</option> <!-- ngModel name="location" #location="ngModel".....#location -->
+        </select>     
       </div>
-      <button class="btn btn-primary" type="submit" (click)="addUser({fname: fname.value, lname: lname.value, email: email.value}, password.value)">Sign Up</button> 
+      <button class="btn btn-primary" type="submit" (click)="addUser({fname: fname.value, lname: lname.value, email: email.value, company: test1.value, location: test2.value}, password.value)">Sign Up</button> <!-- , company: company.value, location: location.value -->
     </form>
   </div>
 
 <!-- pledge section below -->
-<!--  <div class="col-xs-5 col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1">
+ <div class="col-xs-5 col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1">
     <h2>The Pledge:</h2>
     <p>I, {{fname.value}} {{lname.value}}, recognize that my work ultimately creates value by improving people’s lives, particularly patients and caregivers. 
        As such, I recognize the importance of remembering and having empathy for their journies.  
        Hence, I pledge to do small and simple things each day to remain and help others to be inspired to make their lives better.</p>
           <h4>{{fname.value}}</h4><h4>{{lname.value}}</h4> 
-      </div> -->
+      </div>
 
-</div>
+  </div>
 </div>
