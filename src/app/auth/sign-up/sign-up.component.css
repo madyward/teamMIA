@@ -2,7 +2,7 @@
     width: 500px;
     height: 550px;
 }
-h4{
+h1, h2{
     display: inline-block;
     margin: 4px;
 }
@@ -18,7 +18,7 @@ h4{
     background-color: #AD1F1F;
     border: 1px solid #AD1F1F;
     color: #fff;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .user{
@@ -30,3 +30,34 @@ h4{
     color: rgb(209, 46, 46);
 }
 
+.pledge {
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 15px 15px 15px 15px;    
+}
+
+    .main {
+        font-family: 'Tangerine', cursive;
+        font-size: 2.8em;
+        margin-bottom: 1em;
+    
+    }
+    .signature {
+        font-family: 'Great Vibes', cursive;
+        font-size: 5em;
+        margin-left: 15px;
+        margin-bottom: -30px;
+    }
+
+    .signHere {
+        border-bottom: 1px solid #999;
+        margin-bottom: 5%;
+    }
+
+    .x {
+        display: inline-block;
+        left: 0px;
+    }
+
+    p{margin: 0px;}

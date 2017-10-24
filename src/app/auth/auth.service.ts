@@ -1,22 +1,17 @@
-import { Injectable, Provider } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import {Http, Response} from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/database";
-import { FirebaseListObservable } from 'angularfire2/database-deprecated';
-import { AngularFireAuth } from 'angularfire2/auth';
+import {Injectable, Provider} from '@angular/core';
+import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router} from '@angular/router';
+import {Observable} from 'rxjs/Observable';
+import {AngularFireDatabaseModule, AngularFireDatabase} from "angularfire2/database";
+import {FirebaseListObservable} from 'angularfire2/database-deprecated';
+import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase';
 import {SignupService} from "./signup.service";
 
 @Injectable()
 export class AuthService {
     authState: any = null;
-    company = ["Eli Lily", "Roche", "Northwind"]
-    location = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", 
-    "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
-  
-    constructor(private http: Http, 
-        private router: Router,
+
+    constructor(private router: Router,
         private afAuth: AngularFireAuth,
         private db: AngularFireDatabase,
         private signupservice: SignupService 
@@ -92,12 +87,4 @@ export class AuthService {
     this.db.list("users").set(this.currentUserId, data)
     .catch(error => console.log(error));
     }
-    // private updateUserWorkInfo(user): void {
-    //     let path = `users/${this.currentUserId}/info`;
-    //     let info = {
-    //         company: user.company
-    //     }
-    // }
-    
-    
 }
