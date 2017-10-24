@@ -5,9 +5,9 @@
   </div>
   <div class="row">
    <div class="list">
-    <ol >
+    <ol *ngFor="let user of userlist">
       <li>
-        
+        {{user.fname}}
       </li>
     </ol>
 
