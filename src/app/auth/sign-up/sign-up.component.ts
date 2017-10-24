@@ -1,4 +1,4 @@
-//import {AuthService} from '../auth.service';
+import {AuthService} from '../auth.service';
 import {ClusterSetupMasterSettings} from 'cluster';
 import {Router} from '@angular/router';
 import {Component, OnInit, Provider} from '@angular/core';
@@ -16,56 +16,97 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/dat
 })
 
 export class SignUpComponent implements OnInit {
-  company = ["Eli Lily", "Roche", "Northwind"];
-  location = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", 
-   "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
-  
+
   ngOnInit(): void {
   }
 
-  userList = [];
-  constructor(private signupservice: SignupService, private router: Router){}
-  addUser(
-    fname: string,
-    lname: string,
-    email: string
+  // userList = [];
+  constructor(private authservice: AuthService, private router: Router){}
+  
+  addUser(data, password) {
+    console.log(password);
+    this.authservice.emailSignUp(data, password)
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  // addUser(
+  //   fname: string,
+  //   lname: string,
+  //   email: string
     // ,
-    // company: ["Eli Lily", "Roche", "Northwind"],
-    // location = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", 
-    // "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
-  ){
-    this.userList.push({
-      fname: fname,
-      lname: lname,
-      email: email
+     // ){
+  //   this.userList.push({
+  //     fname: fname,
+  //     lname: lname,
+  //     email: email
       // ,
       // company: company,
       // location: location
-    });
-  }
+  //   });
+  // }
 
-  saveUser(fname: string,
-    lname: string,
-    email: string
+  // saveUser(fname: string,
+  //   lname: string,
+  //   email: string
     // company: ["Eli Lily", "Roche", "Northwind"],
     // location = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", 
     // "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
- ){
-      this.userList.push({
-        fname: fname,
-        lname: lname,
-        email: email
-        // ,
-        // company: company,
-        // location: location
-      });
-      this.signupservice.storeUsers(this.userList)
-      .then(
-      (response) => console.log(response),
-      (error) => console.log(error)
-    );
-    this.router.navigate(['/video']);
-  }
+//  ){
+//       this.userList.push({
+//         fname: fname,
+//         lname: lname,
+//         email: email
+//         // ,
+//         // company: company,
+//         // location: location
+//       });
+//       this.signupservice.storeUsers(this.userList)
+//       .then(
+//       (response) => console.log(response),
+//       (error) => console.log(error)
+//     );
+//     this.router.navigate(['/video']);
+//   }
 }
 
 
