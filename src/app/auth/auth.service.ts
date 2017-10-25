@@ -9,17 +9,21 @@ import {SignupService} from "./signup.service";
 
 @Injectable()
 export class AuthService {
-    authState: any = null;
+	authState: any = null;
+	clicks: number = 0;
+	//nCnt: number = 0;
 
-    constructor(private router: Router,
+    constructor(
+		private router: Router,
         private afAuth: AngularFireAuth,
         private db: AngularFireDatabase,
         private signupservice: SignupService 
-        ){
-            this.afAuth.authState.subscribe((auth) => {
-                this.authState = auth
-              });
-    }
+    ){
+        this.afAuth.authState.subscribe((auth) => {
+            this.authState = auth
+        });
+	}
+	
     //RETURN TRUE IF USER IS LOGGED IN
     get authenticated(): boolean {
         return this.authState !== null;
@@ -28,7 +32,6 @@ export class AuthService {
     get currentUser(): any {
         return this.authenticated ? this.authState: null;
     }
-
     //RETURN
     get currentUserObservable(): any {
         return this.afAuth.authState
@@ -37,8 +40,16 @@ export class AuthService {
     //RETURN CURRENT USER'S UID
     get currentUserId(): string {
         return this.authenticated ? this.authState.uid: '';
-    }
-
+	}
+	//LEADERBOARDS
+	userClicks(user){
+		let uid = this.authState.uid;
+		this.clicks = this.clicks + 1;
+		if(uid === uid && this.clicks){	//(this.nCnt === 3){
+			this.updateUserData(user.clicks)
+			//this.clicks.push(this.nCnt)
+		}	
+	}
 	//SIGN UP
     emailSignUp(user, password) {
         return this.afAuth.auth.createUserWithEmailAndPassword(user.email, password)
@@ -49,7 +60,6 @@ export class AuthService {
         })
 		.catch(error => console.log(error));
     }
-
 	//LOGIN W/ EMAIL & PASSWORD
     emailLogin(email:string, password:string) {
         return this.afAuth.auth.signInWithEmailAndPassword(email, password)
@@ -66,8 +76,7 @@ export class AuthService {
     //     .then(() => console.log("email sent"))
     //     .catch((error) => console.log(error))
 	// }
-	
-    //// Sign Out ////
+    //LOG OUT
     signOut(): void {
         this.afAuth.auth.signOut();
         this.router.navigate(['/home'])
