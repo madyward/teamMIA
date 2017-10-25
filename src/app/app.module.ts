@@ -77,7 +77,7 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     //FirebaseListObservable,
     AngularFireAuthModule,
-    MatTableModule
+    
   ],
 
   providers: [

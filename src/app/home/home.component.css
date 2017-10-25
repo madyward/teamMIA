@@ -48,7 +48,6 @@ h4 {
     text-align: center;
 }
 
-
 .btn {
     background-color: #fff;
     border: 1px solid #AD1F1F;
@@ -56,14 +55,21 @@ h4 {
     padding: 12px 9px 11px 9px;
 }
 
-/* .TTPT {
-    color: #fff;
-} */
 .btn:hover {
     background-color: #AD1F1F;
     border: 1px solid #AD1F1F;
     color: #fff;
 }
+
+.btn:hover {
+    background-color: #AD1F1F;
+    border: 1px solid #AD1F1F;
+    color: #fff;
+}
+
+/* .TTPT {
+color: #fff;
+} */
 
 button h3 {
     margin: 0px;
