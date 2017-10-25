@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/database";
 import * as firebase from "firebase";
 import {Observable} from "rxjs/RX";
+import {AuthService} from "../auth/auth.service";
 
 @Component({
   selector: 'app-leader-boards',
@@ -45,7 +46,7 @@ getUser(){
   this.leaderService.showUsers()
   .then(
 
-(userList: any[]) => console.log(userList),
+(user: any) => console.log(user.data.company),
     (error) => console.log(error)
   );
 }
@@ -53,7 +54,7 @@ getUser(){
     this.leaderService.showUsers()
     .then(
   
-  (userList: any[]) => console.log(userList),
+  (user: any[]) => console.log(user),
       (error) => console.log(error)
     );
   }
