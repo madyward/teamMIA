@@ -1,4 +1,4 @@
-import { LeaderService } from './leader.service';
+import {SignupService} from '../auth/signup.service';
 import {Component, OnInit} from '@angular/core';
 import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/database";
 import * as firebase from "firebase";
@@ -11,50 +11,30 @@ import {AuthService} from "../auth/auth.service";
   styleUrls: ['./leader-boards.component.css']
 })
 
-
 export class LeaderBoardsComponent implements OnInit {
 userList = [];
 
-constructor(private leaderService: LeaderService ){}
-
-// getUsers(
-//   email: string, 
-//   fname: string,
-//   lname: string,
-// ){
-//   this.userList.push({
-//     email : email,
-//     fname : fname,
-//     lname : lname
-//   });
-// }
-
-
+constructor(private signupservice: SignupService ){}
 
   nCnt: number = 0;
   clickMe(){
       this.nCnt = this.nCnt + 1;
-      
-
       if(this.nCnt === 3){
        alert('3')
       }
-     
-    }
-
-getUser(){
-  this.leaderService.showUsers()
-  .then(
-
-(user: any) => console.log(user.data.company),
-    (error) => console.log(error)
-  );
-}
+  }
+  getUser(){
+    this.signupservice.getUsers()
+    .subscribe(
+      (user: any) => console.log(user[0].company),
+      // (user: any) => console.log(user.data.company),
+      (error) => console.log(error)
+    );
+  }
   ngOnInit() {
-    this.leaderService.showUsers()
-    .then(
-  
-  (user: any[]) => console.log(user),
+    this.signupservice.getUsers()
+    .subscribe(
+      (user: any[]) => console.log(user),
       (error) => console.log(error)
     );
   }
