@@ -27,8 +27,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AdminComponent } from './admin/admin.component';
-import {MatTableModule} from '@angular/material'; 
-import { LeaderService } from './leader-boards/leader.service';
+import {MatTableModule} from '@angular/material';
 
 // Initialize Firebase
 export const firebaseConfig = {
@@ -75,9 +74,7 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireModule,
     AngularFireDatabaseModule,
-    //FirebaseListObservable,
-    AngularFireAuthModule,
-    
+    AngularFireAuthModule
   ],
 
   providers: [
@@ -85,8 +82,7 @@ const appRoutes: Routes = [
     AuthGuard,
     SignupService,
     SigninService,
-    ServerService,
-    LeaderService
+    ServerService
   ],
   bootstrap: [AppComponent]
 })
