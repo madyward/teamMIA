@@ -1,12 +1,12 @@
-import { ClusterSetupMasterSettings } from 'cluster';
+import {ClusterSetupMasterSettings} from 'cluster';
 import {Router} from '@angular/router';
 import {Component, OnInit, Provider} from '@angular/core';
-import {NgForm, Form } from '@angular/forms';
-import { ServerService } from './server.service';
-import { Response } from '@angular/http';
+import {NgForm, Form} from '@angular/forms';
+import {ServerService} from './server.service';
+import {Response} from '@angular/http';
 import {Observable} from "rxjs/RX";
 import * as firebase from "firebase";
-import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/database";
+import {AngularFireDatabaseModule, AngularFireDatabase} from "angularfire2/database";
 
 @Component({
   selector: 'app-admin',

@@ -4,6 +4,15 @@
     <h4>Top Viewers</h4>
   </div>
   <div class="row">
-    
-  </div>
-</div>
+   <div class="list">
+    <ol *ngFor="let user of userlist">
+      <li>
+        {{user.fname}}
+      </li>
+    </ol>
+
+   </div>
+   
+    </div>
+    <button (click) = "getUser()">Checkout</button>
+ </div>     

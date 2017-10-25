@@ -2,6 +2,8 @@ h4 {
     margin-bottom: 0px;
 }
 
+
+/* ======Take The Pledge====== */
 .rightSide-top{
     border: 1px solid #eaeaea;
     background-color: #eaeaea;
@@ -24,7 +26,7 @@ h4 {
 
 }
 
-/* .rightSide-bottom-bgColor {
+/* .rightSide-topVideos-bgColor {
     border: 1px solid #AD1F1F;
     background-color: #AD1F1F;
     
@@ -34,15 +36,52 @@ h4 {
     margin-bottom: 5%;
 }
 
+#pledge p {
+    margin-bottom: 2%;
+}
+
 #spotLight{
    padding-bottom: 28px;
 }
 
-/*======Top Videos======*/
+.TTP {
+    text-align: center;
+}
+
+.btn {
+    background-color: #fff;
+    border: 1px solid #AD1F1F;
+    color: #AD1F1F;
+    padding: 12px 9px 11px 9px;
+}
+
+.btn:hover {
+    background-color: #AD1F1F;
+    border: 1px solid #AD1F1F;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #AD1F1F;
+    border: 1px solid #AD1F1F;
+    color: #fff;
+}
+
+/* .TTPT {
+color: #fff;
+} */
+
+button h3 {
+    margin: 0px;
+}
+
+button:focus {outline:0;}
+
+/* ======Top Videos====== */
 .picture {
     cursor: pointer;
-    height: 100px;
-    width: 150px;
+    height: 150px;
+    width: 250px;
     border-radius: 4px;
 }
 

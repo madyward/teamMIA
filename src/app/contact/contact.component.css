@@ -1,3 +1,7 @@
+h4 {
+    margin: 0px;
+}
+
 .picture{
     
     margin: 15% 0 5% 0;
@@ -24,16 +28,16 @@
 }
 
 .btn {
-    background-color: #AD1F1F;
-    border: 1px solid #AD1F1F;
-    color: #fff;
-    padding: 6px 8px 5px 8px;
-}
-
-.btn:hover {
     background-color: #fff;
     border: 1px solid #AD1F1F;
     color: #AD1F1F;
+    padding: 8px 9px 5px 9px;
+}
+
+.btn:hover {
+    background-color: #AD1F1F;
+    border: 1px solid #AD1F1F;
+    color: #fff;
 }
 
 .img {

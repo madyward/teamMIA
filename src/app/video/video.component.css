@@ -13,6 +13,8 @@ p {
     border-radius: 4px; 
 }
 
+button:focus {outline:0;}
+
 a:focus {outline:0;}
 
 .video:hover {
@@ -32,3 +34,55 @@ a:focus {outline:0;}
 .center {
     text-align: center;
 }
+
+.imgBtn {
+    padding: 0px;
+    border: none;
+}
+
+/*======PopUp Modal======*/
+.modal-header {
+    padding-bottom: 5px;
+}
+
+.modal-body {
+    padding-top: 0px;
+}
+
+.subTitles {
+    display: flex;
+    justify-content: space-around;
+}
+
+.onOwn {
+    margin-right: 1em;
+}
+
+.inMeeting {
+   margin-left: 1em;
+}
+
+form {
+    text-align: left;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    background-color: #fff;
+    border: 1px solid #AD1F1F;
+    color: #AD1F1F;
+    padding: 6px 8px 5px 8px;
+}
+
+.btn:hover {
+    background-color: #AD1F1F;
+    border: 1px solid #AD1F1F;
+    color: #fff;
+}
+
+/* .btn1 {} */
+/* .btn2 {} */
