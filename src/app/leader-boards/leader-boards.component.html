@@ -1,18 +1,14 @@
 <div class="container">
-  <div class="row">
-    <h2>LeaderBoard</h2>
-    <h4>Top Viewers</h4>
-  </div>
-  <div class="row">
-   <div class="list">
-    <ol *ngFor="let user of userlist">
-      <li>
-        {{user.fname}}
-      </li>
-    </ol>
-
-   </div>
-   
+	<div class="row">
+   		<h2>LeaderBoard</h2>
+    	<h4>Top Viewers</h4>
+  	</div>
+  	<div class="row">
+   		<div class="list">
+    		<ol *ngFor="let user of userlist">
+      			<li>{{user.fname}}</li>
+    		</ol>
+   		</div>
     </div>
     <button (click) = "getUser()">Checkout</button>
  </div>     

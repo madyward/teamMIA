@@ -1,9 +1,9 @@
-import {SignupService} from '../auth/signup.service';
 import {Component, OnInit} from '@angular/core';
-import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/database";
-import * as firebase from "firebase";
 import {Observable} from "rxjs/RX";
+import * as firebase from "firebase";
+import {AngularFireDatabaseModule, AngularFireDatabase} from "angularfire2/database";
 import {AuthService} from "../auth/auth.service";
+import {SignupService} from '../auth/signup.service';
 
 @Component({
   selector: 'app-leader-boards',
@@ -12,9 +12,8 @@ import {AuthService} from "../auth/auth.service";
 })
 
 export class LeaderBoardsComponent implements OnInit {
-userList = [];
-
-constructor(private signupservice: SignupService ){}
+  userList = [];
+  constructor(private signupservice: SignupService ){}
 
   nCnt: number = 0;
   clickMe(){
@@ -27,7 +26,6 @@ constructor(private signupservice: SignupService ){}
     this.signupservice.getUsers()
     .subscribe(
       (user: any) => console.log(user[0].company),
-      // (user: any) => console.log(user.data.company),
       (error) => console.log(error)
     );
   }
