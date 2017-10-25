@@ -20,34 +20,37 @@ export class AuthService {
                 this.authState = auth
               });
     }
-    // Returns true if user is logged in
+    //RETURN TRUE IF USER IS LOGGED IN
     get authenticated(): boolean {
         return this.authState !== null;
     }
-    // Returns current user data
+    //RETURN CURRENT USER'S DATA
     get currentUser(): any {
         return this.authenticated ? this.authState: null;
     }
 
-    // Returns
+    //RETURN
     get currentUserObservable(): any {
         return this.afAuth.authState
     }
 
-    // Returns current user UID
+    //RETURN CURRENT USER'S UID
     get currentUserId(): string {
         return this.authenticated ? this.authState.uid: '';
     }
 
+	//SIGN UP
     emailSignUp(user, password) {
         return this.afAuth.auth.createUserWithEmailAndPassword(user.email, password)
         .then((newUser) => {
-            this.authState = newUser
-            this.updateUserData(user)
+            this.authState = newUser;
+			this.updateUserData(user);
+			this.router.navigate(['/video']);
         })
-        .catch(error => console.log(error));
+		.catch(error => console.log(error));
     }
 
+	//LOGIN W/ EMAIL & PASSWORD
     emailLogin(email:string, password:string) {
         return this.afAuth.auth.signInWithEmailAndPassword(email, password)
         .then((currentUser) => {
