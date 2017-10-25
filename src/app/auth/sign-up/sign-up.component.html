@@ -30,7 +30,7 @@
           				<option *ngFor="let l of location; let u = index" id="u" [value]="l">{{l}}</option>
         			</select>     
       			</div>
-      			<button class="btn btn-primary" type="submit" [disabled]="!f.valid" (click)="addUser({fname: fname.value, lname: lname.value, email: email.value, company: test1.value, location: test2.value}, password.value)">Sign Up</button> <!-- , company: company.value, location: location.value -->
+      			<button class="btn btn-primary" type="submit" [disabled]="!f.valid" (click)="addUser({fname: fname.value, lname: lname.value, email: email.value, company: test1.value, location: test2.value, clicks: clicks}, password.value)">Sign Up</button> <!-- , company: company.value, location: location.value -->
     		</form>
   		</div>
 <!-- pledge section below -->

@@ -62,15 +62,14 @@ export class AuthService {
     //     return auth.sendPasswordResetEmail(email)
     //     .then(() => console.log("email sent"))
     //     .catch((error) => console.log(error))
-    // }
-
+	// }
+	
     //// Sign Out ////
     signOut(): void {
         this.afAuth.auth.signOut();
         this.router.navigate(['/home'])
-    }
-
-
+	}
+	
     //// Helpers ////
     private updateUserData(user): void {
     // Writes user name and email to realtime db
@@ -82,7 +81,8 @@ export class AuthService {
         email: this.authState.email,
         uid: this.authState.uid,
         company: user.company,
-        location: user.location
+		location: user.location,
+		clicks: user.clicks
     }
     this.db.list("users").set(this.currentUserId, data)
     .catch(error => console.log(error));

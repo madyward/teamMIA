@@ -12,7 +12,8 @@ import {SignupService} from '../auth/signup.service';
 })
 
 export class LeaderBoardsComponent implements OnInit {
-  userList = [];
+  clicks = [];
+  
   constructor(private signupservice: SignupService ){}
 
   nCnt: number = 0;
@@ -25,7 +26,7 @@ export class LeaderBoardsComponent implements OnInit {
   getUser(){
     this.signupservice.getUsers()
     .subscribe(
-      (user: any) => console.log(user[0].company),
+      (user: any) => console.log(user[0].clicks),
       (error) => console.log(error)
     );
   }
