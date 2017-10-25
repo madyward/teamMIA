@@ -73,13 +73,14 @@
                   </div>
                 </div>
                   
-                      <button class="imgBtn" data-toggle="modal" data-target="#exampleModal">
+                      <button class="imgBtn" data-toggle="modal" (click)="clickMe()" data-target="#exampleModal">
                           <img
                         [src]="video.picture"
                         alt="{{video.picture}}"
                         class="video"
                         style="height: 150px; width: 250px;">
                       </button> 
+
                     <p class="videoSubTitle2">{{video.patient}}</p>   
                     <p class="videoSubTitle">{{video.condition}}</p>
                   </td>
@@ -121,8 +122,9 @@
               <br/>
               <tr>
                 <td *ngFor= "let video of videos4"  class="video-grid center">  
-                        <button class="imgBtn" data-toggle="modal" data-target="#exampleModal">
+                        <button class="imgBtn" data-toggle="modal" (click)="clickMe()" data-target="#exampleModal">
                             <img
+
                           [src]="video.picture"
                           alt="{{video.picture}}"
                           class="video"

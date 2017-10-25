@@ -1,11 +1,11 @@
 import {Injectable, Provider} from '@angular/core';
 import {Response} from "@angular/http";
 import 'rxjs/RX';
-import { Observable } from 'rxjs/Observable';
+import {Observable} from 'rxjs/Observable';
 import * as firebase from 'firebase';
 import {AdminComponent} from './admin.component';
 import {firebaseConfig} from "../app.module";
-import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/database";
+import {AngularFireDatabaseModule, AngularFireDatabase} from "angularfire2/database";
 
 
 @Injectable()

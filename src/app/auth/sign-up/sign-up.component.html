@@ -1,43 +1,43 @@
 <div class="container">
 <div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 ">
+  <div class="col-xs-5 col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1">
     <form #f="ngForm"> 
       <div class="form-group">
         <div>
           <label class="user" for="fname">First Name:</label>
-          <input type="text" class="form-control" (keyup)="0" #fname name="fname" id="fname" required ngModel>
-          <!-- <span class="required" *ngIf="!fname.valid && fname.touched">Please Enter your first name</span> -->
+          <input ngModel type="text" class="form-control" name="fname" (keyup)="0" id="fname" #fname required>
         </div>
+
         <div>
           <label class="user" for="lname">Last Name:</label>
-          <input type="text" class="form-control" (keyup)="0" #lname name="lname" id="lname" required ngModel>
-          <!-- <span class="required" *ngIf="!lname.valid && lname.touched">Please Enter your last name</span> -->
+          <input ngModel type="text" class="form-control" name="lname" (keyup)="0" id="lname" #lname required>
         </div>
+
         <div>
           <label class="user" for="email">Email:</label>
-          <input type="email" class="form-control" #email name="email" id="email" required ngModel>
-          <!-- <span class="help required" *ngIf="!email.valid && email.dirty">Please enter a valid email</span> -->
+          <input ngModel type="email" id="email" class="form-control" name="email" id="email" #email required>
         </div>
+
         <label class="user" for="password">Password:</label>
-        <input type="password" id="password" class="form-control" required ngModel>
+        <input ngModel type="password" id="password" class="form-control" name="password" id="password" #password required>
         <p><i>*Minimum 6 characters</i></p>
 
-        <!-- want this to eventually pop into second div when selected-ajh -->
         <label class="user" for="company">Company:</label>
-        <select class="form-control" id="reason" >
-          <option  *ngFor="let i of company" [value]="i">{{i}}</option>
-        </select>
-        <label class="user" for="location">Location:</label>
-        <select class="form-control" id="reason" >  
-          <option  *ngFor="let i of location" [value]="i">{{i}}</option>
+        <select class="form-control" id="reason" #test1>
+          <option *ngFor="let i of company; let x = index" id="x" [value]="i">{{i}}</option>
         </select>      
+
+        <label class="user" for="location">Location:</label>
+        <select class="form-control" id="reason" #test2>
+          <option *ngFor="let l of location; let u = index" id="u" [value]="l">{{l}}</option>
+        </select>     
       </div>
-      <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Sign Up</button> 
+      <button class="btn btn-primary" type="submit" [disabled]="!f.valid" (click)="addUser({fname: fname.value, lname: lname.value, email: email.value, company: test1.value, location: test2.value}, password.value)">Sign Up</button> <!-- , company: company.value, location: location.value -->
     </form>
   </div>
 
 <!-- pledge section below -->
-  <div class="col-xs12 col-sm-12 col-md-6 col-sm-offset-1 col-md-offset-1 pledge">
+<div class="col-md-6 pledge"> <!-- <div class="col-xs12 col-sm-12 col-md-6 col-sm-offset-1 col-md-offset-1 pledge"> -->
     <div style="text-align:center;">
       <h2>The Pledge:</h2>
     </div>
@@ -52,5 +52,5 @@
 
       </div>
 
-</div>
+  </div>
 </div>
