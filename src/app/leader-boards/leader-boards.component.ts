@@ -1,10 +1,12 @@
-import {SignupService} from '../auth/signup.service';
 import {Component, OnInit} from '@angular/core';
 import {NgForm, Form} from '@angular/forms';
 import { AngularFireDatabaseModule, AngularFireDatabase, AngularFireObject } from "angularfire2/database";
 import * as firebase from "firebase";
 import {Observable} from "rxjs/RX";
+import * as firebase from "firebase";
+import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList, AngularFireObject} from "angularfire2/database";
 import {AuthService} from "../auth/auth.service";
+import {SignupService} from '../auth/signup.service';
 
 @Component({
   selector: 'app-leader-boards',
@@ -13,37 +15,19 @@ import {AuthService} from "../auth/auth.service";
 })
 
 export class LeaderBoardsComponent implements OnInit {
-  user: any[];
+	user: any[];
+	clicks: number = 0;
 
+  	constructor(
+		private signupservice: SignupService,
+		private authservice: AuthService,
+		private db: AngularFireDatabase){}
 
- constructor(private signupservice: SignupService,
-  private db: AngularFireDatabase){}
-    ngOnInit() {
-      this.signupservice.getUsers()
-      .subscribe(
-        user => {
-          this.user = user }),
-          
-         
-  
-       (error) => console.log(error)
-    
-    }
-  
-
-
-
-  }
-  // getUser(){
-  //   this.signupservice.getUsers()
-  //   .subscribe(
-  //     (user: any) => console.log(user[0].company),
-  //     // (user: any) => console.log(user.data.company),
-  //     (error) => console.log(error)
-  //   );
-  // }
-  
-
- 
- 
+	ngOnInit() {
+	this.signupservice.getUsers()
+	.subscribe(
+		user => {
+		this.user = user }),
+		(error) => console.log(error)
+	}
 }

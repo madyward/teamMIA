@@ -1,45 +1,38 @@
-import {SignupService} from '../auth/signup.service';
 import {Component, OnInit} from '@angular/core';
 import {NgForm, Form} from '@angular/forms';
-import { AngularFireDatabaseModule, AngularFireDatabase, AngularFireObject } from "angularfire2/database";
-import * as firebase from "firebase";
+import {AuthService} from "../auth/auth.service";
+import {Injectable, Provider} from '@angular/core';
+import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router} from '@angular/router';
+import {Observable} from 'rxjs/Observable';
+import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList ,AngularFireObject} from "angularfire2/database";
+import {AngularFireAuth} from 'angularfire2/auth';
+import * as firebase from 'firebase';
+import {SignupService} from "../auth/signup.service";
 import {Observable} from "rxjs/RX";
 import {AuthService} from "../auth/auth.service";
+
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+	selector: 'app-home',
+	templateUrl: './home.component.html',
+	styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  user: any[]
 
+	user: any[];
+	clicks: number = 0;
+	//uid = this.authservice.authState.uid;
+	constructor(
+		private authservice: AuthService
+	) {}
 
-constructor(private signupservice: SignupService,
-  private db: AngularFireDatabase){}
-    ngOnInit() {
-      this.signupservice.getUsers()
-      .subscribe(
-        user => {
-          this.user = user }),
-          
-         
-  
-       (error) => console.log(error)
+  	//LEADERBOARDS
+	  getClicks(){
+		this.authservice.userClicks
+		return(
+			console.log(this.clicks)
+			//this.clicks.push(this.clicks)
+		)
+	}  
     
-    }
-
-  msg = '';
-  nCnt: number = 0;
-  clickMe(){
-      this.nCnt = this.nCnt + 1;
-      this.msg = "Clicked: " + this.nCnt;
-
-      if(this.nCnt === 3){
-       alert('3')
-      }
-     
-    }
-
-
-  }
-
+	ngOnInit() {}
+}
