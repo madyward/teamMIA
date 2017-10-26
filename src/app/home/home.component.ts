@@ -8,8 +8,7 @@ import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList ,Angular
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase';
 import {SignupService} from "../auth/signup.service";
-import {Observable} from "rxjs/RX";
-import {AuthService} from "../auth/auth.service";
+
 
 @Component({
 	selector: 'app-home',
@@ -22,8 +21,9 @@ export class HomeComponent implements OnInit {
 	clicks: number = 0;
 	//uid = this.authservice.authState.uid;
 	constructor(
-		private authservice: AuthService
-	) {}
+		private signupservice: SignupService,
+		private authservice: AuthService,
+		private db: AngularFireDatabase){}
 
   	//LEADERBOARDS
 	  getClicks(){
@@ -34,5 +34,11 @@ export class HomeComponent implements OnInit {
 		)
 	}  
     
-	ngOnInit() {}
+	ngOnInit() {
+		this.signupservice.getUsers()
+		.subscribe(
+			user => {
+			this.user = user }),
+			(error) => console.log(error)
+		}
 }
