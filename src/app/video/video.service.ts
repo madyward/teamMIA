@@ -13,7 +13,7 @@ Injectable()
 export class VideoService {
 	user: any[];
 	clicks: number = 0;
-	//uid = this.authservice.authState.uid;
+	uid = this.authservice.authState.uid;
 
     constructor(
 		private authservice: AuthService,
@@ -21,12 +21,12 @@ export class VideoService {
 	){}
 
 	//LEADERBOARDS
-	// userClicks(){
-	// 	this.clicks = this.clicks + 1;
-	// 	if(this.uid === this.uid && this.clicks){
-	// 		console.log(this.clicks)
-	// 		return this.clicks
-	// 	}
-	// }
+	userClicks(){
+		this.clicks = this.clicks + 1;
+		if(this.uid === this.uid && this.clicks){
+			console.log(this.clicks)
+			return this.clicks
+		}
+	}
 
 }
