@@ -33,16 +33,6 @@ export class LeaderBoardsComponent implements OnInit {
 
 
 
-
- 
-
-
- nCnt: number = 0;
-  clickMe(){
-      this.nCnt = this.nCnt + 1;
-      if(this.nCnt === 3){
-       alert('3')
-      }
   }
   // getUser(){
   //   this.signupservice.getUsers()
