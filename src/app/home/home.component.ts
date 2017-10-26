@@ -9,9 +9,9 @@ import * as firebase from 'firebase';
 import {SignupService} from "../auth/signup.service";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+	selector: 'app-home',
+	templateUrl: './home.component.html',
+	styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
 	user: any[];

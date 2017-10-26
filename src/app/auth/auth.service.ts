@@ -9,18 +9,20 @@ import {SignupService} from "./signup.service";
 @Injectable()
 export class AuthService {
 	authState: any = null;
+	user: any[];
 	clicks: number = 0;
-
+	clicksRef: AngularFireList<any>;
 
     constructor(
 		private router: Router,
         private afAuth: AngularFireAuth,
         private db: AngularFireDatabase,
-        private signupservice: SignupService 
+        private signupservice: SignupService
     ){
         this.afAuth.authState.subscribe((auth) => {
             this.authState = auth
-        });
+		});
+		this.clicksRef = db.list("users");
 	}
 	
     //RETURN TRUE IF USER IS LOGGED IN
@@ -41,12 +43,32 @@ export class AuthService {
         return this.authenticated ? this.authState.uid: '';
 	}
 	//LEADERBOARDS
-	userClicks(user){
-		let uid = this.authState.uid;
-		this.clicks = this.clicks + 1;
-		if(uid === uid && this.clicks){
-			this.updateUserData(this.clicks)
-		}	
+	// userClicks(){
+	// 	let uid = this.authState.uid;
+	// 	let newClicks = this.clicks + 1;
+	// 	this.clicksRef.update(uid, {clicks: newClicks})
+	// 	if(uid && this.clicks){
+	// 	this.updateUserData(this.clicks + 1)
+	// 	}
+	// 	return(
+	// 	this.db.object("users").update(this.clicks))
+		//console.log("users")
+		userClicks(user){
+			let uid = firebase.auth().currentUser.uid;
+			console.log(uid)
+			this.db.list(`users/${uid}`,
+			ref => {
+				ref.child("clicks").transaction(clicks => clicks +1)
+				return user
+			}
+			)
+			// this.clicksRef.update(uid, {clicks: newClicks})
+			// if(uid && this.clicks){
+			// this.updateUserData(this.clicks + 1)
+			// }
+			// return(
+			// this.db.object("users").update(this.clicks))
+	
 	}
 	//SIGN UP
     emailSignUp(user, password) {
@@ -92,7 +114,7 @@ export class AuthService {
         uid: this.authState.uid,
         company: user.company,
 		location: user.location,
-		clicks: user.clicks + 1
+		clicks: user.clicks
     }
     this.db.list("users").set(this.currentUserId, data)
     .catch(error => console.log(error));

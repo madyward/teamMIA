@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ContactService} from "./contact.service";
 
 @Component({
   selector: 'app-contact',
@@ -8,7 +9,8 @@ import {Component, OnInit} from '@angular/core';
 export class ContactComponent implements OnInit {
   home= ["Video Suggestion", "Enhancement", "Other"];
   fname = '';
-  constructor() { }
-  ngOnInit() {
-  }
+
+  constructor() {}
+
+  ngOnInit() {}
 }

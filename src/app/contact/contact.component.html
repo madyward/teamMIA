@@ -1,40 +1,33 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="email">
-      <div class="form-group">
-      <form method="POST" action="http://formspree.io/ajhephner178@gmail.com">
-        <h2>Feedback</h2>
-        <label for="email">Email:</label>
-        <input type="email" class="form-control email-input" name="email" placeholder="Your email">
-
-        <label for="reason">Reason:</label>
-        <select class="form-control reason-input" id="reason">
-          <option *ngFor="let i of home" [value]="i">{{i}}</option>
-        </select>
-
-        <label for="message">Message:</label>
-        <textarea name="message" class="form-control message-input" placeholder="Your message"></textarea>
-
-        <button class="btn" type="submit"><h4>Send</h4></button>
-      </form>
-    </div>
-    </div>
-<!-- left hand side below -->
-
-      <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" >
-        <div class="img-quote">
-          <div class="picture">
-            <img class="img" src="./assets/feedbackPage-quotePic.jpg" alt="">
-          </div>
-
-          <div class="quote" id="text">
-            <h4>It's not how much you do, but how much love you put into the doing the matters</h4>
-            <h4>- Mother Teresa</h4>
-          </div>
-        </div>
+	<div class="row">
+    	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="email">
+    		<div class="form-group">
+      			<form method="POST" action="http://formspree.io/ajhephner178@gmail.com">
+        			<h2>Feedback</h2>
+        			<label for="email">Email:</label>
+        			<input type="email" class="form-control email-input" name="email" placeholder="Your email">
+        			<label for="reason">Reason:</label>
+        			<select class="form-control reason-input" id="reason">
+          				<option *ngFor="let i of home" [value]="i">{{i}}</option>
+        			</select>
+        			<label for="message">Message:</label>
+        			<textarea name="message" class="form-control message-input" placeholder="Your message"></textarea>
+        			<button class="btn" type="submit"><h4>Send</h4></button>
+      			</form>
+   			</div>
+    	</div>
+		<!-- left hand side below -->
+      	<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" >
+        	<div class="img-quote">
+        		<div class="picture">
+            		<img class="img" src="./assets/feedbackPage-quotePic.jpg" alt="">
+          		</div>
+          		<div class="quote" id="text">
+            		<h4>It's not how much you do, but how much love you put into the doing the matters</h4>
+            		<h4>- Mother Teresa</h4>
+          		</div>
+        	</div>
       </div>
-
-
   </div>
 </div>
 

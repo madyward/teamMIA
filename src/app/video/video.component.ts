@@ -17,7 +17,7 @@ export class VideoComponent implements OnInit {
 	// usersDB: AngularFireList<any>;
 	user: any[];
 	clicks: number = 0;
-	uid = this.authservice.authState.uid;
+	// uid = this.authservice.authState.uid;
 
 	videos = [
 		{ url: "https://www.youtube.com/embed/MXTd8xd_f8s", picture: "https://i.ytimg.com/vi/MXTd8xd_f8s/maxresdefault.jpg", patient: "Julie Flygare", condition: "Narcolepsy"},
@@ -50,13 +50,17 @@ export class VideoComponent implements OnInit {
 	ngOnInit() {
 	}
 		//LEADERBOARDS
-		userClicks(user){
-			this.clicks = this.clicks + 1;
-			if(this.uid === this.uid && this.clicks){
-				console.log(this.clicks)
-				return this.clicks
-			}
-		}
+		// userClicks(user){
+		// 	this.clicks = this.clicks + 1;
+		// 	if(this.uid === this.uid && this.clicks){
+		// 		console.log(this.clicks)
+		// 		 //return(
+					
+		// 		 //)
+		// 		 //this.clicks + 1
+		// 	}
+		// 	this.db.list(user.clicks).push(this.clicks)
+		// }
 
 	// getClicks(){
 	// 	this.authservice.userClicks()
