@@ -18,7 +18,7 @@
 						<td>
 							<table>
 								<tr>
-									<td><a data-fancybox data-type='iframe' (click)="clickMe()" data-src="https://www.youtube.com/embed/MXTd8xd_f8s"><img class='picture' src="https://i.ytimg.com/vi/MXTd8xd_f8s/maxresdefault.jpg"></a></td>
+									<td><a data-fancybox data-type='iframe' (click)="userClicks(user)" data-src="https://www.youtube.com/embed/MXTd8xd_f8s"><img class='picture' src="https://i.ytimg.com/vi/MXTd8xd_f8s/maxresdefault.jpg"></a></td>
 								</tr>
 								<tr>
 									<td class='videoTitle'>Julie Flygare</td>
@@ -32,7 +32,7 @@
 						<td>
 							<table>
 								<tr>
-									<td><a data-fancybox data-type='iframe' (click)="clickMe()" data-src="https://www.youtube.com/embed/3HuxRDX0kbs"><img class='picture' src="https://i.ytimg.com/vi/rZ-b1omWXH4/maxresdefault.jpg"></a></td>
+									<td><a data-fancybox data-type='iframe' (click)="userClicks(user)" data-src="https://www.youtube.com/embed/3HuxRDX0kbs"><img class='picture' src="https://i.ytimg.com/vi/rZ-b1omWXH4/maxresdefault.jpg"></a></td>
 								</tr>
 								<tr>
 									<td class='videoTitle'>Ryan Prior</td>
@@ -46,7 +46,7 @@
 						<td>
 							<table>
 								<tr>
-									<td><a data-fancybox data-type='iframe' (click)="clickMe()" data-src="https://www.youtube.com/embed/fNKfakkH8Yg"><img class='picture' src="http://storytelling.healthcentral.com/encoded/56ac223a4ee9b1a6393515f0/image/62ac6fa3-efdd-40fc-875b-2fba99b96682_leslie_Rott_hero2.jpg"></a></td>
+									<td><a data-fancybox data-type='iframe' (click)="userClicks(user)" data-src="https://www.youtube.com/embed/fNKfakkH8Yg"><img class='picture' src="http://storytelling.healthcentral.com/encoded/56ac223a4ee9b1a6393515f0/image/62ac6fa3-efdd-40fc-875b-2fba99b96682_leslie_Rott_hero2.jpg"></a></td>
 								</tr>
 								<tr>
 									<td class='videoTitle'>Leslie Rott</td>
@@ -65,8 +65,8 @@
 		</div>
 	</div>
 			
-	<button (click)="clickMe()">Click</button>
+	<button (click)="userClicks(user)">Click</button>
 	<br/> <p><strong>{{msg}}</strong></p>
-	<button (click)="clickMe()">Click</button>
+	<button (click)="userClicks(user)">Click</button>
 </div>
 	

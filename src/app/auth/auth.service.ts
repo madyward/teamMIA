@@ -1,8 +1,7 @@
 import {Injectable, Provider} from '@angular/core';
 import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
-import {AngularFireDatabaseModule, AngularFireDatabase} from "angularfire2/database";
-import {FirebaseListObservable} from 'angularfire2/database-deprecated';
+import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList, } from "angularfire2/database";
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase';
 import {SignupService} from "./signup.service";
@@ -11,7 +10,7 @@ import {SignupService} from "./signup.service";
 export class AuthService {
 	authState: any = null;
 	clicks: number = 0;
-	//nCnt: number = 0;
+
 
     constructor(
 		private router: Router,
@@ -45,9 +44,8 @@ export class AuthService {
 	userClicks(user){
 		let uid = this.authState.uid;
 		this.clicks = this.clicks + 1;
-		if(uid === uid && this.clicks){	//(this.nCnt === 3){
-			this.updateUserData(user.clicks)
-			//this.clicks.push(this.nCnt)
+		if(uid === uid && this.clicks){
+			this.updateUserData(this.clicks)
 		}	
 	}
 	//SIGN UP
@@ -94,7 +92,7 @@ export class AuthService {
         uid: this.authState.uid,
         company: user.company,
 		location: user.location,
-		clicks: user.clicks
+		clicks: user.clicks + 1
     }
     this.db.list("users").set(this.currentUserId, data)
     .catch(error => console.log(error));

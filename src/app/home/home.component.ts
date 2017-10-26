@@ -1,4 +1,12 @@
 import {Component, OnInit} from '@angular/core';
+import {AuthService} from "../auth/auth.service";
+import {Injectable, Provider} from '@angular/core';
+import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router} from '@angular/router';
+import {Observable} from 'rxjs/Observable';
+import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList, } from "angularfire2/database";
+import {AngularFireAuth} from 'angularfire2/auth';
+import * as firebase from 'firebase';
+import {SignupService} from "../auth/signup.service";
 
 @Component({
   selector: 'app-home',
@@ -6,19 +14,21 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+	user: any[];
+	clicks: number = 0;
+	//uid = this.authservice.authState.uid;
+	constructor(
+		private authservice: AuthService
+	) {}
 
-  msg = '';
-  nCnt: number = 0;
-  clickMe(){
-      this.nCnt = this.nCnt + 1;
-      this.msg = "Clicked: " + this.nCnt;
-
-      if(this.nCnt === 3){
-       alert('3')
-      }
-     
-    }
-  constructor() { }
-  ngOnInit() {
-  }
+  	//LEADERBOARDS
+	  getClicks(){
+		this.authservice.userClicks
+		return(
+			console.log(this.clicks)
+			//this.clicks.push(this.clicks)
+		)
+	}  
+    
+	ngOnInit() {}
 }
