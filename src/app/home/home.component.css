@@ -4,27 +4,6 @@ h4 {
 
 
 /* ======Take The Pledge====== */
-.rightSide-top{
-    border: 1px solid #eaeaea;
-    background-color: #eaeaea;
-    margin-bottom: 5%;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.rightSide-bottom{
-    margin-bottom: 5%;
-    border-radius: 10%;
-    text-align: center;
-}
-
-.header {
-    color: #fff;
-    background-color: #AD1F1F;
-    padding: 7px 0px 7px 0px;
-    border-radius: 3px;
-
-}
 
 /* .rightSide-topVideos-bgColor {
     border: 1px solid #AD1F1F;
@@ -78,10 +57,17 @@ button h3 {
 button:focus {outline:0;}
 
 /* ======Top Videos====== */
+.header {
+    color: #fff;
+    background-color: #AD1F1F;
+    padding: 7px 0px 7px 0px;
+    border-radius: 3px;
+}
+
 .picture {
     cursor: pointer;
-    height: 150px;
-    width: 250px;
+    height: 90px;
+    width: 160px;
     border-radius: 4px;
 }
 
@@ -91,8 +77,8 @@ button:focus {outline:0;}
 
 @media(max-width: 1200px) {
     .picture {
-        height: 60px;
-        width: 110px;
+        height: 70px;
+        width: 140px;
     }
 }
 
@@ -135,4 +121,55 @@ td {
 
 .videoTable {
     text-align: center;
+}
+
+.padding {
+    padding-left: 0px;
+}
+
+.padding2 {
+    padding-right: 0px;
+}
+/*======Leaderboard======*/
+#leaderboard {
+    border: 1px solid #eaeaea;
+    background-color: #eaeaea;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 28px; 
+    color: #fff;
+    background-color: #AD1F1F;
+    padding: 7px 0px 7px 0px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.table-striped th {
+    background-color: #a1a1a1;
+}
+
+.table-striped th p {
+    color: #fff;
+    margin-bottom: 0px; 
+    font-weight: normal;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.table{
+    font-family: 'Roboto', sans-serif;
+    padding: 8px;
+}
+
+
+.table-striped tr:nth-child(even){
+    background-color: rgb(230, 230, 230);
+} 
+
+.table-striped td {
+    color: #444;
 }
