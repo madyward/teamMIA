@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row">
+    
     <h2>LeaderBoard</h2>
     <h4>Top Viewers</h4>
   </div>
@@ -94,3 +95,39 @@
     <div>
     <!-- <button (click) = "getUser(user)">Checkout</button> -->
  </div>     
+
+ <div class="container">
+    <div class="row">
+        <div class="col-md-12 col-lg-12">  
+              <table class="table table-striped">
+                <tr>
+                  <th class="a"></th>
+                  <th><p>Name</p></th>
+                  <th><p>Company</p></th>
+                  <th><p>Location</p></th>
+                  <th><p>Views</p></th>
+                </tr>
+                <td></td>
+                <tr *ngFor= "let i of user">
+                 <td>
+                  {{i.fname + ' ' +i.lname}}
+                  {{i.company}} 
+                  {{i.location}}
+                  {{i.clicks}}
+                  </td>
+                </tr>
+                
+                <!-- <tr *ngFor= "let i of user">
+                    {{i.company}}
+                </tr>
+                  <tr *ngFor= "let i of user">
+                      {{i.location}}
+                  </tr>
+                    <tr *ngFor= "let i of user">
+                        {{i.clicks}}
+                    </tr>   -->
+       </table>
+       </div>         
+    </div>
+  </div>
+
