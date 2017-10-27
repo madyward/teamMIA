@@ -43,8 +43,15 @@ export class AuthService {
         return this.authenticated ? this.authState.uid: '';
 	}
 	//LEADERBOARDS
-	// userClicks(){
-	// 	let uid = this.authState.uid;
+		userClicks(user){
+		let uid = firebase.auth().currentUser.uid;
+		console.log(uid)
+		this.db.list(`users/${uid}`,
+		ref => {
+			ref.child("clicks").transaction(clicks => clicks +1)
+			return user
+		})
+		
 	// 	let newClicks = this.clicks + 1;
 	// 	this.clicksRef.update(uid, {clicks: newClicks})
 	// 	if(uid && this.clicks){
@@ -53,22 +60,6 @@ export class AuthService {
 	// 	return(
 	// 	this.db.object("users").update(this.clicks))
 		//console.log("users")
-		userClicks(user){
-			let uid = firebase.auth().currentUser.uid;
-			console.log(uid)
-			this.db.list(`users/${uid}`,
-			ref => {
-				ref.child("clicks").transaction(clicks => clicks +1)
-				return user
-			}
-			)
-			// this.clicksRef.update(uid, {clicks: newClicks})
-			// if(uid && this.clicks){
-			// this.updateUserData(this.clicks + 1)
-			// }
-			// return(
-			// this.db.object("users").update(this.clicks))
-	
 	}
 	//SIGN UP
     emailSignUp(user, password) {
