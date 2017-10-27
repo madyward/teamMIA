@@ -10,10 +10,10 @@ import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList} from "a
 
 @Injectable()
 export class SignupService {
-   users: Observable<any[]>;
-   usersDB: AngularFireList<any>;
+	users: Observable<any[]>;
+   	usersDB: AngularFireList<any>;
 
-   constructor(private db: AngularFireDatabase){
+   	constructor(private db: AngularFireDatabase){
         this.usersDB = this.db.list("users")
         this.users = this.usersDB.valueChanges()
     }

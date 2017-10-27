@@ -14,40 +14,37 @@ import {AngularFireDatabaseModule, AngularFireDatabase} from "angularfire2/datab
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+	ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  videoList=[];
-  constructor(private serverService: ServerService) {}
+	videoList=[];
+	constructor(private serverService: ServerService) {}
     addVideo(
-      url : string,
-      picture: string,
-      patient: string, 
-      condition: string
-    ){
-      this.videoList.push({
-        url: url,
-        picture: picture, 
-        patient: patient,
-        condition: condition
-
-      });
-     
-    }
+		url : string,
+		picture: string,
+    	patient: string, 
+    	condition: string
+	){
+		this.videoList.push({
+    		url: url,
+    		picture: picture, 
+    		patient: patient,
+    		condition: condition
+    	});
+	}
+	
     saveVideo() {
-      this.serverService.storeVideos(this.videoList)
-      .then(
-        (response) => console.log(response),
-        (error) => console.log(error)
-      );
+    	this.serverService.storeVideos(this.videoList)
+    	.then(
+    		(response) => console.log(response),
+    		(error) => console.log(error)
+    	);
     }
 
     getVideo(){
-      this.serverService.showVideos()
-      .then(
-        (videoList: any[]) => console.log(videoList[0].url),         
-        (error) => console.log(error)
-      );
+    	this.serverService.showVideos()
+    	.then(
+    		(videoList: any[]) => console.log(videoList[0].url),         
+    		(error) => console.log(error)
+    	);
     }
 }

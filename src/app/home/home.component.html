@@ -1,79 +1,125 @@
-<div class="container">
-  <div class="row">
+ <div class="container">
+ <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="pledge">
-      
-        <h1>Pledge</h1>
-        
-        <p>I recognize that my work ultimately creates value by improving people’s lives, particularly patients and caregivers. 
-            As such, I recognize the importance of remembering and having empathy for their journies.  
-            Hence, I pledge to do small and simple things each day to remain and help others to be inspired to make their lives better.</p>        
-      
-				<div class="TTP">
-						<a class="TTPT" [routerLink]="['/signup']"><button class="btn btn-primary" ><h3 >Take The Pledge!</h3></button></a>
-				</div>
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			<h1>About</h1>
+
+			<p>This is the about section of the page. Stuff about Remempathy will go here to tell others about Remempathy and what our cause is.
+			This is the about section of the page. Stuff about Remempathy will go here to tell others about Remempathy and what our cause is.
+			This is the about section of the page. Stuff about Remempathy will go here to tell others about Remempathy and what our cause is.
+			</p>
 		</div>
-		
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			<h1>Pledge</h1>
+			
+			<p>I recognize that my work ultimately creates value by improving people’s lives, particularly patients and caregivers. 
+			As such, I recognize the importance of remembering and having empathy for their journies.  
+			Hence, I pledge to do small and simple things each day to remain and help others to be inspired to make their lives better.
+			</p>
 
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="rightSide">
-			<div class="rightSide-bottom rightSide-topVideos-bgColor" id="spotLight"> 
-				<h4 class="header">Top Videos</h4>
-				<Table align="center">
-					<tr>
-						
-						<td>
-							<table>
-									<tr>
-										<td><a data-fancybox data-type='iframe' (click)="clickMe()" data-src="https://www.youtube.com/embed/MXTd8xd_f8s"><img class='picture' src="https://i.ytimg.com/vi/MXTd8xd_f8s/maxresdefault.jpg"></a></td>
-									</tr>
-									<tr>
-										<td class='videoTitle'>Julie Flygare</td>
-									</tr>
-									<tr>
-											<td class='videoSubTitle'>Narcolepsy</td>
-										</tr>
-								</table>
-							</td>
-
-							<td>
-									<table>
-										<tr>
-												<td><a data-fancybox data-type='iframe' (click)="clickMe()" data-src="https://www.youtube.com/embed/3HuxRDX0kbs"><img class='picture' src="https://i.ytimg.com/vi/rZ-b1omWXH4/maxresdefault.jpg"></a></td>
-											</tr>
-											<tr>
-												<td class='videoTitle'>Ryan Prior</td>
-											</tr>
-											<tr>
-													<td class='videoSubTitle'>Chronic Fatigue</td>
-												</tr>
-											</table>
-							</td>
-
-							<td>
-								<table>
-											<tr>
-												<td><a data-fancybox data-type='iframe' (click)="clickMe()" data-src="https://www.youtube.com/embed/fNKfakkH8Yg"><img class='picture' src="http://storytelling.healthcentral.com/encoded/56ac223a4ee9b1a6393515f0/image/62ac6fa3-efdd-40fc-875b-2fba99b96682_leslie_Rott_hero2.jpg"></a></td>
-											</tr>
-											<tr>
-												<td class='videoTitle'>Leslie Rott</td>
-											</tr>
-											<tr>
-												<td class='videoSubTitle'>Lupus</td>
-											</tr>
-										</table>
-							</td>
-							
-						</tr>
-					</Table>
-				</div>
-						<div class="rightSide-top" id="leaderboard">
-							<h3>Leader Board Here</h3>
-						</div>
-					
+			<div class="TTP">
+					<a class="TTPT" [routerLink]="['/signup']"><button class="btn btn-primary" ><h3 >Take The Pledge!</h3></button></a>
 			</div>
 		</div>
-			
-		<button (click)="clickMe()">Click</button>
-		<br/> <p><strong>{{msg}}</strong></p>
-		<button (click)="clickMe()">Click</button>
 	</div>
+		
+  </div>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7" id="rightSide">
+				<div id="spotLight" style="text-align: center;"> 
+					<h4 class="header">Sample Videos</h4>
+					<Table align="center">
+						<tr>
+							
+							<td class="padding">
+								<table>
+										<tr>
+											<td><a data-fancybox data-type='iframe' (click)="userClicks(user)" data-src="https://www.youtube.com/embed/MXTd8xd_f8s"><img class='picture' src="https://i.ytimg.com/vi/MXTd8xd_f8s/maxresdefault.jpg"></a></td>
+										</tr>
+										<tr>
+											<td class='videoTitle'>Julie Flygare</td>
+										</tr>
+										<tr>
+												<td class='videoSubTitle'>Narcolepsy</td>
+											</tr>
+									</table>
+								</td>
+
+								<td>
+										<table>
+											<tr>
+													<td><a data-fancybox data-type='iframe' (click)="userClicks(user)" data-src="https://www.youtube.com/embed/3HuxRDX0kbs"><img class='picture' src="https://i.ytimg.com/vi/rZ-b1omWXH4/maxresdefault.jpg"></a></td>
+												</tr>
+												<tr>
+													<td class='videoTitle'>Ryan Prior</td>
+												</tr>
+												<tr>
+														<td class='videoSubTitle'>Chronic Fatigue</td>
+													</tr>
+												</table>
+								</td>
+
+								<td class="padding2">
+									<table>
+												<tr>
+													<td><a data-fancybox data-type='iframe' (click)="userClicks(user)" data-src="https://www.youtube.com/embed/fNKfakkH8Yg"><img class='picture' src="http://storytelling.healthcentral.com/encoded/56ac223a4ee9b1a6393515f0/image/62ac6fa3-efdd-40fc-875b-2fba99b96682_leslie_Rott_hero2.jpg"></a></td>
+												</tr>
+												<tr>
+													<td class='videoTitle'>Leslie Rott</td>
+												</tr>
+												<tr>
+													<td class='videoSubTitle'>Lupus</td>
+												</tr>
+											</table>
+								</td>
+								
+							</tr>
+						</Table>
+					</div>
+				</div>
+				<div class=" row rightSide-top col-xs-12 col-sm-12 col-md-4 col-lg-4">
+					<h4 class="title">Activity</h4>
+
+					<div id="leaderboard">
+							<table class="table table-striped">
+							  <tr>
+								<th></th>
+								<th><p>Name</p></th>
+								<th><p>Company</p></th>
+								<!-- <th><p>Location</p></th> -->
+								<th><p>Views</p></th>
+							  </tr>
+							  <tr>
+								<td>1.</td>
+								<td style="text-align: left;">{{user[0].fname + " " + user[0].lname}}</td>
+								<td style="text-align: left;">{{user[0].company}}</td>
+								<!-- <td>{{user[0].location}}</td> -->
+								<td style="text-align: right;">113 Views</td>
+							  </tr>
+							  <tr>
+								<td>2.</td>
+								<td style="text-align: left;">{{user[1].fname + " " + user[1].lname}}</td>
+								<td style="text-align: left;">{{user[1].company}}</td>
+								<!-- <td>{{user[1].location}}</td> -->
+								<td style="text-align: right;">105 Views</td>
+							  </tr>
+							  <tr>
+								<td>3.</td>
+								<td style="text-align: left;">{{user[2].fname + " " + user[2].lname}}</td>
+								<td style="text-align: left;">{{user[2].company}}</td>
+								<!-- <td>{{user[2].location}}</td> -->
+								<td style="text-align: right">92 Views</td>
+							  </tr>
+					  
+							</table>		
+						  </div>
+						</div>		
+				</div>
+		
 	
+</div>		
+
+
+
+

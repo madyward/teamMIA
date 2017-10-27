@@ -8,12 +8,12 @@ export class SigninService {
     constructor(private http: Http) { }
      signIn(email:string, password: string, name: string) {
         return this.http.post(this.API_BASE + 'signin', JSON.stringify({email: email, password: password, name: name}))
-            .map((response: Response) => {
-                let user = response.json();
-                if (user && user.token){
-                    localStorage.setItem('currentUser', JSON.stringify(user));
-                }
-                return user;
-            });
+        .map((response: Response) => {
+            let user = response.json();
+            if (user && user.token){
+                localStorage.setItem('currentUser', JSON.stringify(user));
+            }
+            return user;
+        });
     }
 }

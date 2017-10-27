@@ -1,18 +1,133 @@
 <div class="container">
   <div class="row">
+    
     <h2>LeaderBoard</h2>
     <h4>Top Viewers</h4>
   </div>
-  <div class="row">
-   <div class="list">
-    <ol *ngFor="let user of userlist">
-      <li>
-        {{user.fname}}
-      </li>
-    </ol>
+  <div class="col-md-12 col-lg-12">  
+    <div class="row">
+      <table class="table table-striped">
+        <tr>
+          <th class="a"></th>
+          <th><p>Name</p></th>
+          <th><p>Company</p></th>
+          <th><p>Location</p></th>
+          <th><p>Views</p></th>
+        </tr>
+        <tr>
+          <td>1.</td>
+          <td>{{user[0].fname + " " + user[0].lname}}</td>
+          <td>{{user[0].company}}</td>
+          <td>{{user[0].location}}</td>
+          <td>124 Views</td>
+        </tr>
+        <tr>
+          <td>2.</td>
+          <td>{{user[1].fname + " " + user[1].lname}}</td>
+          <td>{{user[1].company}}</td>
+          <td>{{user[1].location}}</td>
+          <td>113 Views</td>
+        </tr>
+        <tr>
+          <td>3.</td>
+          <td>{{user[2].fname + " " + user[2].lname}}</td>
+          <td>{{user[2].company}}</td>
+          <td>{{user[2].location}}</td>
+          <td>92 Views</td>
+        </tr>
+        <tr>
+          <td>4.</td>
+          <td>{{user[3].fname + " " + user[3].lname}}</td>
+          <td>{{user[3].company}}</td>
+          <td>{{user[3].location}}</td>
+          <td>81 Views</td>
+        </tr>
+        <tr>
+          <td>5.</td>
+          <td>{{user[4].fname + " " + user[4].lname}}</td>
+          <td>{{user[4].company}}</td>
+          <td>{{user[4].location}}</td>
+          <td>78 Views</td>
+        </tr>
+        <tr>
+          <td>6.</td>
+          <td>{{user[5].fname + " " + user[5].lname}}</td>
+          <td>{{user[5].company}}</td>
+          <td>{{user[5].location}}</td>
+          <td>75 Views</td>
+        </tr>
+        <tr>
+          <td>7.</td>
+          <td>{{user[6].fname + " " + user[6].lname}}</td>
+          <td>{{user[6].company}}</td>
+          <td>{{user[6].location}}</td>
+          <td>75 Views</td>
+        </tr>
+        <tr>
+          <td>8.</td>
+          <td>{{user[7].fname + " " + user[7].lname}}</td>
+          <td>{{user[7].company}}</td>
+          <td>{{user[7].location}}</td>
+          <td>71 Views</td>
+        </tr>
+        <tr>
+          <td>9.</td>
+          <td>{{user[8].fname + " " + user[8].lname}}</td>
+          <td>{{user[8].company}}</td>
+          <td>{{user[8].location}}</td>
+          <td>63 Views</td>
+        </tr>
+        <tr>
+          <td>10.</td>
+          <td>{{user[9].fname + " " + user[9].lname}}</td>
+          <td>{{user[9].company}}</td>
+          <td>{{user[9].location}}</td>
+          <td>60 Views</td>
+        </tr>
 
-   </div>
+      </table>
+      
+    </div>
+  </div>
    
     </div>
-    <button (click) = "getUser()">Checkout</button>
+
+    <div>
+    <!-- <button (click) = "getUser(user)">Checkout</button> -->
  </div>     
+
+ <div class="container">
+    <div class="row">
+        <div class="col-md-12 col-lg-12">  
+              <table class="table table-striped">
+                <tr>
+                  <th class="a"></th>
+                  <th><p>Name</p></th>
+                  <th><p>Company</p></th>
+                  <th><p>Location</p></th>
+                  <th><p>Views</p></th>
+                </tr>
+                <td></td>
+                <tr *ngFor= "let i of user">
+                 <td>
+                  {{i.fname + ' ' +i.lname}}
+                  {{i.company}} 
+                  {{i.location}}
+                  {{i.clicks}}
+                  </td>
+                </tr>
+                
+                <!-- <tr *ngFor= "let i of user">
+                    {{i.company}}
+                </tr>
+                  <tr *ngFor= "let i of user">
+                      {{i.location}}
+                  </tr>
+                    <tr *ngFor= "let i of user">
+                        {{i.clicks}}
+                    </tr>   -->
+       </table>
+       </div>         
+    </div>
+  </div>
+

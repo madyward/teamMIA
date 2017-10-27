@@ -1,24 +1,44 @@
 import {Component, OnInit} from '@angular/core';
+import {NgForm, Form} from '@angular/forms';
+import {AuthService} from "../auth/auth.service";
+import {Injectable, Provider} from '@angular/core';
+import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router} from '@angular/router';
+import {Observable} from 'rxjs/Observable';
+import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList ,AngularFireObject} from "angularfire2/database";
+import {AngularFireAuth} from 'angularfire2/auth';
+import * as firebase from 'firebase';
+import {SignupService} from "../auth/signup.service";
+
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+	selector: 'app-home',
+	templateUrl: './home.component.html',
+	styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
 
-  msg = '';
-  nCnt: number = 0;
-  clickMe(){
-      this.nCnt = this.nCnt + 1;
-      this.msg = "Clicked: " + this.nCnt;
+	user: any[];
+	clicks: number = 0;
+	//uid = this.authservice.authState.uid;
+	constructor(
+		private signupservice: SignupService,
+		private authservice: AuthService,
+		private db: AngularFireDatabase){}
 
-      if(this.nCnt === 3){
-       alert('3')
-      }
-     
-    }
-  constructor() { }
-  ngOnInit() {
-  }
+  	//LEADERBOARDS
+	  getClicks(){
+		this.authservice.userClicks
+		return(
+			console.log(this.clicks)
+			//this.clicks.push(this.clicks)
+		)
+	}  
+    
+	ngOnInit() {
+		this.signupservice.getUsers()
+		.subscribe(
+			user => {
+			this.user = user }),
+			(error) => console.log(error)
+		}
 }
