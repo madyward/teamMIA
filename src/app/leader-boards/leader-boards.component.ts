@@ -14,7 +14,7 @@ import {SignupService} from '../auth/signup.service';
 })
 
 export class LeaderBoardsComponent implements OnInit {
-	user: any[];
+user: any[];
 	clicks: number = 0;
 
   	constructor(
