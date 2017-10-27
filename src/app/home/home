@@ -1,5 +1,78 @@
 <div class="container">
-<div class="row">
+<<<<<<< mw-lb-auth
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="pledge">
+        	<h1>Pledge</h1>
+        	<p>I recognize that my work ultimately creates value by improving people’s lives, particularly patients and caregivers. 
+            As such, I recognize the importance of remembering and having empathy for their journies.  
+            Hence, I pledge to do small and simple things each day to remain and help others to be inspired to make their lives better.</p>
+			<div class="TTP">
+				<a class="TTPT" [routerLink]="['/signup']"><button class="btn btn-primary" ><h3 >Take The Pledge!</h3></button></a>
+			</div>
+		</div>
+
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="rightSide">
+			<div class="rightSide-bottom rightSide-topVideos-bgColor" id="spotLight"> 
+				<h4 class="header">Top Videos</h4>
+				<Table align="center">
+					<tr>
+						<td>
+							<table>
+								<tr>
+									<td><a data-fancybox data-type='iframe' (click)="userClicks(user)" data-src="https://www.youtube.com/embed/MXTd8xd_f8s"><img class='picture' src="https://i.ytimg.com/vi/MXTd8xd_f8s/maxresdefault.jpg"></a></td>
+								</tr>
+								<tr>
+									<td class='videoTitle'>Julie Flygare</td>
+								</tr>
+								<tr>
+										<td class='videoSubTitle'>Narcolepsy</td>
+								</tr>
+							</table>
+						</td>
+
+						<td>
+							<table>
+								<tr>
+									<td><a data-fancybox data-type='iframe' (click)="userClicks(user)" data-src="https://www.youtube.com/embed/3HuxRDX0kbs"><img class='picture' src="https://i.ytimg.com/vi/rZ-b1omWXH4/maxresdefault.jpg"></a></td>
+								</tr>
+								<tr>
+									<td class='videoTitle'>Ryan Prior</td>
+								</tr>
+								<tr>
+									<td class='videoSubTitle'>Chronic Fatigue</td>
+								</tr>
+							</table>
+						</td>
+
+						<td>
+							<table>
+								<tr>
+									<td><a data-fancybox data-type='iframe' (click)="userClicks(user)" data-src="https://www.youtube.com/embed/fNKfakkH8Yg"><img class='picture' src="http://storytelling.healthcentral.com/encoded/56ac223a4ee9b1a6393515f0/image/62ac6fa3-efdd-40fc-875b-2fba99b96682_leslie_Rott_hero2.jpg"></a></td>
+								</tr>
+								<tr>
+									<td class='videoTitle'>Leslie Rott</td>
+								</tr>
+								<tr>
+									<td class='videoSubTitle'>Lupus</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</Table>
+			</div>
+			<div class="rightSide-top" id="leaderboard">
+				<h3>Leader Board Here</h3>
+			</div>
+		</div>
+	</div>
+			
+	<button (click)="userClicks(user)">Click</button>
+	<br/> <p><strong>{{msg}}</strong></p>
+	<button (click)="userClicks(user)">Click</button>
+</div>
+	
+=======
+  <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="pledge">
 		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 			<h1>About</h1>
@@ -35,7 +108,7 @@
 							<td class="padding">
 								<table>
 										<tr>
-											<td><a data-fancybox data-type='iframe' (click)="userClicks(user)" data-src="https://www.youtube.com/embed/MXTd8xd_f8s"><img class='picture' src="https://i.ytimg.com/vi/MXTd8xd_f8s/maxresdefault.jpg"></a></td>
+											<td><a data-fancybox data-type='iframe' (click)="clickMe()" data-src="https://www.youtube.com/embed/MXTd8xd_f8s"><img class='picture' src="https://i.ytimg.com/vi/MXTd8xd_f8s/maxresdefault.jpg"></a></td>
 										</tr>
 										<tr>
 											<td class='videoTitle'>Julie Flygare</td>
@@ -49,7 +122,7 @@
 								<td>
 										<table>
 											<tr>
-													<td><a data-fancybox data-type='iframe' (click)="userClicks(user)" data-src="https://www.youtube.com/embed/3HuxRDX0kbs"><img class='picture' src="https://i.ytimg.com/vi/rZ-b1omWXH4/maxresdefault.jpg"></a></td>
+													<td><a data-fancybox data-type='iframe' (click)="clickMe()" data-src="https://www.youtube.com/embed/3HuxRDX0kbs"><img class='picture' src="https://i.ytimg.com/vi/rZ-b1omWXH4/maxresdefault.jpg"></a></td>
 												</tr>
 												<tr>
 													<td class='videoTitle'>Ryan Prior</td>
@@ -63,7 +136,7 @@
 								<td class="padding2">
 									<table>
 												<tr>
-													<td><a data-fancybox data-type='iframe' (click)="userClicks(user)" data-src="https://www.youtube.com/embed/fNKfakkH8Yg"><img class='picture' src="http://storytelling.healthcentral.com/encoded/56ac223a4ee9b1a6393515f0/image/62ac6fa3-efdd-40fc-875b-2fba99b96682_leslie_Rott_hero2.jpg"></a></td>
+													<td><a data-fancybox data-type='iframe' (click)="clickMe()" data-src="https://www.youtube.com/embed/fNKfakkH8Yg"><img class='picture' src="http://storytelling.healthcentral.com/encoded/56ac223a4ee9b1a6393515f0/image/62ac6fa3-efdd-40fc-875b-2fba99b96682_leslie_Rott_hero2.jpg"></a></td>
 												</tr>
 												<tr>
 													<td class='videoTitle'>Leslie Rott</td>
@@ -112,14 +185,15 @@
 								<td style="text-align: right">92 Views</td>
 							  </tr>
 					  
-							</table>		
+							</table>
+							
 						  </div>
 						</div>		
 				</div>
 		
-		<button (click)="userClicks(user)">Click</button>
-	  <br/> <p><strong>{{msg}}</strong></p>
-	  <button (click)="userClicks(user)">Click</button>
+		<button (click)="clickMe()">Click</button>
+		<br/> <p><strong>{{msg}}</strong></p>
+		<button (click)="clickMe()">Click</button>
 </div>		
 
-
+>>>>>>> develop
