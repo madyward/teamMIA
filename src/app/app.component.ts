@@ -1,9 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {NgForm, Form} from '@angular/forms';
 import * as firebase from 'firebase';
 import * as admin from "firebase-admin";
 import {AuthService} from "./auth/auth.service";
 import {AppModule} from "./app.module";
+import { Observable } from 'rxjs/Observable';
+
 
 @Component({
 	selector: 'pm-root',
@@ -12,10 +15,15 @@ import {AppModule} from "./app.module";
 })
 
 export class AppComponent implements OnInit {
-	constructor(private router: Router){}
+
+	// isLoggedIn$: Observable<boolean>;
+							// private authService: AuthService
+	constructor(private router: Router ){ }
 	//public logo: string = 'Logo will go here';
 
 	ngOnInit(){
+		// this.isLoggedIn$ = this.authService.isLoggedIn;
+
 		firebase.initializeApp({
 			apiKey: "AIzaSyDh-hrLobQ_kFD11bWacfhUP_ejzKHFY58",
 			authDomain: "remempathy-us.firebaseapp.com",
@@ -30,5 +38,9 @@ export class AppComponent implements OnInit {
         	console.log(res);
         	this.router.navigate(['/home']);
     	})
-    }
+	}
+	
+	// onLogout() {
+	// 	this.authService.logout();
+	// }
 }
