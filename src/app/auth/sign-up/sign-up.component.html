@@ -1,57 +1,66 @@
-<div class="container">
-	<div class="row">
-  		<div class="col-xs-5 col-sm-5 col-md-5">
-    		<form #f="ngForm"> 
-      			<div class="form-group a">
-        			<div>
-          				<label class="user" for="fname">*First Name:</label>
-          				<input ngModel type="text" class="form-control" name="fname" (keyup)="0" id="fname" #fname required>
-        			</div>
-        			<div>
-          				<label class="user" for="lname">*Last Name:</label>
-          				<input ngModel type="text" class="form-control" name="lname" (keyup)="0" id="lname" #lname required>
-        			</div>
-        			<div>
-          				<label class="user" for="email">*Email:</label>
-          				<input ngModel type="email" id="email" class="form-control" name="email" id="email" #email required>
-					</div>
-					
-        			<label class="user" for="password">*Password:</label>
-        			<input ngModel type="password" id="password" class="form-control" name="password" id="password" #password required>
-					<p><i>*Minimum 6 characters</i></p>
-					
-        			<label class="user" for="company">*Company:</label>
-        			<select class="form-control" id="reason" #test1>
-          				<option *ngFor="let i of company; let x = index" id="x" [value]="i">{{i}}</option>
-					</select> 
-					     
-        			<label class="user" for="location">*Location:</label>
-        			<select class="form-control" id="reason" #test2>
-          				<option *ngFor="let l of location; let u = index" id="u" [value]="l">{{l}}</option>
-        			</select>     
-				</div>
+<div class="container text">
+  <div>
+      <h1>Take The Pledge</h1>
+  </div>
+    <div class="row">
+        <div class="col-xs-5 col-sm-5 col-md-5">
+          <form #f="ngForm"> 
+              <div class="form-group a">
+                <div>
+                    <label class="user" for="fname">*First Name:</label>
+                    <input ngModel type="text" class="form-control" name="fname" (keyup)="0" id="fname" #fname required>
+                </div>
+                <div>
+                    <label class="user" for="lname">*Last Name:</label>
+                    <input ngModel type="text" class="form-control" name="lname" (keyup)="0" id="lname" #lname required>
+                </div>
+                <div>
+                    <label class="user" for="email">*Email:</label>
+                    <input ngModel type="email" id="email" class="form-control" name="email" id="email" #email required>
+            </div>
+            
+                <label class="user" for="password">*Password:</label>
+                <input ngModel type="password" id="password" class="form-control" name="password" id="password" #password required>
+            <p><i>*Minimum 6 characters</i></p>
+            
+            <label for="password">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="password" ngModel class="form-control"/>
+            <p><i>Please confirm your password.</i></p>
+            
+                <label class="user" for="company">*Company:</label>
+                <select class="form-control" id="reason" #test1>
+                    <option *ngFor="let i of company; let x = index" id="x" [value]="i">{{i}}</option>
+            </select> 
+                
+                <label class="user" for="location">*Location:</label>
+                <select class="form-control" id="reason" #test2>
+                    <option *ngFor="let l of location; let u = index" id="u" [value]="l">{{l}}</option>
+                </select>     
+          </div>
 
-				<div class="col-xs-12 b">
-					<div class="links">
-							<button class="btn btn-primary" type="submit" [disabled]="!f.valid" (click)="addUser({fname: fname.value, lname: lname.value, email: email.value, company: test1.value, location: test2.value, clicks: clicks}, password.value)">Sign Up</button> <!-- , company: company.value, location: location.value -->
-							<h6><a [routerLink]="['/signin']">Already a User?</a></h6>
-					</div>
-				</div>
-				
-    		</form>
-  		</div>
-<!-- pledge section below -->
-		<div class="col-md-6 pledge"> <!-- <div class="col-xs12 col-sm-12 col-md-6 col-sm-offset-1 col-md-offset-1 pledge"> -->
-    		<div style="text-align:center;">
-      			<h2 style="font-size: 3em;">The Pledge:</h2>
-    		</div>
-    		<h4 class="main">I, {{fname.value}} {{lname.value}}, recognize that my work ultimately creates value by improving people’s lives, particularly patients and caregivers. 
-       		As such, I recognize the importance of remembering and having empathy for their journies.  
-       		Hence, I pledge to do small and simple things each day to remain and help others to be inspired to make their lives better.</h4>
-       		<div class="signHere">
-         		<p class="x" style="font-family:Arial, Helvetica, sans-serif">x</p>
-         		<h2 class="signature" placeholder="Sign here">{{fname.value}}</h2><h2 class="signature">{{lname.value}}</h2> 
-       		</div>
-      	</div>
-  	</div>
+          <div class="col-xs-12 b">
+            <div class="links">
+                <button class="btn btn-primary" type="submit" [disabled]="!f.valid" (click)="addUser({fname: fname.value, lname: lname.value, email: email.value, company: test1.value, location: test2.value, clicks: clicks}, password.value)">Take The Pledge!</button> <!-- , company: company.value, location: location.value -->
+                <h6><a [routerLink]="['/signin']">Already a User?</a></h6>
+            </div>
+          </div>
+          
+          </form>
+        </div>
+        
+  <!-- pledge section below -->
+      <div class="col-md-6 pledge"> <!-- <div class="col-xs12 col-sm-12 col-md-6 col-sm-offset-1 col-md-offset-1 pledge"> -->
+          <div style="text-align:center;">
+              <h2 style="font-size: 3em;">The Pledge:</h2>
+          </div>
+          <h4 class="main">I, {{fname.value}} {{lname.value}}, recognize that my work ultimately creates value by improving people’s lives, particularly patients and caregivers. 
+            As such, I recognize the importance of remembering and having empathy for their journies.  
+            Hence, I pledge to do small and simple things each day to remain and help others to be inspired to make their lives better.</h4>
+            <div class="signHere">
+              <p class="x" style="font-family:Arial, Helvetica, sans-serif">x</p>
+              <h2 class="signature" placeholder="Sign here">{{fname.value}}</h2><h2 class="signature">{{lname.value}}</h2> 
+            </div>
+          </div>
+          
+      </div>
 </div>

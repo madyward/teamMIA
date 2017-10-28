@@ -1,15 +1,19 @@
+button:focus {outline:0;}
+
 h4 {
     margin-bottom: 0px;
 }
 
 
 /* ======Take The Pledge====== */
-#pledge {
+#about {
     margin-bottom: 4%;
 }
 
-#pledge p {
+.text {
     margin-bottom: 4%;
+    font-family: 'Roboto', sans-serif;
+    color: #444;
 }
 
 #spotLight{
@@ -47,7 +51,6 @@ button h3 {
     margin: 0px;
 }
 
-button:focus {outline:0;}
 
 /* ======Top Videos====== */
 .header {

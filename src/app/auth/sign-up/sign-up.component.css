@@ -1,3 +1,5 @@
+button:focus {outline:0;}
+
 #signup{
     width: 500px;
     height: 550px;
@@ -5,6 +7,11 @@
 h1, h2{
     display: inline-block;
     margin: 4px;
+}
+
+.text {
+    font-family: 'Roboto', sans-serif;
+    color: #444;
 }
 
 .user{
@@ -74,6 +81,10 @@ p{margin: 0px;}
     border: 1px solid #AD1F1F;
     color: #fff;
     /* cursor: pointer; */
+}
+
+.btn {
+    margin-bottom: 5%;
 }
 
 .links {
