@@ -4,7 +4,6 @@ import {Observable} from 'rxjs/Observable';
 import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList} from "angularfire2/database";
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase';
-import {SignupService} from "./signup.service";
 
 @Injectable()
 export class AuthService {
@@ -16,8 +15,7 @@ export class AuthService {
     constructor(
 		private router: Router,
         private afAuth: AngularFireAuth,
-        private db: AngularFireDatabase,
-        private signupservice: SignupService
+        private db: AngularFireDatabase
     ){
         this.afAuth.authState.subscribe((auth) => {
             this.authState = auth
@@ -55,27 +53,12 @@ export class AuthService {
 	//LEADERBOARD DISPLAY
 	getClicks(){
 		return this.db.list("users", 
-		ref => ref.orderByChild("clicks").limitToFirst(10)
+		ref => ref.orderByChild("clicks").limitToFirst(2)
 		).valueChanges()
 	}
-	//getClicks():Observable<any[]>{
-		// let uid = firebase.auth().currentUser.uid;
-		// return this.db.list(`users/${uid}`,
-		// ref => {
-			// return ref.limitToFirst(10).orderByChild("clicks")
-		//})
-	//}
-		// this.db.list("users", {
-		// 	query: {
-		// 		orderByChild: "clicks",
-		// 		limitToFirst: 10
-		// 	}
-		// })
-	
-	// this.db.list("users", {
-	// 	query: {
-	// 		orderBy: "clicks",
-	// 	}
+	getUsers(){
+        return this.db.list('users', ref => ref.orderByChild('clicks').limitToLast(2)).valueChanges()
+    }
 	// //SIGN UP
     emailSignUp(user, password) {
         return this.afAuth.auth.createUserWithEmailAndPassword(user.email, password)

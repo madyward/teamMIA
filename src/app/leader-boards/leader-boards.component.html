@@ -12,78 +12,15 @@
           <th><p>Company</p></th>
           <th><p>Location</p></th>
           <th><p>Views</p></th>
-        </tr>
-        <tr>
-          <td>1.</td>
-          <td>{{user[0].fname + " " + user[0].lname}}</td>
-          <td>{{user[0].company}}</td>
-          <td>{{user[0].location}}</td>
-          <td>124 Views</td>
-        </tr>
-        <tr>
-          <td>2.</td>
-          <td>{{user[1].fname + " " + user[1].lname}}</td>
-          <td>{{user[1].company}}</td>
-          <td>{{user[1].location}}</td>
-          <td>113 Views</td>
-        </tr>
-        <tr>
-          <td>3.</td>
-          <td>{{user[2].fname + " " + user[2].lname}}</td>
-          <td>{{user[2].company}}</td>
-          <td>{{user[2].location}}</td>
-          <td>92 Views</td>
-        </tr>
-        <tr>
-          <td>4.</td>
-          <td>{{user[3].fname + " " + user[3].lname}}</td>
-          <td>{{user[3].company}}</td>
-          <td>{{user[3].location}}</td>
-          <td>81 Views</td>
-        </tr>
-        <tr>
-          <td>5.</td>
-          <td>{{user[4].fname + " " + user[4].lname}}</td>
-          <td>{{user[4].company}}</td>
-          <td>{{user[4].location}}</td>
-          <td>78 Views</td>
-        </tr>
-        <tr>
-          <td>6.</td>
-          <td>{{user[5].fname + " " + user[5].lname}}</td>
-          <td>{{user[5].company}}</td>
-          <td>{{user[5].location}}</td>
-          <td>75 Views</td>
-        </tr>
-        <tr>
-          <td>7.</td>
-          <td>{{user[6].fname + " " + user[6].lname}}</td>
-          <td>{{user[6].company}}</td>
-          <td>{{user[6].location}}</td>
-          <td>75 Views</td>
-        </tr>
-        <tr>
-          <td>8.</td>
-          <td>{{user[7].fname + " " + user[7].lname}}</td>
-          <td>{{user[7].company}}</td>
-          <td>{{user[7].location}}</td>
-          <td>71 Views</td>
-        </tr>
-        <tr>
-          <td>9.</td>
-          <td>{{user[8].fname + " " + user[8].lname}}</td>
-          <td>{{user[8].company}}</td>
-          <td>{{user[8].location}}</td>
-          <td>63 Views</td>
-        </tr>
-        <tr>
-          <td>10.</td>
-          <td>{{user[9].fname + " " + user[9].lname}}</td>
-          <td>{{user[9].company}}</td>
-          <td>{{user[9].location}}</td>
-          <td>60 Views</td>
-        </tr>
-
+		</tr>
+		<tr *ngFor="let user of users; let i = index">
+			<td> {{ i }} </td>
+			<td>{{ user.fname }} {{user.lname }} </td>
+			<td>{{ user.company }} </td>
+			<td> {{ user.location}} </td>
+			<td> {{ user.clicks }} </td>
+		</tr>
+        
       </table>
       
     </div>

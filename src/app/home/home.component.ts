@@ -7,7 +7,6 @@ import {Observable} from 'rxjs/Observable';
 import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList ,AngularFireObject} from "angularfire2/database";
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase';
-import {SignupService} from "../auth/signup.service";
 
 @Component({
 	selector: 'app-home',
@@ -16,21 +15,16 @@ import {SignupService} from "../auth/signup.service";
 })
 export class HomeComponent implements OnInit {
 
-	user: any[];
+	users: any[];
 	clicks: number = 0;
 	//uid = this.authservice.authState.uid;
 	constructor(
 		private authservice: AuthService
 	) {}
-
-  	//LEADERBOARDS
-	  getClicks(){
-		this.authservice.userClicks
-		return(
-			console.log(this.clicks)
-			//this.clicks.push(this.clicks)
-		)
-	}  
     
-	ngOnInit() {}
+	ngOnInit() {
+		this.authservice.getClicks().subscribe(users => {
+			this.users = users
+		})
+	}
 }
