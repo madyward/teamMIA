@@ -12,8 +12,11 @@ import {AppModule} from "./app.module";
 })
 
 export class AppComponent implements OnInit {
-	constructor(private router: Router){}
-	//public logo: string = 'Logo will go here';
+	isLoggedIn: boolean
+	constructor(
+		private router: Router,
+		private authservice: AuthService){}
+		//public logo: string = 'Logo will go here';
 
 	ngOnInit(){
 		firebase.initializeApp({
@@ -21,7 +24,13 @@ export class AppComponent implements OnInit {
 			authDomain: "remempathy-us.firebaseapp.com",
 			databaseURL: "https://remempathy-us.firebaseio.com"
 		});
-  }
+		this.authservice.getAuth().subscribe(auth => {
+			if (!auth){
+				return this.isLoggedIn = false;
+			}
+			this.isLoggedIn = true;
+		});
+	}
 
 	signOutToken(){
     	firebase.auth().signOut().then(function(){

@@ -2,8 +2,8 @@
     <div>
         <ul class="signin-signup-signout">
                 <!-- <li style="height: 0px;"><a [routerLink]="['/signup']" class="signin-up-out-buttons" style="color: #AD1F1F;">Take The Pledge!</a></li> -->
-                <li style="height: 0px;"><a [routerLink]="['/signin']" class="signin-up-out-buttons" style="color: #AD1F1F;">Sign In</a></li>
-                <li style="height: 0px;"><a (click)="signOutToken()"  class="signin-up-out-buttons" style="color: #AD1F1F;">Sign Out</a></li>
+                <li style="height: 0px;"><a [routerLink]="['/signin']" *ngIf="!isLoggedIn" class="signin-up-out-buttons" style="color: #AD1F1F;">Sign In</a></li>
+                <li style="height: 0px;"><a (click)="signOutToken()"  *ngIf="isLoggedIn" class="signin-up-out-buttons" style="color: #AD1F1F;">Sign Out</a></li>
         </ul>
         <img id="logo" src="assets/RemEmpathy-blacktext.png" alt="RemEmpathy" />
         

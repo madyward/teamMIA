@@ -18,12 +18,13 @@
 			</p>
 
 			<div class="TTP">
-					<a class="TTPT" [routerLink]="['/signup']"><button class="btn btn-primary" ><h3 >Take The Pledge!</h3></button></a>
+					<a class="TTPT" [routerLink]="['/signup']" *ngIf="!isLoggedIn"><button class="btn btn-primary" ><h3 >Take The Pledge!</h3></button></a>
 			</div>
 		</div>
 	</div>
 		
   </div>
+  
 
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7" id="rightSide">
