@@ -6,6 +6,8 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase';
 import {SignupService} from "./signup.service";
 
+
+
 @Injectable()
 export class AuthService {
 	authState: any = null;

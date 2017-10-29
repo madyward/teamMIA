@@ -4,6 +4,8 @@
                 <!-- <li style="height: 0px;"><a [routerLink]="['/signup']" class="signin-up-out-buttons" style="color: #AD1F1F;">Take The Pledge!</a></li> -->
                 <li style="height: 0px;"><a [routerLink]="['/signin']" *ngIf="!isLoggedIn" class="signin-up-out-buttons" style="color: #AD1F1F;">Sign In</a></li>
                 <li style="height: 0px;"><a (click)="signOutToken()"  *ngIf="isLoggedIn" class="signin-up-out-buttons" style="color: #AD1F1F;">Sign Out</a></li>
+                <li style="height: 0px;" class="signin-up-out1" ><a [routerLink]="['/profile']" class="signin-up-out-buttons" style="color: #AD1F1F;">Profile</a></li>
+
         </ul>
         <img id="logo" src="assets/RemEmpathy-blacktext.png" alt="RemEmpathy" />
         
@@ -16,7 +18,7 @@
                 <li><a [routerLink]="['/video']">VIDEOS</a></li>
                 <li><a [routerLink]="['/leaderboards']">ACTIVITY</a></li>
                 <li><a [routerLink]="['/contact']">FEEDBACK</a></li>
-                <li><a [routerLink]="['/profile']">PROFILE</a></li>
+                <!-- <li><a [routerLink]="['/profile']">PROFILE</a></li> -->
              
             </ul>
             
