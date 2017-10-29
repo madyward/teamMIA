@@ -8,8 +8,6 @@ import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList ,Angular
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase';
 import {SignupService} from "../auth/signup.service";
-import {Observable} from "rxjs/RX";
-import {AuthService} from "../auth/auth.service";
 
 @Component({
 	selector: 'app-home',

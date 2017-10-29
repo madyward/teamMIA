@@ -1,7 +1,7 @@
 import {Injectable, Provider} from '@angular/core';
 import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
-import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList, } from "angularfire2/database";
+import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList} from "angularfire2/database";
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase';
 import {SignupService} from "./signup.service";
@@ -11,7 +11,7 @@ export class AuthService {
 	authState: any = null;
 	user: any[];
 	clicks: number = 0;
-	clicksRef: AngularFireList<any>;
+	//clicksRef: AngularFireList<any>;
 
     constructor(
 		private router: Router,
@@ -22,7 +22,7 @@ export class AuthService {
         this.afAuth.authState.subscribe((auth) => {
             this.authState = auth
 		});
-		this.clicksRef = db.list("users");
+		//this.clicksRef = db.list("users");
 	}
 	
     //RETURN TRUE IF USER IS LOGGED IN
@@ -42,35 +42,41 @@ export class AuthService {
     get currentUserId(): string {
         return this.authenticated ? this.authState.uid: '';
 	}
-	//LEADERBOARDS
-	// userClicks(){
-	// 	let uid = this.authState.uid;
-	// 	let newClicks = this.clicks + 1;
-	// 	this.clicksRef.update(uid, {clicks: newClicks})
-	// 	if(uid && this.clicks){
-	// 	this.updateUserData(this.clicks + 1)
-	// 	}
-	// 	return(
-	// 	this.db.object("users").update(this.clicks))
-		//console.log("users")
-		userClicks(user){
-			let uid = firebase.auth().currentUser.uid;
-			console.log(uid)
-			this.db.list(`users/${uid}`,
-			ref => {
-				ref.child("clicks").transaction(clicks => clicks +1)
-				return user
-			}
-			)
-			// this.clicksRef.update(uid, {clicks: newClicks})
-			// if(uid && this.clicks){
-			// this.updateUserData(this.clicks + 1)
-			// }
-			// return(
-			// this.db.object("users").update(this.clicks))
-	
+	//LEADERBOARD DB
+	userClicks(user){
+		let uid = firebase.auth().currentUser.uid;
+		console.log(uid)
+		this.db.list(`users/${uid}`,
+		ref => {
+			ref.child("clicks").transaction(clicks => clicks +1)
+			return user
+		})
 	}
-	//SIGN UP
+	//LEADERBOARD DISPLAY
+	getClicks(){
+		return this.db.list("users", 
+		ref => ref.orderByChild("clicks").limitToFirst(10)
+		).valueChanges()
+	}
+	//getClicks():Observable<any[]>{
+		// let uid = firebase.auth().currentUser.uid;
+		// return this.db.list(`users/${uid}`,
+		// ref => {
+			// return ref.limitToFirst(10).orderByChild("clicks")
+		//})
+	//}
+		// this.db.list("users", {
+		// 	query: {
+		// 		orderByChild: "clicks",
+		// 		limitToFirst: 10
+		// 	}
+		// })
+	
+	// this.db.list("users", {
+	// 	query: {
+	// 		orderBy: "clicks",
+	// 	}
+	// //SIGN UP
     emailSignUp(user, password) {
         return this.afAuth.auth.createUserWithEmailAndPassword(user.email, password)
         .then((newUser) => {

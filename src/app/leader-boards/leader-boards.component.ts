@@ -3,8 +3,6 @@ import {NgForm, Form} from '@angular/forms';
 import { AngularFireDatabaseModule, AngularFireDatabase, AngularFireObject } from "angularfire2/database";
 import * as firebase from "firebase";
 import {Observable} from "rxjs/RX";
-import * as firebase from "firebase";
-import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList, AngularFireObject} from "angularfire2/database";
 import {AuthService} from "../auth/auth.service";
 import {SignupService} from '../auth/signup.service';
 
@@ -29,5 +27,7 @@ export class LeaderBoardsComponent implements OnInit {
 		user => {
 		this.user = user }),
 		(error) => console.log(error)
+	this.authservice.getClicks().subscribe(clicks => console.log(clicks))
 	}
+	//this.authservice.getClicks().subscribe
 }
