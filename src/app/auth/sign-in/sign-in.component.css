@@ -1,12 +1,28 @@
+button:focus {outline:0;}
+
+.a {
+    margin-bottom: 0px;
+}
+
+.b {
+    padding-left: 0px;
+}
+
 .btn {
     background-color: #fff;
     border: 1px solid #AD1F1F;
     color: #AD1F1F;
     padding: 6px 8px 5px 8px;
+    margin-top: 15px;
 }
 
 .btn:hover {
     background-color: #AD1F1F;
     border: 1px solid #AD1F1F;
     color: #fff;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
 }

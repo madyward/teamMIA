@@ -1,5 +1,12 @@
+button:focus {outline:0;}
+
 div div h2 {
     margin-top: 0px;
+}
+
+.text {
+    font-family: 'Roboto', sans-serif;
+    color: #444;
 }
 
 th {
