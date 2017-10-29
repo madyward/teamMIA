@@ -5,6 +5,8 @@ import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList} from "a
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase';
 
+
+
 @Injectable()
 export class AuthService {
 	authState: any = null;
@@ -26,7 +28,10 @@ export class AuthService {
     //RETURN TRUE IF USER IS LOGGED IN
     get authenticated(): boolean {
         return this.authState !== null;
-    }
+	}
+	getAuth(){
+		return this.afAuth.authState.map(auth => auth);
+	}
     //RETURN CURRENT USER'S DATA
     get currentUser(): any {
         return this.authenticated ? this.authState: null;

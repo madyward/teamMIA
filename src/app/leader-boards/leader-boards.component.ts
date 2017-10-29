@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NgForm, Form} from '@angular/forms';
-import { AngularFireDatabaseModule, AngularFireDatabase, AngularFireObject } from "angularfire2/database";
+import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/database";
 import * as firebase from "firebase";
 import {Observable} from "rxjs/RX";
 import {AuthService} from "../auth/auth.service";
@@ -23,7 +22,7 @@ export class LeaderBoardsComponent implements OnInit {
 	this.authservice.getUsers()
 	.subscribe(
 		user => {
-		this.users = user }),
+		this.users = user.reverse() }),
 		(error) => console.log(error)
 	}
 	//this.authservice.getClicks().subscribe

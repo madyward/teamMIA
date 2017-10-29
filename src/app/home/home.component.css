@@ -1,22 +1,19 @@
+button:focus {outline:0;}
+
 h4 {
     margin-bottom: 0px;
 }
 
 
 /* ======Take The Pledge====== */
-
-/* .rightSide-topVideos-bgColor {
-    border: 1px solid #AD1F1F;
-    background-color: #AD1F1F;
-    
-} */
-
-#pledge {
-    margin-bottom: 5%;
+#about {
+    margin-bottom: 4%;
 }
 
-#pledge p {
-    margin-bottom: 2%;
+.text {
+    margin-bottom: 4%;
+    font-family: 'Roboto', sans-serif;
+    color: #444;
 }
 
 #spotLight{
@@ -54,7 +51,6 @@ button h3 {
     margin: 0px;
 }
 
-button:focus {outline:0;}
 
 /* ======Top Videos====== */
 .header {
@@ -75,10 +71,10 @@ button:focus {outline:0;}
     opacity: 0.75;
 }
 
-@media(max-width: 1200px) {
+@media(max-width: 1199px) {
     .picture {
         height: 70px;
-        width: 140px;
+        width: 120px;
     }
 }
 
@@ -131,18 +127,23 @@ td {
     padding-right: 0px;
 }
 /*======Leaderboard======*/
+.activity {
+    padding: 0px;
+    margin: 0% 4% 5% 4%;
+}
+
 #leaderboard {
     border: 1px solid #eaeaea;
     background-color: #eaeaea;
     border-radius: 10px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .title {
-    margin-bottom: 28px; 
+    margin: 10px 0px 20px 0px; 
     color: #fff;
     background-color: #AD1F1F;
-    padding: 7px 0px 7px 0px;
+    padding: 8px 0px 8px 0px;
     border-radius: 3px;
     text-align: center;
 }
@@ -157,7 +158,7 @@ td {
     font-weight: normal;
     font-size: 1.2em;
     text-transform: uppercase;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .table{
