@@ -84,7 +84,7 @@
 
 					<div id="leaderboard">
 							<table class="table table-striped">
-								<h4 style="color: #eaeaea;">asdf</h4>
+								<h4 style="color: #eaeaea; cursor: default;">.</h4>
 							  <tr>
 								<th></th>
 								<th style="text-align: left !important;"><p>Name</p></th>
@@ -96,34 +96,11 @@
 								<td> {{ i + 1 }} </td>
 								<td style="text-align: left;">{{ user.fname }} {{ user.lname }}</td>
 								<td style="text-align: left;">{{ user.company }}</td>
-								<td style="text-align: right;">{{ user.clicks }} Views</td>
+								<td style="text-align: center;">{{ user.clicks }}</td>
 							  </tr>
-							  <!-- <tr>
-								<td>1.</td>
-								<td style="text-align: left;">{{user.fname + " " + user.lname}}</td>
-								<td style="text-align: left;">{{user[0].company}}</td>
-								<td>{{user[0].location}}</td> -->
-								<!-- <td style="text-align: right;">124 Views</td>
-							  </tr>
-							  <tr>
-								<td>2.</td>
-								<td style="text-align: left;">{{user[1].fname + " " + user[1].lname}}</td>
-								<td style="text-align: left;">{{user[1].company}}</td>
-								<td>{{user[1].location}}</td> -->
-								<!-- <td style="text-align: right;">113 Views</td>
-							  </tr>
-							  <tr>
-								<td>3.</td>
-								<td style="text-align: left;">{{user[2].fname + " " + user[2].lname}}</td>
-								<td style="text-align: left;">{{user[2].company}}</td>
-								td>{{user[2].location}}</td> -->
-								<!-- <td style="text-align: right">92 Views</td>
-							  </tr> -->
 							</table>		
-						  </div>
-						</div>		
-				</div>
-		
-		<button (click)="userClicks(user)">Click</button>
-	  <br/> <p><strong>{{msg}}</strong></p>
-	  <button (click)="userClicks(user)">Click</button>
+						</div>
+				</div>		
+			</div>
+
+			

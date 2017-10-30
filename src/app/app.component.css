@@ -7,8 +7,8 @@ h4 {
     display: flex;
     justify-content: flex-start;
     margin: 0.3%;
-    height: 30%;
-    width: 30%;
+    height: 20%;
+    width: 20%;
 }
 
 ul a {
@@ -33,13 +33,13 @@ ul a {
 
 .signin-up-out2 {
     /* text-decoration: none; */
-    margin-right: 15px;
+    margin-right: 10px;
     font-weight: bold;
 }
 
 .signin-up-out3 {
     /* text-decoration: none; */
-    margin-right: 20px;
+    margin-right: 10px;
     font-weight: bold;
 }
 
@@ -90,6 +90,7 @@ ul a {
 #nav li a:hover {
     background-color: #8e1818;
     border: none;
+    transition: all ease-in-out 200ms;
 }
 
 #nav li a:focus {
