@@ -1,7 +1,5 @@
 <div class="container">
-	<div class="row">
     	<!-- <h2>Videos</h2> -->
-  	</div>
   	<div class="table-responsive">
     	<table align="center" class="table" *ngIf= 'videos && videos.length'> 
       		<thead></thead>
@@ -16,25 +14,27 @@
                     					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       						<span aria-hidden="true">&times;</span>
                     					</button>
-                    					<h3 class="modal-title" id="exampleModalLabel">Are you watching:</h3>
+                    					<h3 class="modal-title" id="exampleModalLabel">I'm watching this:</h3>
                   					</div>
                   					<div class="modal-body">
                     					<div class="subTitles">
                       						<div class="onOwn">
-                        						<h4>On Your Own</h4>
+												<h4>On My Own</h4>
                         						<!-- <p>I'm just browsing</p> -->
                       						</div>  
                       						<div class="inMeeting">
                         						<h4>In a Meeting</h4>
                           						<form #f="ngForm">
-                           							 <div class="form-group">
-                              							<label for="meeting" class="col-form-label">Meeting</label>
-                              							<input type="text" class="form-control" id="meeting" name="meeting" placeholder="Meeting name" ngModel required>
-                            						</div>
-                            						<div class="form-group">
-                          								<label for="attendance" class="col-form-label">Attendance</label>
-                          								<input type="number" class="form-control" id="attendance" name="attendance" placeholder="Number of attendees" ngModel required pattern="^[1-9]+[0-9]*$">
-                        							</div>
+													<div style="display: flex; justify-content: space-between;">
+														<div class="form-group" for="meeting" class="col-form-label">
+															<!-- <label for="meeting" class="col-form-label"></label> -->
+															<input type="text" class="form-control" id="meeting" name="meeting" placeholder="Meeting name" ngModel required title="Meeting Name"> 
+													  	</div>
+													  	<div class="form-group" for="attendance" class="col-form-label">
+															  <!-- <label for="attendance" class="col-form-label"></label> -->
+															<input type="number" class="form-control" id="attendance" name="attendance" placeholder="#" ngModel required pattern="^[2-9]+[1-9]*$" title="Number of Attendees">
+													  	</div>
+													</div>
                       							</form>
                         					</div>
                       					</div>    
