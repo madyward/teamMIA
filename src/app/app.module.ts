@@ -22,7 +22,6 @@ import {AdminComponent} from './admin/admin.component';
 import {AuthGuard} from "./auth/auth.guard";
 import {AuthService} from './auth/auth.service';
 import {SigninService} from './auth/signin.service';
-import {SignupService} from './auth/signup.service';
 import {ServerService} from './admin/server.service';
 //import {VideoService} from "./video/video.service";
 import {ContactService} from "./contact/contact.service";
@@ -84,7 +83,6 @@ const appRoutes: Routes = [
 	providers: [
 		AuthService,
 		AuthGuard,
-		SignupService,
 		SigninService,
 		ServerService,
 		//VideoService,

@@ -25,11 +25,11 @@ export class AppComponent implements OnInit {
 	ngOnInit(){
 		// this.isLoggedIn$ = this.authService.isLoggedIn;
 
-		firebase.initializeApp({
-			apiKey: "AIzaSyDh-hrLobQ_kFD11bWacfhUP_ejzKHFY58",
-			authDomain: "remempathy-us.firebaseapp.com",
-			databaseURL: "https://remempathy-us.firebaseio.com"
-		});
+		// firebase.initializeApp({
+		// 	apiKey: "AIzaSyDh-hrLobQ_kFD11bWacfhUP_ejzKHFY58",
+		// 	authDomain: "remempathy-us.firebaseapp.com",
+		// 	databaseURL: "https://remempathy-us.firebaseio.com"
+		// });
 		this.authservice.getAuth().subscribe(auth => {
 			if (!auth){
 				return this.isLoggedIn = false;

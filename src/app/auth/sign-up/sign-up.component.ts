@@ -3,7 +3,6 @@ import {ClusterSetupMasterSettings} from 'cluster';
 import {Router} from '@angular/router';
 import {Component, OnInit, Provider} from '@angular/core';
 import {NgForm, Form} from '@angular/forms';
-import {SignupService} from '../signup.service';
 import {Response} from '@angular/http';
 import {Observable} from "rxjs/RX";
 import * as firebase from "firebase";
