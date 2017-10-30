@@ -7,13 +7,17 @@ h4 {
 
 /* ======Take The Pledge====== */
 #about {
-    margin-bottom: 4%;
+    margin-bottom: 2.5%;
 }
 
 .text {
-    margin-bottom: 4%;
+    margin-bottom: 2.5%;
     font-family: 'Roboto', sans-serif;
     color: #444;
+}
+
+.text p {
+    margin-bottom: 4%;
 }
 
 #spotLight{
