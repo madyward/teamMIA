@@ -39,13 +39,9 @@ h4 {
     background-color: #AD1F1F;
     border: 1px solid #AD1F1F;
     color: #fff;
+    transition: all ease-in-out 200ms;
 }
 
-.btn:hover {
-    background-color: #AD1F1F;
-    border: 1px solid #AD1F1F;
-    color: #fff;
-}
 
 /* .TTPT {
 color: #fff;
@@ -73,6 +69,7 @@ button h3 {
 
 .picture:hover {
     opacity: 0.75;
+    transition: 200ms;
 }
 
 @media(max-width: 1199px) {

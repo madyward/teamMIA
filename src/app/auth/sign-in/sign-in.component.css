@@ -20,6 +20,7 @@ button:focus {outline:0;}
     background-color: #AD1F1F;
     border: 1px solid #AD1F1F;
     color: #fff;
+    transition: all ease-in-out 200ms;
 }
 
 .links {
