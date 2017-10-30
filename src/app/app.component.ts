@@ -15,21 +15,28 @@ import { Observable } from 'rxjs/Observable';
 })
 
 export class AppComponent implements OnInit {
+	isLoggedIn: boolean
+	constructor(
+		private router: Router,
+		private authservice: AuthService){}
+		//public logo: string = 'Logo will go here';
 
-	// isLoggedIn$: Observable<boolean>;
-							// private authService: AuthService
-	constructor(private router: Router ){ }
-	//public logo: string = 'Logo will go here';
 
 	ngOnInit(){
 		// this.isLoggedIn$ = this.authService.isLoggedIn;
 
-		firebase.initializeApp({
-			apiKey: "AIzaSyDh-hrLobQ_kFD11bWacfhUP_ejzKHFY58",
-			authDomain: "remempathy-us.firebaseapp.com",
-			databaseURL: "https://remempathy-us.firebaseio.com"
+		// firebase.initializeApp({
+		// 	apiKey: "AIzaSyDh-hrLobQ_kFD11bWacfhUP_ejzKHFY58",
+		// 	authDomain: "remempathy-us.firebaseapp.com",
+		// 	databaseURL: "https://remempathy-us.firebaseio.com"
+		// });
+		this.authservice.getAuth().subscribe(auth => {
+			if (!auth){
+				return this.isLoggedIn = false;
+			}
+			this.isLoggedIn = true;
 		});
-  }
+	}
 
 	signOutToken(){
     	firebase.auth().signOut().then(function(){

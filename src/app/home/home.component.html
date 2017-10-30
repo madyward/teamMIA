@@ -18,12 +18,13 @@
 			</p>
 
 			<div class="TTP">
-					<a class="TTPT" [routerLink]="['/signup']"><button class="btn btn-primary" ><h3 >Take The Pledge!</h3></button></a>
+					<a class="TTPT" [routerLink]="['/signup']" *ngIf="!isLoggedIn"><button class="btn btn-primary" ><h3 >Take The Pledge!</h3></button></a>
 			</div>
 		</div>
 	</div>
 		
   </div>
+  
 
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7" id="rightSide">
@@ -91,36 +92,38 @@
 								<!-- <th><p>Location</p></th> -->
 								<th style="text-align: center;"><p>Views</p></th>
 							  </tr>
-							  <tr>
+							  <tr *ngFor="let user of users; let i = index">
+								<td> {{ i + 1 }} </td>
+								<td style="text-align: left;">{{ user.fname }} {{ user.lname }}</td>
+								<td style="text-align: left;">{{ user.company }}</td>
+								<td style="text-align: right;">{{ user.clicks }} Views</td>
+							  </tr>
+							  <!-- <tr>
 								<td>1.</td>
-								<td style="text-align: left;">{{user[0].fname + " " + user[0].lname}}</td>
+								<td style="text-align: left;">{{user.fname + " " + user.lname}}</td>
 								<td style="text-align: left;">{{user[0].company}}</td>
-								<!-- <td>{{user[0].location}}</td> -->
-								<td style="text-align: right;">124 Views</td>
+								<td>{{user[0].location}}</td> -->
+								<!-- <td style="text-align: right;">124 Views</td>
 							  </tr>
 							  <tr>
 								<td>2.</td>
 								<td style="text-align: left;">{{user[1].fname + " " + user[1].lname}}</td>
 								<td style="text-align: left;">{{user[1].company}}</td>
-								<!-- <td>{{user[1].location}}</td> -->
-								<td style="text-align: right;">113 Views</td>
+								<td>{{user[1].location}}</td> -->
+								<!-- <td style="text-align: right;">113 Views</td>
 							  </tr>
 							  <tr>
 								<td>3.</td>
 								<td style="text-align: left;">{{user[2].fname + " " + user[2].lname}}</td>
 								<td style="text-align: left;">{{user[2].company}}</td>
-								<!-- <td>{{user[2].location}}</td> -->
-								<td style="text-align: right">92 Views</td>
-							  </tr>
-					  
+								td>{{user[2].location}}</td> -->
+								<!-- <td style="text-align: right">92 Views</td>
+							  </tr> -->
 							</table>		
 						  </div>
 						</div>		
 				</div>
 		
-	
-</div>		
-
-
-
-
+		<button (click)="userClicks(user)">Click</button>
+	  <br/> <p><strong>{{msg}}</strong></p>
+	  <button (click)="userClicks(user)">Click</button>

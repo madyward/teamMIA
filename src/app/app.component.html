@@ -2,15 +2,14 @@
     <div>
         <ul class="signin-signup-signout">
                 <!-- <li style="height: 0px;"><a [routerLink]="['/signup']" class="signin-up-out-buttons" style="color: #AD1F1F;">Take The Pledge!</a></li> -->
-                <li style="height: 0px;" class="signin-up-out1" ><a [routerLink]="['/profile']" class="signin-up-out-buttons" style="color: #AD1F1F;">Profile</a></li>
-                <li style="height: 0px;" class="signin-up-out2" ><a [routerLink]="['/signin']" class="signin-up-out-buttons" style="color: #AD1F1F;">Sign In</a></li>
-                <li style="height: 0px;" class="signin-up-out3" ><a (click)="signOutToken()"  class="signin-up-out-buttons" style="color: #AD1F1F;">Sign Out</a></li>
-        </ul>
-        
+                <li style="height: 0px;"><a [routerLink]="['/signin']" *ngIf="!isLoggedIn" class="signin-up-out-buttons" style="color: #AD1F1F;">Sign In</a></li>
+                <li style="height: 0px;"><a (click)="signOutToken()"  *ngIf="isLoggedIn" class="signin-up-out-buttons" style="color: #AD1F1F;">Sign Out</a></li>
+                <!-- <li style="height: 0px;" class="signin-up-out1" ><a *ngIf="isLoggedIn" routerLink="profile" class="signin-up-out-buttons" style="color: #AD1F1F;">Profile</a></li> -->
+
+        </ul>        
         <!-- <img id="logo" src="assets/Remempathy-blacktext.png" alt="RemEmpathy" /> -->
         <img id="logo" src="assets/remempathyCAP_grey_red2.png" alt="RemEmpathy" />
-        <!-- <img id="logo" src="assets/remempathyCAP_red_grey2.png" alt="RemEmpathy" /> -->
-        
+        <!-- <img id="logo" src="assets/remempathyCAP_red_grey2.png" alt="RemEmpathy" /> -->       
     </div>
     <nav class='navbar  navbar-collapse'>
         <div class='container-fluid'>
