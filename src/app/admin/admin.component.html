@@ -38,9 +38,9 @@
          
         
          
-          <button class="btn btn-primary" type="submit" (click)= "addVideo(url.value, picture.value, patient.value, condition.value)" [disabled]="!f.valid">Add Video</button>
-          <button class="btn btn-success"(click)='saveVideo()' [disabled]="!f.valid">Save Video</button>
-          <button class="btn btn-danger"(click)='getVideo(videoList[0].url)' >Get Video</button>
+          <button class="btn btn-primary" type="submit" (click)= "makeVideo(url.value, picture.value, patient.value, condition.value)" [disabled]="!f.valid">Add Video</button>
+          <button class="btn btn-success" [disabled]="!f.valid">Save Video</button>
+          <button class="btn btn-danger" (click)='deleteAll()'>Delete All </button>
              
            
       
