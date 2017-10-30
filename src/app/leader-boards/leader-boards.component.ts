@@ -3,7 +3,6 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/dat
 import * as firebase from "firebase";
 import {Observable} from "rxjs/RX";
 import {AuthService} from "../auth/auth.service";
-import {SignupService} from '../auth/signup.service';
 
 @Component({
   selector: 'app-leader-boards',
@@ -12,19 +11,19 @@ import {SignupService} from '../auth/signup.service';
 })
 
 export class LeaderBoardsComponent implements OnInit {
-user: any[];
+	users: any[];
 	clicks: number = 0;
 
   	constructor(
-		private signupservice: SignupService,
 		private authservice: AuthService,
 		private db: AngularFireDatabase){}
 
 	ngOnInit() {
-	this.signupservice.getUsers()
+	this.authservice.getUsers()
 	.subscribe(
 		user => {
-		this.user = user }),
+		this.users = user.reverse() }),
 		(error) => console.log(error)
 	}
+	//this.authservice.getClicks().subscribe
 }
