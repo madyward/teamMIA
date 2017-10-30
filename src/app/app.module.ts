@@ -6,6 +6,15 @@ import {BrowserModule} from '@angular/platform-browser';
 import {MatTableModule} from '@angular/material';
 import {HttpModule} from '@angular/http';
 import {NgModule} from '@angular/core';
+import {
+	MatButtonModule,
+	MatMenuModule,
+	MatToolbarModule,
+	MatIconModule,
+	MatCardModule
+  } from '@angular/material';
+//   import { MaterialModule } from './material.module';
+  import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //IMPORT COMPONENTS
 import {AppComponent} from './app.component';
@@ -77,8 +86,15 @@ const appRoutes: Routes = [
     	RouterModule.forRoot(appRoutes),
     	AngularFireModule.initializeApp(firebaseConfig),
 	    AngularFireModule,
- 	   AngularFireDatabaseModule,
-    	AngularFireAuthModule
+ 	    AngularFireDatabaseModule,
+		AngularFireAuthModule,
+		MatButtonModule,
+		MatMenuModule,
+		MatToolbarModule,
+		MatIconModule,
+		MatCardModule,
+		// MaterialModule,
+		BrowserAnimationsModule
 	],
 	providers: [
 		AuthService,
@@ -88,6 +104,13 @@ const appRoutes: Routes = [
 		//VideoService,
 		ContactService
 	],
-	bootstrap: [AppComponent]
+	bootstrap: [AppComponent],
+	exports: [
+		MatButtonModule,
+		MatMenuModule,
+		MatToolbarModule,
+		MatIconModule,
+		MatCardModule
+	  ]
 })
 export class AppModule {}
