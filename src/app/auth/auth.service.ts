@@ -5,8 +5,6 @@ import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList} from "a
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase';
 
-
-
 @Injectable()
 export class AuthService {
 	authState: any = null;
