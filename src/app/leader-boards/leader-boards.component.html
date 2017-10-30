@@ -12,14 +12,14 @@
           <th><p>Name</p></th>
           <th><p>Company</p></th>
           <th><p>Location</p></th>
-          <th><p>Views</p></th>
+          <th style="text-align:center;"><p>Views</p></th>
 		</tr>
 		<tr *ngFor="let user of users; let i = index">
-			<td> {{ i }} </td>
+			<td> {{ i + 1}} </td>
 			<td>{{ user.fname }} {{user.lname }} </td>
 			<td>{{ user.company }} </td>
 			<td> {{ user.location}} </td>
-			<td> {{ user.clicks }} </td>
+			<td style="text-align:center;"> {{ user.clicks }} </td>
 		</tr>
         
       </table>
