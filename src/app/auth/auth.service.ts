@@ -62,6 +62,10 @@ export class AuthService {
 	getUsers(){
         return this.db.list('users', ref => ref.orderByChild('clicks').limitToLast(2)).valueChanges()
     }
+//showVideo oninit
+    showVideo(){
+        return this.db.list('video', ref => ref.orderByChild('url').limitToLast(2)).valueChanges()
+    }
 	// //SIGN UP
     emailSignUp(user, password) {
         return this.afAuth.auth.createUserWithEmailAndPassword(user.email, password)
