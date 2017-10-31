@@ -45,11 +45,11 @@ import * as admin from 'firebase-admin';
 //INITIALIZE FIREBASE
 export const firebaseConfig = {
 	apiKey: "AIzaSyDh-hrLobQ_kFD11bWacfhUP_ejzKHFY58",
-    authDomain: "remempathy-us.firebaseapp.com",
-    databaseURL: "https://remempathy-us.firebaseio.com",
-    projectId: "remempathy-us",
-    storageBucket: "remempathy-us.appspot.com",
-    messagingSenderId: "1071599625628"
+	authDomain: "remempathy-us.firebaseapp.com",
+	databaseURL: "https://remempathy-us.firebaseio.com",
+	projectId: "remempathy-us",
+	storageBucket: "remempathy-us.appspot.com",
+	messagingSenderId: "1071599625628"
 };
 
 //SET UP ROUTING

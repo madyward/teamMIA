@@ -12,11 +12,12 @@ export class AuthGuard implements CanActivate {
     ){}
     canActivate(): Observable<boolean> {
         return this.afAuth.authState.map(auth => {
-            if(!auth) {
-				alert("Access restricted to registered users only. Please sign up or sign in.");
+			if(!auth) {
+			//	alert("Access restricted to registered users only. Please sign up or sign in.");
                 this.router.navigate(['signup']);
                 return false
-            } else {
+			} else {
+				//this.router.navigate(['video']);
                 return true
             }
         })

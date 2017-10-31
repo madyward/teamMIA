@@ -56,15 +56,15 @@ export class AuthService {
 	//LEADERBOARD DISPLAY
 	getClicks(){
 		return this.db.list("users", 
-		ref => ref.orderByChild("clicks").limitToFirst(2)
+		ref => ref.orderByChild("clicks").limitToFirst(3)
 		).valueChanges()
 	}
 	getUsers(){
-        return this.db.list('users', ref => ref.orderByChild('clicks').limitToLast(2)).valueChanges()
+        return this.db.list('users', ref => ref.orderByChild('clicks').limitToLast(3)).valueChanges()
     }
 //showVideo oninit
     showVideo(){
-        return this.db.list('video', ref => ref.orderByChild('url').limitToLast(2)).valueChanges()
+        return this.db.list('video', ref => ref.orderByChild('url').limitToLast(5)).valueChanges()
     }
 	// //SIGN UP
     emailSignUp(user, password) {
