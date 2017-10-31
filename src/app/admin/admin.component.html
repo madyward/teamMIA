@@ -2,7 +2,7 @@
     <div class="row">
       <div class="col-xs-5 col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1">
        
-         <form #f="ngForm">
+         <form #videoForm="ngForm">
           <div class="form-group">
             
               <div>
@@ -37,11 +37,10 @@
             
          
         
-         
-          <button class="btn btn-primary" type="submit" (click)= "makeVideo(url.value, picture.value, patient.value, condition.value)" [disabled]="!f.valid">Add Video</button>
-          <button class="btn btn-success" [disabled]="!f.valid">Save Video</button>
+            <button class="btn btn-success" (click)='addVideo(url.value, picture.value, patient.value, condition.value)'[disabled]="!f.valid">Add Video</button>
+          <button class="btn btn-primary" type="submit" (click)= "makeVideo(url.value, picture.value, patient.value, condition.value); videoForm.reset()" [disabled]="!f.valid">Save Video</button>
           <button class="btn btn-danger" (click)='deleteAll()'>Delete All </button>
-             
+          <button class="btn btn-danger" (click)='deleteMe(url.value)'>Delete One </button>   
            
       
             <div class="container">
@@ -50,7 +49,7 @@
                   <!-- <table align="center" class="table"
                   *ngIf= 'videos && videos.length'>     -->
                   <tr>
-                    <td *ngFor= "let video of videoList" class="video-grid center">
+                    <td *ngFor= "let video of videoRef" class="video-grid center">
                       <a data-fancybox data-type='iframe' href="{{video.url}}">
                         <img
                         [src]="video.picture"
@@ -60,6 +59,8 @@
                       </a>      
                       <p class="videoSubTitle2">{{video.patient}}</p>
                       <p class="videoSubTitle">{{video.condition}}</p>
+                      <button type="submit">Delete This Guy</button>
+                     
                     </td>
                   </tr> 
                   <!-- </table>      -->
@@ -80,6 +81,7 @@
                     </a>      
                     <p class="videoSubTitle2">{{videoList[0].url}}</p>
                     <p class="videoSubTitle">{{videoList[0].url}}</p>
+                    <button>Delete</button>
                   </td>
                 </tr> 
                 <!-- </table>      -->
