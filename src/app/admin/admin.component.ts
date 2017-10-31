@@ -7,6 +7,9 @@ import {Response} from '@angular/http';
 import {Observable} from "rxjs/RX";
 import * as firebase from "firebase";
 import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList} from "angularfire2/database";
+import {AuthService} from "../auth/auth.service";
+
+
 
 @Component({
   selector: 'app-admin',
@@ -14,13 +17,13 @@ import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList} from "a
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-	ngOnInit(): void {}
+	
 
-	videoList=[];
+	videoList=  [];
 	videoRef:AngularFireList<any>;
 	video: Observable<any[]>;
 
-	constructor(private db: AngularFireDatabase ) {
+	constructor(private db: AngularFireDatabase, private authservice: AuthService,) {
 		this.videoRef = db.list('video');
 		this.video = this.videoRef.snapshotChanges().map(
 			changes =>{
@@ -36,8 +39,15 @@ export class AdminComponent implements OnInit {
     		patient: patient,
     		condition: condition});
 	}
+
 	deleteAll(){
 		this.videoRef.remove();
+	}
+	deleteMe(url : string,
+		picture: string,
+    	patient: string, 
+    	condition: string){
+		this.videoRef.remove(url)
 	}
  
 	
@@ -57,8 +67,15 @@ export class AdminComponent implements OnInit {
     // 	);
 	// }
 	
+	ngOnInit() {
+		this.authservice.showVideo()
+		.subscribe(
+			video => {
+				this.videoList = video }),
+				(error) => console.log(error)
+	}
 
-
+    
 	addVideo(
 		url : string,
 		picture: string,
@@ -70,6 +87,7 @@ export class AdminComponent implements OnInit {
     		picture: picture, 
     		patient: patient,
     		condition: condition
-    	});
+		});
+	
 	}
 }
