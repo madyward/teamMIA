@@ -26,13 +26,13 @@ a button:focus {outline:0;}
 }
 
 .videoSubTitle {
-    color: #337ab7;
+    color: #444;
     padding-top: 0em;
-    border-top: solid #337ab7 1px;
+    border-top: solid #444 1px;
 }
 
 .videoSubTitle2 {
-    color: #337ab7;
+    color: #444;
 }
 
 .center {
