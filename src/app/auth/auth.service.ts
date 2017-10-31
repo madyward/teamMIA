@@ -56,11 +56,11 @@ export class AuthService {
 	//LEADERBOARD DISPLAY
 	getClicks(){
 		return this.db.list("users", 
-		ref => ref.orderByChild("clicks").limitToFirst(5)
+		ref => ref.orderByChild("clicks").limitToFirst(3)
 		).valueChanges()
 	}
 	getUsers(){
-        return this.db.list('users', ref => ref.orderByChild('clicks').limitToLast(5)).valueChanges()
+        return this.db.list('users', ref => ref.orderByChild('clicks').limitToLast(3)).valueChanges()
     }
 //showVideo oninit
     showVideo(){
