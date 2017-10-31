@@ -44,12 +44,12 @@ import * as admin from 'firebase-admin';
 
 //INITIALIZE FIREBASE
 export const firebaseConfig = {
-	apiKey: "AIzaSyDpNw6jTlVx_oHOQ4P_Qx5MPsgfPsElUuA",
-    authDomain: "buildingappswithangularf-6a3fa.firebaseapp.com",
-    databaseURL: "https://buildingappswithangularf-6a3fa.firebaseio.com",
-    projectId: "buildingappswithangularf-6a3fa",
-    storageBucket: "buildingappswithangularf-6a3fa.appspot.com",
-    messagingSenderId: "1024296893512"
+	apiKey: "AIzaSyDh-hrLobQ_kFD11bWacfhUP_ejzKHFY58",
+    authDomain: "remempathy-us.firebaseapp.com",
+    databaseURL: "https://remempathy-us.firebaseio.com",
+    projectId: "remempathy-us",
+    storageBucket: "remempathy-us.appspot.com",
+    messagingSenderId: "1071599625628"
 };
 
 //SET UP ROUTING
