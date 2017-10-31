@@ -1,32 +1,33 @@
 <div>
-    <div>
-        <ul class="signin-signup-signout">
-                <!-- <li style="height: 0px;" class="signin-up-out1"><a [routerLink]="['/signup']" class="signin-up-out-buttons signin-up-out1" style="color: #AD1F1F;">Take The Pledge!</a></li> -->
-                <li style="height: 0px;" class="signin-up-out2"><a [routerLink]="['/signin']" *ngIf="!isLoggedIn" class="signin-up-out-buttons" style="color: #AD1F1F;">Sign In</a></li>
-                <li style="height: 0px;" class="signin-up-out3"><a (click)="signOutToken()"  *ngIf="isLoggedIn" class="signin-up-out-buttons" style="color: #AD1F1F;">Sign Out</a></li>
-                <!-- <li style="height: 0px;" class="signin-up-out1" ><a *ngIf="isLoggedIn" routerLink="profile" class="signin-up-out-buttons" style="color: #AD1F1F;">Profile</a></li> -->
-
-        </ul>        
+    <div class="class">
         <!-- <img id="logo" src="assets/Remempathy-blacktext.png" alt="RemEmpathy" /> -->
-        <a [routerLink]="['/home']"><img id="logo" src="assets/remempathyCAP_grey_red2.png" alt="RemEmpathy" /></a>
         <!-- <img id="logo" src="assets/remempathyCAP_red_grey2.png" alt="RemEmpathy" /> -->       
-    </div>
-    <nav class='navbar  navbar-collapse'>
-        <div class='container-fluid'>
-            <!-- <a class='navbar-brand'style="color: white">{{pageTitle}}</a> -->
-            <ul class='nav navbar-nav' id='nav'>
-                <li><a [routerLink]="['/home']">HOME</a></li>
-                <li><a [routerLink]="['/video']">VIDEOS</a></li>
-                <li><a [routerLink]="['/leaderboards']">ACTIVITY</a></li>
-                <li><a [routerLink]="['/contact']">FEEDBACK</a></li>
-                <!-- <li><a [routerLink]="['/profile']">PROFILE</a></li> -->
-             
-            </ul>
+        <nav class='navbar  navbar-collapse'>
             
+            <img id="logo" style="right:0px;" src="assets/remempathyCAP_grey_red2.png" alt="RemEmpathy" />
+            <!-- <div class='container-fluid'> -->
+                
+                <!-- <a class='navbar-brand'style="color: white">{{pageTitle}}</a> -->
+                <ul class='nav navbar-nav' id='nav'>
+                    <li><a [routerLink]="['/home']">HOME</a></li>
+                    <li><a [routerLink]="['/video']">VIDEOS</a></li>
+                    <li><a [routerLink]="['/leaderboards']">ACTIVITY</a></li>
+                    <li><a [routerLink]="['/contact']">FEEDBACK</a></li>
+                    <!-- <li><a [routerLink]="['/profile']">PROFILE</a></li> -->
+                </ul>
+                    <ul class="sign-inOut" style="right:0em;">
+                            <!-- <li class="sign-inOut1"><a [routerLink]="['/signup']" class="signin-up-out-buttons" style="color: #AD1F1F;">Take The Pledge!</a></li> -->
+                            <li class="signin"><a [routerLink]="['/signin']" *ngIf="!isLoggedIn" class="signin-buttons">Sign In</a></li>
+                            <li class="signout"><a (click)="signOutToken()"  *ngIf="isLoggedIn" class="signout-buttons">Sign Out</a></li>
+                            <!-- <li class="sign-inOut4" ><a *ngIf="isLoggedIn" routerLink="profile" class="signin-up-out-buttons" style="color: #AD1F1F;">Profile</a></li> -->
+            
+                    </ul>            
+                
+                <!-- </div> -->
+                
+            </nav>
         </div>
-
-    </nav>
-    <div class='container'>
+    <div>
         <router-outlet></router-outlet>
     </div>
 </div>
