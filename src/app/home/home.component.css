@@ -4,14 +4,18 @@ h4 {
     margin-bottom: 0px;
 }
 
+/* .container {
+} */
 
 /* ======Take The Pledge====== */
 #about {
     margin-bottom: 2.5%;
+    padding-right: 0px;
 }
 
 .text {
     margin-bottom: 2.5%;
+    padding-right: 0px; 
     font-family: 'Roboto', sans-serif;
     color: #444;
 }
@@ -54,9 +58,10 @@ button h3 {
 
 /* ======Top Videos====== */
 .header {
-    color: #fff;
-    background-color: #AD1F1F;
-    padding: 7px 0px 7px 0px;
+    color: #AD1F1F;
+    /* background-color: #fff; */
+    /* border: 1px solid #AD1F1F; */
+    padding: 7px 0px 0px 0px;
     border-radius: 3px;
 }
 
@@ -97,14 +102,14 @@ td {
 }
 
 .videoTitle {
-    color: #337ab7;
+    color: #444;
     padding-top: 0.5em !important;
 }
 
 .videoSubTitle {
-    color: #337ab7;
+    color: #444;
     padding-top: 0em;
-    border-top: solid #337ab7 1.5px;
+    border-top: solid #444 1.5px;
 }
 
 .videoLi {
@@ -129,22 +134,27 @@ td {
 }
 /*======Leaderboard======*/
 .activity {
-    padding: 0px;
-    margin: 0% 4% 5% 4%;
+    /* padding: 5px 2em 2em 2em; */
+    margin: 0% 0% 4.5% 3.5%;
+    /* background-color: #fff; */
+    border-radius: 10px;
 }
 
 #leaderboard {
-    border: 1px solid #eaeaea;
-    background-color: #eaeaea;
+    border: 1px solid #cecece;
+    background-color: #cecece;
     border-radius: 10px;
+    border-right: none;
+    border-left: none;
     /* text-align: center; */
 }
 
 .title {
-    margin: 10px 0px 26px 0px; 
-    color: #fff;
-    background-color: #AD1F1F;
-    padding: 8px 0px 8px 0px;
+    margin: 8px 0px 8px 0px; 
+    color: #AD1F1F;
+    /* background-color: #fff; */
+    /* border: 1px solid #AD1F1F; */
+    padding: 8px 0px 20px 0px;
     border-radius: 3px;
     text-align: center;
 }
