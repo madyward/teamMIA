@@ -26,11 +26,23 @@ export class AdminComponent implements OnInit {
 		return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
 	  });
 	}
-	addItem(newName: string) {
-	  this.videoRef.push({ text: newName });
+	addItem(videoUrl: string,
+	pictureUrl:string,
+	patient: string,
+	condition: string) {
+	  this.videoRef.push({text: videoUrl,
+		    		pictureUrl: pictureUrl, 
+		    		patient: patient,
+		    		condition: condition });
 	}
-	updateItem(key: string, newText: string) {
-	  this.videoRef.update(key, { text: newText });
+	updateItem(key: string, videoUrl: string,
+		pictureUrl: string, 
+		patient: string,
+		condition: string) {
+	  this.videoRef.update(key, { videoUrl: videoUrl,
+		picture: pictureUrl, 
+		patient: patient,
+		condition: condition });
 	}
 	deleteItem(key: string) {    
 	  this.videoRef.remove(key); 
