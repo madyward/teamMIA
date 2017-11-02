@@ -17,39 +17,56 @@ import {AuthService} from "../auth/auth.service";
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-	
-
-	videoList=  [];
 	videoRef:AngularFireList<any>;
-	video: Observable<any[]>;
+	 video: Observable<any[]>;
+	constructor(db: AngularFireDatabase) {
+	  this.videoRef = db.list('videos');
+	  // Use snapshotChanges().map() to store the key
+	  this.video = this.videoRef.snapshotChanges().map(changes => {
+		return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+	  });
+	}
+	addItem(newName: string) {
+	  this.videoRef.push({ text: newName });
+	}
+	updateItem(key: string, newText: string) {
+	  this.videoRef.update(key, { text: newText });
+	}
+	deleteItem(key: string) {    
+	  this.videoRef.remove(key); 
+	}
+	deleteEverything() {
+	  this.videoRef.remove();
+	}
+	ngOnInit(){}  
+}
 
-	constructor(private db: AngularFireDatabase, private authservice: AuthService,) {
-		this.videoRef = db.list('video');
-		this.video = this.videoRef.snapshotChanges().map(
-			changes =>{
-				return changes.map(c => ({video: c.payload.key, ...c.payload.val() }))
-			});
-	}
-	makeVideo(	url : string,
-		picture: string,
-    	patient: string, 
-    	condition: string){
-		this.videoRef.push({url: url,
-    		picture: picture, 
-    		patient: patient,
-    		condition: condition});
-	}
+	// videoList=  [];
+	//
 
-	deleteAll(){
-		this.videoRef.remove();
-	}
-	deleteMe(url : string,
-		picture: string,
-    	patient: string, 
-    	condition: string){
-		this.videoRef.remove(url)
-	}
- 
+	// constructor(private db: AngularFireDatabase, 
+	// 	private authservice: AuthService,) {
+	// 	this.videoRef = db.list('video');
+	// 	//snapshot gives value and key1
+	// 	this.video = this.videoRef.snapshotChanges().map(
+	// 		changes =>{
+	// 			return changes.map(c => ({video: c.payload.key, ...c.payload.val() }))
+	// 		});
+	// }
+	// makeVideo(	url : string,){
+	// 	this.videoRef.push({text: url});
+	// }
+
+	// deleteAll(){
+	// 	this.videoRef.remove();
+	// }
+	// deleteMe(key: string){
+	// 	this.videoRef.remove(key);
+	 
+	// }
+	// deleteItem(key: string) {    
+	// 	this.videoRef.remove(key); 
+	//   }
 	
     // saveVideo() {
     // 	this.serverService.storeVideos(this.videoList)
@@ -67,27 +84,28 @@ export class AdminComponent implements OnInit {
     // 	);
 	// }
 	
-	ngOnInit() {
-		this.authservice.showVideo()
-		.subscribe(
-			video => {
-				this.videoList = video }),
-				(error) => console.log(error)
-	}
+	// ngOnInit() {
+	// 	this.authservice.showVideo()
+	// 	.subscribe(
+	// 		video => {
+	// 			this.videoList = video }),
+	// 			(error) => console.log(error)
+	// }
 
-    
-	addVideo(
-		url : string,
-		picture: string,
-    	patient: string, 
-    	condition: string
-	){
-		this.videoList.push({
-    		url: url,
-    		picture: picture, 
-    		patient: patient,
-    		condition: condition
-		});
 	
-	}
-}
+	
+// 	addVideo(
+// 		url : string,
+// 		picture: string,
+//     	patient: string, 
+//     	condition: string
+// 	){
+// 		this.videoList.push({
+//     		url: url,
+//     		picture: picture, 
+//     		patient: patient,
+//     		condition: condition
+// 		});
+	
+// 	}
+ 

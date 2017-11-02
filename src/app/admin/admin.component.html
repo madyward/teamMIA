@@ -1,90 +1,10 @@
-<div class="container">
-    <div class="row">
-      <div class="col-xs-5 col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1">
-       
-         <form #videoForm="ngForm">
-          <div class="form-group">
-            
-              <div>
-                  <label class="url user" for="url">Video URL:</label>
-                  <input type="text" class="form-control" name="url" id="url" #url ngModel required>
-                  
-                </div>
-  
-           <div>
-              <label class="picture user" for="picture">Picture URL:</label>
-              <input type="text" class="form-control" name="picture" id="picture" #picture ngModel required>
-              
-            </div>
-  
-          <div>
-            <label class="patient user" for="patient">Patient Name:</label>
-            <input type="text" class="form-control" name="patient" id="patient" #patient ngModel required>
-          
-          </div>
-  
-          <div>
-              <label class="condition user" for="condition">Condition:</label>
-              <input type="text" class="form-control" name="condition" id="condition" #condition ngModel required>
-              
-            </div>
-            </div>
-            </form>
-            
-           
-              
-            <br>
-            
-         
-        
-            <button class="btn btn-success" (click)='addVideo(url.value, picture.value, patient.value, condition.value)'[disabled]="!f.valid">Add Video</button>
-          <button class="btn btn-primary" type="submit" (click)= "makeVideo(url.value, picture.value, patient.value, condition.value); videoForm.reset()" [disabled]="!f.valid">Save Video</button>
-          <button class="btn btn-danger" (click)='deleteAll()'>Delete All </button>
-          <button class="btn btn-danger" (click)='deleteMe(url.value)'>Delete One </button>   
-           
-      
-            <div class="container">
-              <div class="row">
-                <div class="table-responsive">
-                  <!-- <table align="center" class="table"
-                  *ngIf= 'videos && videos.length'>     -->
-                  <tr>
-                    <td *ngFor= "let video of videoRef" class="video-grid center">
-                      <a data-fancybox data-type='iframe' href="{{video.url}}">
-                        <img
-                        [src]="video.picture"
-                        alt="{{video.picture}}"
-                        class="video"
-                        style="height: 150px; width: 250px;">
-                      </a>      
-                      <p class="videoSubTitle2">{{video.patient}}</p>
-                      <p class="videoSubTitle">{{video.condition}}</p>
-                      <button type="submit">Delete This Guy</button>
-                     
-                    </td>
-                  </tr> 
-                  <!-- </table>      -->
-                </div>
-            </div>
-            <div class="row">
-              <div class="table-responsive">
-                <!-- <table align="center" class="table"
-                *ngIf= 'videos && videos.length'>     -->
-                <tr>
-                  <td *ngFor= "let video of videoList" class="video-grid center">
-                    <a data-fancybox data-type='iframe' href="{{videoList[0].url}}">
-                      <img
-                      [src]="video.picture"
-                      alt="{{video.picture}}"
-                      class="video"
-                      style="height: 150px; width: 250px;">
-                    </a>      
-                    <p class="videoSubTitle2">{{videoList[0].url}}</p>
-                    <p class="videoSubTitle">{{videoList[0].url}}</p>
-                    <button>Delete</button>
-                  </td>
-                </tr> 
-                <!-- </table>      -->
-              </div>
-            </div>
-          </div>
+<ul>
+  <li *ngFor="let item of video | async">
+    <input type="text" #updatetext [value]="item.text" />
+    <button (click)="updateItem(item.key, updatetext.value)">Update</button>
+    <button (click)="deleteItem(item.key)">Delete</button>
+  </li>
+</ul>
+<input type="text" #newitem />
+<button (click)="addItem(newitem.value)">Add</button>
+<button (click)="deleteEverything()">Delete All</button>
