@@ -1,88 +1,44 @@
-<div class="container">
-    <div class="row">
-      <div class="col-xs-5 col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1">
-       
-         <form #f="ngForm">
-          <div class="form-group">
-            
-              <div>
-                  <label class="url user" for="url">Video URL:</label>
-                  <input type="text" class="form-control" name="url" id="url" #url ngModel required>
-                  
-                </div>
-  
-           <div>
-              <label class="picture user" for="picture">Picture URL:</label>
-              <input type="text" class="form-control" name="picture" id="picture" #picture ngModel required>
-              
-            </div>
-  
-          <div>
-            <label class="patient user" for="patient">Patient Name:</label>
-            <input type="text" class="form-control" name="patient" id="patient" #patient ngModel required>
-          
-          </div>
-  
-          <div>
-              <label class="condition user" for="condition">Condition:</label>
-              <input type="text" class="form-control" name="condition" id="condition" #condition ngModel required>
-              
-            </div>
-            </div>
-            </form>
-            
-           
-              
-            <br>
-            
-         
-        
-         
-          <button class="btn btn-primary" type="submit" (click)= "addVideo(url.value, picture.value, patient.value, condition.value)" [disabled]="!f.valid">Add Video</button>
-          <button class="btn btn-success"(click)='saveVideo()' [disabled]="!f.valid">Save Video</button>
-          <button class="btn btn-danger"(click)='getVideo(videoList[0].url)' >Get Video</button>
-             
-           
-      
-            <div class="container">
-              <div class="row">
-                <div class="table-responsive">
-                  <!-- <table align="center" class="table"
-                  *ngIf= 'videos && videos.length'>     -->
-                  <tr>
-                    <td *ngFor= "let video of videoList" class="video-grid center">
-                      <a data-fancybox data-type='iframe' href="{{video.url}}">
-                        <img
-                        [src]="video.picture"
-                        alt="{{video.picture}}"
-                        class="video"
-                        style="height: 150px; width: 250px;">
-                      </a>      
-                      <p class="videoSubTitle2">{{video.patient}}</p>
-                      <p class="videoSubTitle">{{video.condition}}</p>
-                    </td>
-                  </tr> 
-                  <!-- </table>      -->
-                </div>
-            </div>
-            <div class="row">
-              <div class="table-responsive">
-                <!-- <table align="center" class="table"
-                *ngIf= 'videos && videos.length'>     -->
-                <tr>
-                  <td *ngFor= "let video of videoList" class="video-grid center">
-                    <a data-fancybox data-type='iframe' href="{{videoList[0].url}}">
-                      <img
-                      [src]="video.picture"
-                      alt="{{video.picture}}"
-                      class="video"
-                      style="height: 150px; width: 250px;">
-                    </a>      
-                    <p class="videoSubTitle2">{{videoList[0].url}}</p>
-                    <p class="videoSubTitle">{{videoList[0].url}}</p>
-                  </td>
-                </tr> 
-                <!-- </table>      -->
-              </div>
-            </div>
-          </div>
+<div class=container>
+
+  <h1><strong>MUST BE LOGGED IN TO ADD ViDEOS OR DELETE</strong></h1>
+<ul>
+  <li *ngFor="let item of video | async">
+    <input type="text" #updatetext [value]="item.text"/>
+    <button (click)="updateItem(item.key, updatetext.value)">Update</button>
+    <button (click)="deleteItem(item.key)">Delete</button>
+  </li>
+ 
+  <li *ngFor="let item of video | async">
+    <input type="text" #updatetext [value]="item.pictureUrl"/>
+    <button (click)="updateItem(item.key, updatetext.value)">Update</button>
+    <button (click)="deleteItem(item.key)">Delete</button>
+  </li>
+ 
+  <li *ngFor="let item of video | async">
+    <input type="text" #updatetext [value]="item.patient"/>
+    <button (click)="updateItem(item.key, updatetext.value)">Update</button>
+    <button (click)="deleteItem(item.key)">Delete</button>
+  </li>
+ 
+  <li *ngFor="let item of video | async">
+    <input type="text" #updatetext [value]="item.condition"/>
+    <button (click)="updateItem(item.key, updatetext.value)">Update</button>
+    <button (click)="deleteItem(item.key)">Delete</button>
+  </li>
+ 
+</ul>
+
+
+<!-- this is our new input field -->
+<form #newItem >
+<input type="text" #videoUrl />
+<input type="text" #pictureUrl />
+<input type="text" #patient />
+<input type="text" #condition />
+</form>
+
+<button (click)="addItem(videoUrl.value, pictureUrl.value, patient.value, condition.value) ">Add</button>
+
+<!-- I think you should have the (click) = a modal to confirm -->
+<button (click)="deleteEverything()">Delete All</button>
+</div>

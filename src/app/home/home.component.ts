@@ -19,12 +19,19 @@ export class HomeComponent implements OnInit {
 	clicks: number = 0;
 	//uid = this.authservice.authState.uid;
 	constructor(
-		private authservice: AuthService
+		private authservice: AuthService,
+		private db: AngularFireDatabase
 	) {}
     
 	ngOnInit() {
-		this.authservice.getClicks().subscribe(users => {
-			this.users = users
-		})
+		this.authservice.getUsers()
+		.subscribe(
+			user => {
+			this.users = user.reverse() }),
+			(error) => console.log(error)
 	}
+	// 	this.authservice.getClicks().subscribe(users => {
+	// 		this.users = users
+	// 	})
+	// }
 }
